@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
   <meta name="author" content="Mathieu Pauly @ Arolla" />
-  <title>Java 8 AL ESGI</title>
+  <title>Cours Java 8 AL ESGI</title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
 div.sourceCode { overflow-x: auto; }
@@ -47,15 +47,56 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </head>
 <body>
 <div id="header">
-<h1 class="title">Java 8 AL ESGI</h1>
+<h1 class="title">Cours Java 8 AL ESGI</h1>
 <h2 class="author">Mathieu Pauly @ Arolla</h2>
-<h3 class="date">mars 2017</h3>
+<h3 class="date">Première rédaction mars 2017 (dernière mise à jour : 17/04/2017)</h3>
 </div>
 <div id="TOC">
 <ul>
 <li><a href="#introduction-à-java"><span class="toc-section-number">1</span> Introduction à Java</a><ul>
 <li><a href="#premier-programme"><span class="toc-section-number">1.1</span> Premier programme</a></li>
-<li><a href="#notation-binaire"><span class="toc-section-number">1.2</span> Notation binaire</a></li>
+<li><a href="#notation-binaire-exercice"><span class="toc-section-number">1.2</span> Notation binaire : exercice</a></li>
+<li><a href="#notation-binaire-correction"><span class="toc-section-number">1.3</span> Notation binaire : correction</a></li>
+<li><a href="#java-8-api"><span class="toc-section-number">1.4</span> Java 8 API</a></li>
+<li><a href="#styles-de-if"><span class="toc-section-number">1.5</span> Styles de if</a></li>
+<li><a href="#logarithme-et-exponentiation-exercice"><span class="toc-section-number">1.6</span> Logarithme et exponentiation : exercice</a></li>
+<li><a href="#logarithme-base-2-en-java"><span class="toc-section-number">1.7</span> Logarithme base 2 en Java</a></li>
+<li><a href="#visibilité"><span class="toc-section-number">1.8</span> Visibilité</a></li>
+<li><a href="#conversion"><span class="toc-section-number">1.9</span> Conversion</a></li>
+<li><a href="#tableau"><span class="toc-section-number">1.10</span> Tableau</a></li>
+<li><a href="#list-et-arraylist"><span class="toc-section-number">1.11</span> List et ArrayList</a></li>
+<li><a href="#stringbuilder"><span class="toc-section-number">1.12</span> StringBuilder</a></li>
+<li><a href="#plus-grand-commun-diviseur-exercice"><span class="toc-section-number">1.13</span> Plus grand commun diviseur : exercice</a><ul>
+<li><a href="#méthode-récursive-et-statique"><span class="toc-section-number">1.13.1</span> Méthode récursive et statique</a></li>
+<li><a href="#premier-objet"><span class="toc-section-number">1.13.2</span> Premier objet</a></li>
+<li><a href="#champ-de-classe"><span class="toc-section-number">1.13.3</span> Champ de classe</a></li>
+<li><a href="#constructeur-par-défaut"><span class="toc-section-number">1.13.4</span> Constructeur par défaut</a></li>
+<li><a href="#constructeur-sans-paramètre"><span class="toc-section-number">1.13.5</span> Constructeur sans paramètre</a></li>
+<li><a href="#constructeur-avec-2-paramètres"><span class="toc-section-number">1.13.6</span> Constructeur avec 2 paramètres</a></li>
+<li><a href="#référence-interne"><span class="toc-section-number">1.13.7</span> Référence interne</a></li>
+</ul></li>
+<li><a href="#premier-objet-correction"><span class="toc-section-number">1.14</span> Premier objet : correction</a></li>
+<li><a href="#nombres-rationels"><span class="toc-section-number">1.15</span> Nombres rationels</a><ul>
+<li><a href="#exercice-1"><span class="toc-section-number">1.15.1</span> Exercice 1</a></li>
+<li><a href="#invariant-et-bug"><span class="toc-section-number">1.15.2</span> Invariant et bug</a></li>
+<li><a href="#exercice-2"><span class="toc-section-number">1.15.3</span> Exercice 2</a></li>
+<li><a href="#exercice-3"><span class="toc-section-number">1.15.4</span> Exercice 3</a></li>
+<li><a href="#exercice-4"><span class="toc-section-number">1.15.5</span> Exercice 4</a></li>
+<li><a href="#exercice-5"><span class="toc-section-number">1.15.6</span> Exercice 5</a></li>
+<li><a href="#exercice-6"><span class="toc-section-number">1.15.7</span> Exercice 6</a></li>
+<li><a href="#exercice-7"><span class="toc-section-number">1.15.8</span> Exercice 7</a></li>
+<li><a href="#exercice-8"><span class="toc-section-number">1.15.9</span> Exercice 8</a></li>
+<li><a href="#exercice-9"><span class="toc-section-number">1.15.10</span> Exercice 9</a></li>
+<li><a href="#exercice-10"><span class="toc-section-number">1.15.11</span> Exercice 10</a></li>
+<li><a href="#exercice-11"><span class="toc-section-number">1.15.12</span> Exercice 11</a></li>
+<li><a href="#exercice-12"><span class="toc-section-number">1.15.13</span> Exercice 12</a></li>
+<li><a href="#exercice-13"><span class="toc-section-number">1.15.14</span> Exercice 13</a></li>
+<li><a href="#exercice-14"><span class="toc-section-number">1.15.15</span> Exercice 14</a></li>
+<li><a href="#exercice-15"><span class="toc-section-number">1.15.16</span> Exercice 15</a></li>
+<li><a href="#exercice-16"><span class="toc-section-number">1.15.17</span> Exercice 16</a></li>
+<li><a href="#exercice-17"><span class="toc-section-number">1.15.18</span> Exercice 17</a></li>
+<li><a href="#exercice-18"><span class="toc-section-number">1.15.19</span> Exercice 18</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </div>
@@ -69,7 +110,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 }</code></pre></div>
 <p>Pour compiler le programme, il faut installer le JDK.</p>
 <p>Dans un terminal, tapez :</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">javac</span> -version</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">javac</span> -version</code></pre></div>
 <p>Si vous avez une erreur, il faut finaliser l'installation.</p>
 <p>Pour lancer un programme, il faut que celui-ci soit référencé dans le <code>PATH</code>. Il s'agit d'une variable d'environnement. Elle est définie sur Windows et Linux. Cette variable liste un ensemble de chemins séparés par des points-virgules. Par exemple :</p>
 <pre><code>C:\WINDOWS\system32;C:\WINDOWS</code></pre>
@@ -81,15 +122,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Contient-il le chemin d'installation du compilateur ? Il est typiquement installé dans le répertoire : <code>C:\Program Files\Java\jdk1.8.0\bin</code> (ou plus généralement dans <code>%ProgramFiles%\Java\jdk1.8.0\bin</code>).</p>
 <p>Allez dans les variables d'environnements de l'utilisateur. Si <code>PATH</code> n'existe pas ajoutez une variable nommée <code>PATH</code> valant <code>C:\Program Files\Java\jdk1.8.0\bin</code>. Si elle existe, modifiez la valeur pour ressembler au <code>PATH</code> attendu (cf. plus haut).</p>
 <p>https://docs.oracle.com/javase/8/docs/technotes/guides/install/windows_jdk_install.html</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">javac</span> -version</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">javac</span> -version</code></pre></div>
 <p>Si l'installation est bien finalisée vous devriez voir s'afficher : <code>javac 1.8.0_121</code>.</p>
 <p>Naviguez dans le dossier de votre code source :</p>
 <pre><code>cd hello-world</code></pre>
 <p>Compilez le programme :</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">javac</span> Main.java</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">javac</span> Main.java</code></pre></div>
 <p>Le compilateur a créé un nouveau fichier : <code>Main.class</code>.</p>
 <p>Lancez le programme :</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">java</span> Main</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">java</span> Main</code></pre></div>
 <p>Le message d'erreur est le suivant :</p>
 <pre><code>Erreur : la méthode principale est introuvable dans la classe Main,
 définissez la méthode principale comme suit :
@@ -99,14 +140,14 @@ ou une classe d&#39;applications JavaFX doit étendre javafx.application.Applica
 <p>Vous venez de créer votre premier programme Java ! Mais il ne fait pas grand chose.</p>
 <p>Ajoutez une instruction à la méthode <code>main()</code> :</p>
 <div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">class</span> Main {
-  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(String[] args) {
-    System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hello world!&quot;</span>);
+  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hello world!&quot;</span>);
   }
 }</code></pre></div>
 <p>Compilez avec <code>javac</code>, lancez avec <code>java</code>.</p>
 <p>Vous devriez voir le message suivant s'afficher :</p>
 <pre><code>Hello world!</code></pre>
-<h2 id="notation-binaire"><span class="header-section-number">1.2</span> Notation binaire</h2>
+<h2 id="notation-binaire-exercice"><span class="header-section-number">1.2</span> Notation binaire : exercice</h2>
 <p>Créez un dossier <code>binary-format</code>. Créez-y un fichier <code>Main.java</code>.</p>
 <p>A chaque étape, vous devez effectuer tout le cycle d'édition, de compilation et d'exécution. N'attendez pas l'étape 3 avant de tester votre programme.</p>
 <ol style="list-style-type: decimal">
@@ -115,32 +156,458 @@ ou une classe d&#39;applications JavaFX doit étendre javafx.application.Applica
 <li>Modifiez ce programme pour qu'il affiche <code>0</code> si le nombre passé en paramètre est pair et <code>1</code> sinon. Utilisez l'opérateur modulo <code>%</code>. Essayez aussi d'utiliser l'opérateur de conjonction binaire <code>&amp;</code>.</li>
 <li>Modifiez ce programme pour préfixer (quand le nombre est supérieur ou égal à <code>2</code>) <code>0</code> si la moitié du nombre passé en paramètre est pair, <code>1</code> sinon. Utilisez l'opérateur de concaténation de <code>String</code> <code>+</code>. On aura donc :</li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">java</span> Main 1
-<span class="kw">1</span>
-$ <span class="kw">java</span> Main 0
-<span class="kw">0</span>
-$ <span class="kw">java</span> Main 2
-<span class="kw">10</span>
-$ <span class="kw">java</span> Main 3
-<span class="kw">11</span>
-$ <span class="kw">java</span> Main 4
-<span class="kw">00</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="ex">java</span> Main 1
+<span class="ex">1</span>
+$ <span class="ex">java</span> Main 0
+<span class="ex">0</span>
+$ <span class="ex">java</span> Main 2
+<span class="ex">10</span>
+$ <span class="ex">java</span> Main 3
+<span class="ex">11</span>
+$ <span class="ex">java</span> Main 4
+<span class="ex">00</span></code></pre></div>
 <ol start="5" style="list-style-type: decimal">
 <li>Modifiez ce programme pour que l'argument passé en argument soit entré en notation binaire plutôt qu'en format décimal. Ne pas afficher l'argument tel quel. Utilisez <code>Integer.parseInt(int, int)</code>.</li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">java</span> Main 11
-<span class="kw">11</span>
-$ <span class="kw">java</span> Main 110
-<span class="kw">10</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="ex">java</span> Main 11
+<span class="ex">11</span>
+$ <span class="ex">java</span> Main 110
+<span class="ex">10</span></code></pre></div>
 <ol start="6" style="list-style-type: decimal">
 <li>Modifiez ce programme pour afficher la décomposition binaire pour n'importe quel nombre en utilisant la notation Java 7. Utilisez l'opérateur d'affectation combiné à la concaténation <code>+=</code>.</li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">java</span> Main 1111
-<span class="kw">0B1111</span>
-$ <span class="kw">java</span> Main 10000000
-<span class="kw">0B10000000</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="ex">java</span> Main 1111
+<span class="ex">0B1111</span>
+$ <span class="ex">java</span> Main 10000000
+<span class="ex">0B10000000</span></code></pre></div>
 <ol start="7" style="list-style-type: decimal">
 <li>Remplacez l'opérateur d'affectation-concaténation <code>+=</code> par un <code>StringBuilder.append(String)</code>.</li>
 </ol>
+<h2 id="notation-binaire-correction"><span class="header-section-number">1.3</span> Notation binaire : correction</h2>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> fr.arolla.java8esgi.binarynotation;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> Main {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+        <span class="kw">if</span> (args.<span class="fu">length</span> == <span class="dv">0</span>) {
+            <span class="bu">System</span>.<span class="fu">err</span>.<span class="fu">println</span>(<span class="st">&quot;erreur&quot;</span>);
+            <span class="bu">System</span>.<span class="fu">exit</span>(<span class="dv">1</span>);
+        }
+
+        <span class="bu">String</span> arg = args[<span class="dv">0</span>];
+        <span class="dt">int</span> n = <span class="bu">Integer</span>.<span class="fu">parseInt</span>(arg);
+        <span class="dt">int</span> i = <span class="dv">0</span>;
+        <span class="bu">String</span>[] bits = <span class="kw">new</span> <span class="bu">String</span>[<span class="dv">4</span>];
+        <span class="kw">while</span> (n &gt;= <span class="dv">0</span>) {
+            <span class="kw">if</span> (n % <span class="dv">2</span> == <span class="dv">0</span>) {
+                bits[i] = <span class="st">&quot;0&quot;</span>;
+            } <span class="kw">else</span> {
+                bits[i] = <span class="st">&quot;1&quot;</span>;
+            }
+            i++;
+            n = n / <span class="dv">2</span>;
+            <span class="kw">if</span> (n == <span class="dv">0</span>) {
+                <span class="kw">break</span>;
+            }
+        }
+        <span class="kw">for</span> (<span class="dt">int</span> j = i - <span class="dv">1</span>; j &gt;= <span class="dv">0</span>; j--) {
+            <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(bits[j]);
+        }
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>();
+    }
+}</code></pre></div>
+<p>Pour éviter d'afficher (print) plusieurs fois chaque bit, on peut accumuler dans une chaîne de caractère ce qu'il y a à afficher. On pourra ainsi n'effectuer qu'une seule entrée/sortie (I/O).</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">String</span> binary = <span class="st">&quot;&quot;</span>;
+<span class="kw">for</span> (<span class="dt">int</span> j = i - <span class="dv">1</span>; j &gt;= <span class="dv">0</span>; j--) {
+    <span class="bu">String</span> bit = bits[j];
+    binary += bit;
+}
+<span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(binary);</code></pre></div>
+<p>L'opérateur de concaténation-affectation <code>binary += bit;</code> est équivalent à <code>binary = binary + bit;</code>.</p>
+<p>Notez que la comparaison de chaîne de caractère avec l'opérateur <code>==</code> ne donne pas de bons résultats. <em>Parfois</em> le code suivant affiche <code>OK</code>.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">String</span> argument = <span class="bu">String</span>.<span class="fu">valueOf</span>(<span class="dv">1</span>);
+<span class="kw">if</span> (argument == <span class="st">&quot;1&quot;</span>) {
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;OK&quot;</span>);
+}</code></pre></div>
+<p>L'égalité des chaînes de caractères est basée sur la comparaison des valeurs et non pas des références.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">String</span> = <span class="bu">String</span>.<span class="fu">valueOf</span>(<span class="dv">1</span>);
+<span class="kw">if</span> (argument.<span class="fu">equals</span>(<span class="st">&quot;1&quot;</span>)) {
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;OK&quot;</span>);
+}</code></pre></div>
+<p>L'opérateur qui calcule le reste de la division entière est noté : <code>%</code>. Un invariant important de la division Euclidienne peut être exprimé ainsi en Java :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">d * (x / d) + (x % d) == x</code></pre></div>
+<p>Attention cependant, même si l'on ne fait pas explicitement une division, calculer le reste d'une division par zéro est interdit :</p>
+<pre><code>int r = 2 % 0;
+// java.lang.ArithmeticException: / by zero</code></pre>
+<p>On a également utilisé l'opérateur <code>&amp;</code> conjonction binaire. Cet opérateur réalise un &quot;et&quot; binaire sur chaque bit des deux opérandes.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> r1 = <span class="dv">9</span> % <span class="dv">2</span>; <span class="co">// 1</span>
+<span class="dt">int</span> r2 = <span class="dv">9</span> &amp; <span class="dv">1</span>; <span class="co">// 1</span></code></pre></div>
+<h2 id="java-8-api"><span class="header-section-number">1.4</span> Java 8 API</h2>
+<p>La <a href="https://docs.oracle.com/javase/8/docs/api/">bibliothèque standard de programmation de Java</a> est riche.</p>
+<p>Nous avons vu jusqu'ici les méthodes suivantes :</p>
+<ul>
+<li><code>int Integer.parseInt(String s) throws NumberFormatException</code></li>
+<li><code>String String.valueOf(int i)</code></li>
+<li><code>String Integer.toString(int i)</code></li>
+<li><code>String String.format(Locale l, String format, Object... args)</code></li>
+<li><code>String Arrays.toString(Object[] a)</code></li>
+<li><code>void System.exit(int status)</code></li>
+<li>...</li>
+</ul>
+<p>Et des classes incontournables de <code>java.lang</code> :</p>
+<ul>
+<li><code>String</code></li>
+<li><code>Integer</code></li>
+<li><code>System</code></li>
+<li><code>Math</code></li>
+<li><code>ArrayIndexOutOfBoundsException</code></li>
+<li>...</li>
+</ul>
+<p>Prenez l'habitude de lire la documentation de référence.</p>
+<h2 id="styles-de-if"><span class="header-section-number">1.5</span> Styles de if</h2>
+<p>Alternative métier :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">if</span> (failure) {
+    <span class="bu">System</span>.<span class="fu">err</span>.<span class="fu">println</span>(<span class="st">&quot;FAIL&quot;</span>);
+} <span class="kw">else</span> {
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;OK&quot;</span>);
+}</code></pre></div>
+<p>Règle et exception :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">if</span> (failure) {
+    <span class="bu">System</span>.<span class="fu">err</span>.<span class="fu">println</span>(<span class="st">&quot;FAIL&quot;</span>);
+    <span class="kw">return</span>;
+}
+<span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;OK&quot;</span>);</code></pre></div>
+<h2 id="logarithme-et-exponentiation-exercice"><span class="header-section-number">1.6</span> Logarithme et exponentiation : exercice</h2>
+<p>Dans l'algorithme précédent, nous avons fixé la taille du tableau en dur.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">String</span>[] bits = <span class="kw">new</span> <span class="bu">String</span>[<span class="dv">4</span>];</code></pre></div>
+<p>Si on cherche à calculer la représentation binaire de 16 (<code>0B1_0000</code>).</p>
+<p>Le programme crash :</p>
+<pre><code>Exception in thread &quot;main&quot; java.lang.ArrayIndexOutOfBoundsException: 4
+    at fr.arolla.java8esgi.binaryformat.Main.main(Main.java:18)</code></pre>
+<p>On a dépassé les bornes du tableau. On va donc chercher à calculer la taille minimale du tableau nécessaire pour stocker la représentation binaire d'un nombre entier.</p>
+<p>Pour trouver la formule qui nous donnerait la taille en fonction du nombre que l'on cherche à représenter en binaire, on peut noter que :</p>
+<p><span class="math inline"><em>m</em> = 2<sup><em>s</em></sup> − 1</span></p>
+<p>avec <span class="math inline"><em>m</em></span> le nombre maximum que l'on peut représenter avec un tableau de taille <span class="math inline"><em>s</em></span>.</p>
+<p>En passant cette équation au logarithme et en ajustant un peu, on peut noter que :</p>
+<p><span class="math inline"><em>s</em> = <em>l</em><em>n</em><sub>2</sub>(<em>n</em>)+1</span></p>
+<p>avec <span class="math inline"><em>n</em></span> le nombre que l'on chercher à représenter et <span class="math inline"><em>s</em></span> (pour &quot;size&quot;) le nombre de bits nécessaires.</p>
+<p>Pourtant, en Java il n'existe pas de fonction standard pour <span class="math inline"><em>l</em><em>n</em><sub>2</sub></span>.</p>
+<p>Il faudra donc l'implémenter en notant la relation suivante :</p>
+<p><span class="math inline"><em>l</em><em>n</em><sub>2</sub>(<em>x</em>)=<em>l</em><em>n</em>(<em>x</em>)/<em>l</em><em>n</em>(2)</span></p>
+<h2 id="logarithme-base-2-en-java"><span class="header-section-number">1.7</span> Logarithme base 2 en Java</h2>
+<p>On définit une méthode <code>log2</code>, dans notre classe <code>Main</code> :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> Main {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+        <span class="co">// ...</span>
+    }
+    
+    <span class="kw">private</span> <span class="dt">static</span> <span class="dt">int</span> <span class="fu">log2</span>(<span class="dt">int</span> n) {
+        <span class="dt">double</span> ln = <span class="bu">Math</span>.<span class="fu">log</span>(n);
+        <span class="dt">double</span> ln2 = <span class="bu">Math</span>.<span class="fu">log</span>(<span class="dv">2</span>);
+
+        <span class="kw">return</span> (<span class="dt">int</span>) (ln / ln2);
+    }
+}</code></pre></div>
+<p>On peut ainsi modifier notre méthode <code>main</code> de la façon suivante :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">String</span>[] bits = <span class="kw">new</span> <span class="bu">String</span>[<span class="fu">log2</span>(n) + <span class="dv">1</span>];</code></pre></div>
+<h2 id="visibilité"><span class="header-section-number">1.8</span> Visibilité</h2>
+<p>Trois mots-clés du langage ajustent la visibilité d'un symbole (champ ou méthode) de classe. Mais il existe 4 concepts :</p>
+<ul>
+<li><code>private</code></li>
+<li><code>public</code></li>
+<li><code>protected</code></li>
+<li>par défaut : package-protected</li>
+</ul>
+<p>Un champ ou méthode déclaré <em>privé</em> n'est visible qu'à l'intérieur de la classe. Les méthodes qui ne sont appelées que par votre classes devraient être privée.</p>
+<p>Un champ ou méthode déclaré <em>publique</em> est tout le temps visible, pour peu que la classe qui la définit soit visible.</p>
+<p>Un champ ou méthode déclarée <em>protégé</em> n'est visible que par les sous classes et par les classes du même paquetage.</p>
+<p>Un champ ou méthode sans modificateur de visibilité est dit <em>package-protected</em>. Il n'est visible que dans le même <code>package</code>.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> Hello {
+    <span class="dt">void</span> <span class="fu">foo</span>() { <span class="co">// visible uniquement dans le paquetage</span>
+    }
+}</code></pre></div>
+<h2 id="conversion"><span class="header-section-number">1.9</span> Conversion</h2>
+<p>Java autorise la conversion implicite de type dès lors qu'il n'y a pas de perte d'information.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> salary = 35_<span class="dv">000</span>;
+<span class="dt">double</span> amount = salary;</code></pre></div>
+<p>En revanche, il interdit cette conversion avec perte :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">double</span> amount = 2_<span class="dv">000</span>;
+<span class="dt">int</span> salary = amount; <span class="co">// incompatible types</span></code></pre></div>
+<p>Pour forcer la conversion, il faut indiquer au compilateur <code>javac</code> que l'on sait ce que l'on fait en castant une expression dans un type plus spécifique.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">double</span> amount = 2_<span class="dv">000</span>;
+<span class="dt">int</span> salary = (<span class="dt">int</span>) amount;</code></pre></div>
+<h2 id="tableau"><span class="header-section-number">1.10</span> Tableau</h2>
+<p>Le type <code>String[]</code> est un tableau de <code>String</code>. Une variable de type tableau référence un objet. Une fois l’objet créé, sa longueur ne change jamais. C'est pour cela que l'on devait calculer sa taille en amont avec <code>log2(int)</code>.</p>
+<p>Les indices de tableaux commencent à zéro.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">String</span>[] strings = <span class="kw">new</span> <span class="bu">String</span>[<span class="dv">2</span>];
+
+<span class="bu">String</span> premier = strings[<span class="dv">0</span>];
+<span class="bu">String</span> dernier = strings[strings.<span class="fu">length</span> - <span class="dv">1</span>];</code></pre></div>
+<h2 id="list-et-arraylist"><span class="header-section-number">1.11</span> List et ArrayList</h2>
+<p>L'utilisation de tableaux est fastidieuse et facilite l'introduction de bug. Pour éviter cela on peut utiliser une structure de données plus sophistiquée : <code>ArrayList</code>. C'est une classe qui définit un tableau dynamique (c.à.d. peut changer de taille).</p>
+<p>On pourra donc écrire :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">List</span>&lt;<span class="bu">String</span>&gt; bits = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();
+bits.<span class="fu">add</span>(<span class="st">&quot;0&quot;</span>);
+bits.<span class="fu">add</span>(<span class="st">&quot;1&quot;</span>);
+<span class="bu">Collections</span>.<span class="fu">reverse</span>(bits);
+<span class="kw">for</span> (<span class="bu">String</span> bit : bits) {
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(bit);
+}</code></pre></div>
+<p>Précision : le type (connu à la compilation) de <code>bits</code> est <code>List&lt;String&gt;</code>. La syntaxe <code>List&lt;String&gt;</code>, <code>List&lt;Integer&gt;</code>, <code>Set&lt;Object&gt;</code>, etc. désigne un type paramétré par un autre type.</p>
+<p>L'instruction :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">List</span>&lt;<span class="bu">String</span>&gt; bits = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();</code></pre></div>
+<p>est équivalente à :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">List</span>&lt;<span class="bu">String</span>&gt; bits = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;<span class="bu">String</span>&gt;();</code></pre></div>
+<p>Nous verrons cela en détail dans un autre cours.</p>
+<h2 id="stringbuilder"><span class="header-section-number">1.12</span> StringBuilder</h2>
+<p>Concaténer avec <code>+</code> dans une boucle peut-être très long (ici, <span class="math inline"><em>t</em> &lt; 1<em>s</em></span>) et consommer beaucoup de mémoire.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">String</span> output = <span class="st">&quot;&quot;</span>;
+<span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; 10_<span class="dv">000</span>; i++) {
+    <span class="dt">int</span> n = (<span class="dt">int</span>) (<span class="bu">Math</span>.<span class="fu">random</span>() * <span class="bu">Integer</span>.<span class="fu">MAX_VALUE</span>);
+    <span class="bu">String</span> s = <span class="bu">String</span>.<span class="fu">valueOf</span>(n);
+
+    output += s;
+}
+<span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(output);</code></pre></div>
+<p>On préférera donc l'utilisation de <code>StringBuilder</code> qui ne créé par une nouvelle chaîne de caractère à chaque itération contrairement à l'opérateur <code>+</code>.</p>
+<p>Préférer <code>StringBuilder</code> pour éviter de très long temps de traitements (ici, <span class="math inline"><em>t</em> &lt; 50<em>m</em><em>s</em></span>) :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">StringBuilder</span> output = <span class="kw">new</span> <span class="bu">StringBuilder</span>();
+<span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; 10_<span class="dv">000</span>; i++) {
+    <span class="dt">int</span> n = (<span class="dt">int</span>) (<span class="bu">Math</span>.<span class="fu">random</span>() * <span class="bu">Integer</span>.<span class="fu">MAX_VALUE</span>);
+    <span class="bu">String</span> s = <span class="bu">String</span>.<span class="fu">valueOf</span>(n);
+
+    output.<span class="fu">append</span>(s);
+}
+<span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(output);</code></pre></div>
+<p>On pourra astucieusement améliorer notre implémentation d'affichage du nombre binaire :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">StringBuilder</span> buffer = <span class="kw">new</span> <span class="bu">StringBuilder</span>();
+<span class="kw">for</span> (<span class="dt">int</span> j = i - <span class="dv">1</span>; j &gt;= <span class="dv">0</span>; j--) {
+    <span class="bu">String</span> bit = bits[j];
+    buffer.<span class="fu">append</span>(bit);
+}
+<span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(buffer);</code></pre></div>
+<h2 id="plus-grand-commun-diviseur-exercice"><span class="header-section-number">1.13</span> Plus grand commun diviseur : exercice</h2>
+<p>Le <span class="math inline"><em>P</em><em>G</em><em>C</em><em>D</em></span> de 2 nombres <span class="math inline"><em>a</em></span> et <span class="math inline"><em>b</em></span> est le plus grand entier tel que <span class="math inline"><em>P</em><em>G</em><em>C</em><em>D</em></span> divise <span class="math inline"><em>a</em></span> et <span class="math inline"><em>b</em></span>. (en anglais, on note GCD pour &quot;Greatest Common Divisor&quot;).</p>
+<p>Propriété : <span class="math inline"><em>G</em><em>C</em><em>D</em>(<em>a</em>, <em>b</em>)=<em>G</em><em>C</em><em>D</em>(<em>b</em>, <em>r</em>)</span> avec <span class="math inline"><em>r</em></span> le reste de la division de <span class="math inline"><em>a</em></span> par <span class="math inline"><em>b</em></span>.</p>
+<p>De cette propriété, nous en tirons directement l'algorithme :</p>
+<pre><code>pgcd de a et b vaut :
+- a, si b égale zéro
+- pgcd de b et du reste de la division de a par b, sinon</code></pre>
+<p>L'exercice consiste à implémenter cet algorithme pour calculer le PGCD de 16 et 28.</p>
+<pre><code>$ java Gcd 16 28
+4</code></pre>
+<h3 id="méthode-récursive-et-statique"><span class="header-section-number">1.13.1</span> Méthode récursive et statique</h3>
+<p>Implémenter l'algorithme avec le prototype suivant :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">static</span> <span class="dt">int</span> <span class="fu">computeGcd</span>(<span class="dt">int</span> a, <span class="dt">int</span> b) {
+    <span class="co">// TODO</span>
+}</code></pre></div>
+<h3 id="premier-objet"><span class="header-section-number">1.13.2</span> Premier objet</h3>
+<p>Modifier le programme de sorte qu'il instancie un objet de classe Gcd :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> fr.arolla.java8esgi.gcd;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> Gcd {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+        <span class="kw">if</span> (args.<span class="fu">length</span> != <span class="dv">2</span>) {
+            <span class="bu">System</span>.<span class="fu">err</span>.<span class="fu">println</span>(<span class="st">&quot;2 arguments attendus : &lt;a&gt; &lt;b&gt;&quot;</span>);
+            <span class="bu">System</span>.<span class="fu">exit</span>(<span class="dv">1</span>);
+        }
+        Gcd gcd = <span class="kw">new</span> <span class="fu">Gcd</span>(<span class="bu">Integer</span>.<span class="fu">parseInt</span>(args[<span class="dv">0</span>]), <span class="bu">Integer</span>.<span class="fu">parseInt</span>(args[<span class="dv">1</span>]));
+        <span class="dt">int</span> divisor = gcd.<span class="fu">computeGcd</span>();
+
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(divisor);
+    }
+    <span class="co">// ...</span>
+}</code></pre></div>
+<p>Cette surcharge de la méthode <code>computeGcd(int, int)</code> ne définit pas de paramètre et n'est pas statique.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> <span class="fu">computeGcd</span>();</code></pre></div>
+<h3 id="champ-de-classe"><span class="header-section-number">1.13.3</span> Champ de classe</h3>
+<p>Pour cela, on peut définir et initialiser 2 champs de classe :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">class</span> Gcd {
+    <span class="co">// ...</span>
+    <span class="dt">int</span> a = <span class="dv">16</span>;
+    <span class="dt">int</span> b = <span class="dv">28</span>;
+}</code></pre></div>
+<p>On pourra aussi simplement déclarer les champs (sans les initialiser) :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">class</span> Gcd {
+    <span class="co">// ...</span>
+    <span class="dt">int</span> a;
+    <span class="dt">int</span> b;
+}</code></pre></div>
+<h3 id="constructeur-par-défaut"><span class="header-section-number">1.13.4</span> Constructeur par défaut</h3>
+<p>On peut invoquer un constructeur sans paramètre sans le définir explicitement :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> Gcd {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+        Gcd calculator = <span class="kw">new</span> <span class="fu">Gcd</span>();
+    }
+    
+    <span class="co">// 0 constructeur =&gt; constructeur par défaut</span>
+}</code></pre></div>
+<h3 id="constructeur-sans-paramètre"><span class="header-section-number">1.13.5</span> Constructeur sans paramètre</h3>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> Gcd {
+    <span class="fu">Gcd</span>() {
+        a = <span class="dv">16</span>;
+        b = <span class="dv">28</span>;
+    }
+}</code></pre></div>
+<h3 id="constructeur-avec-2-paramètres"><span class="header-section-number">1.13.6</span> Constructeur avec 2 paramètres</h3>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="fu">Gcd</span>(<span class="dt">int</span> a, <span class="dt">int</span> b) {
+    <span class="kw">this</span>.<span class="fu">a</span> = a;
+    <span class="kw">this</span>.<span class="fu">b</span> = b;
+}</code></pre></div>
+<p>En définissant un constructeur, on perd le constructeur par défaut. Si on veut pouvoir instancier la classe sans argument, il faut définir explicitement un constructeur sans paramètre.</p>
+<h3 id="référence-interne"><span class="header-section-number">1.13.7</span> Référence interne</h3>
+<p>La variable <code>this</code> référence l'objet receveur ou objet courant.</p>
+<h2 id="premier-objet-correction"><span class="header-section-number">1.14</span> Premier objet : correction</h2>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> fr.arolla.java8esgi.gcd;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> Gcd {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+        <span class="kw">if</span> (args.<span class="fu">length</span> != <span class="dv">2</span>) {
+            <span class="bu">System</span>.<span class="fu">err</span>.<span class="fu">println</span>(<span class="st">&quot;2 arguments attendus : &lt;a&gt; &lt;b&gt;&quot;</span>);
+            <span class="bu">System</span>.<span class="fu">exit</span>(<span class="dv">1</span>);
+        }
+        Gcd gcd = <span class="kw">new</span> <span class="fu">Gcd</span>(<span class="bu">Integer</span>.<span class="fu">parseInt</span>(args[<span class="dv">0</span>]), <span class="bu">Integer</span>.<span class="fu">parseInt</span>(args[<span class="dv">1</span>]));
+        <span class="dt">int</span> divisor = gcd.<span class="fu">computeGcd</span>();
+
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(divisor);
+    }
+    
+    <span class="kw">private</span> <span class="dt">int</span> a;
+    <span class="kw">private</span> <span class="dt">int</span> b;
+    
+    <span class="kw">public</span> <span class="fu">Gcd</span>(<span class="dt">int</span> a, <span class="dt">int</span> b) {
+        <span class="kw">this</span>.<span class="fu">a</span> = a;
+        <span class="kw">this</span>.<span class="fu">b</span> = b;
+    }
+    
+    <span class="kw">public</span> <span class="dt">int</span> <span class="fu">computeGcd</span>() {
+        <span class="kw">return</span> <span class="fu">computeGcd</span>(a, b);
+    }
+    
+    <span class="kw">private</span> <span class="dt">static</span> <span class="dt">int</span> <span class="fu">computeGcd</span>(<span class="dt">int</span> a, <span class="dt">int</span> b) {
+        <span class="kw">if</span> (b == <span class="dv">0</span>) {
+            <span class="kw">return</span> a;
+        }
+        <span class="kw">return</span> <span class="fu">computeGcd</span>(b, a % b);
+    }
+}</code></pre></div>
+<h2 id="nombres-rationels"><span class="header-section-number">1.15</span> Nombres rationels</h2>
+<p>Dans la suite d'exercices qui suit nous allons développer un calculateur symbolique de nombres rationnels. Un nombre rationnel est défini par un ratio (ou quotient) de 2 entiers naturels. L'avantage de cette représentation est qu'elle est précise et que l'on peut inspecter le programme plus facilement. En revanche, ce modèle risque d'être moins rapide que les calculs flottant directement implémentés sur les processeurs.</p>
+<p>On peut combiner 2 nombres rationnels en effectuant leur somme, leur différence, leur produit ou le quotient. Voici comment effectuer de telles combinaisons :</p>
+<p><span class="math inline"><em>n</em>1/<em>d</em>1 + <em>n</em>2/<em>d</em>2 = (<em>n</em>1 × <em>d</em>2 + <em>n</em>2 × <em>d</em>1)/(<em>d</em>1 × <em>d</em>2)</span></p>
+<p><span class="math inline"><em>n</em>1/<em>d</em>1 − <em>n</em>2/<em>d</em>2 = (<em>n</em>1 × <em>d</em>2 − <em>n</em>2 × <em>d</em>1)/(<em>d</em>1 × <em>d</em>2)</span></p>
+<p><span class="math inline"><em>n</em>1/<em>d</em>1 × <em>n</em>2/<em>d</em>2 = (<em>n</em>1 × <em>n</em>2)/(<em>d</em>1 × <em>d</em>2)</span></p>
+<p><span class="math inline">(<em>n</em>1/<em>d</em>1)/(<em>n</em>2/<em>d</em>2)=(<em>n</em>1 × <em>d</em>2)/(<em>d</em>1 × <em>n</em>2)</span></p>
+<p><span class="math inline">(<em>n</em>1/<em>d</em>1)=(<em>n</em>2/<em>d</em>2)≡(<em>n</em>1 × <em>d</em>2)=(<em>d</em>1 × <em>n</em>2)</span></p>
+<h3 id="exercice-1"><span class="header-section-number">1.15.1</span> Exercice 1</h3>
+<p>Ecrire un programme qui prend en arguments 4 nombres (n1, d1, n2, d2) et affiche la somme : <span class="math inline"><em>n</em>1/<em>d</em>1 + <em>n</em>2/<em>d</em>2</span>. Exemple :</p>
+<pre><code>$ java Rational 1 4 2 8
+1/2</code></pre>
+<p>Ici <code>1 4</code> se lit <span class="math inline">1/4</span> et <code>2 8</code> se lit <span class="math inline">1/8</span>.</p>
+<ol style="list-style-type: decimal">
+<li>Ecrire une méthode et une seule, le <code>main(String[])</code> qui affiche la somme des 2 nombres rationels encodés sous 4 arguments.</li>
+<li>Introduire 2 champs de classe (numérateur et dénominateur) et un constructeur qui les initialise.</li>
+<li>Extraire le code qui calculait la somme dans une nouvelle méthode <code>add</code> qui prend en entrée 2 paramètres de type <code>Rational</code> et retourne un <code>Rational</code>.</li>
+</ol>
+<p>Dans la méthode <code>main(String[] args)</code>, après le calcul vous pouvez afficher avec :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(sum.<span class="fu">numerator</span> + <span class="st">&quot;/&quot;</span> + sum.<span class="fu">denominator</span>);</code></pre></div>
+<p>Puis vous pouvez extraire le code : <code>sum.numerator + &quot;/&quot; + sum.denominator</code> dans une nouvelle méthode <code>show()</code>. Voilà un exemple d'usage :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">Rational left = ...
+Rational right = ...
+Rational sum = <span class="fu">add</span>(left, right);
+<span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(sum.<span class="fu">show</span>());</code></pre></div>
+<p>Renommer <code>show()</code> en <code>toString()</code> pour avoir :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> Rational {
+    <span class="co">// ...</span>
+    
+    <span class="at">@Override</span>
+    <span class="kw">public</span> <span class="bu">String</span> <span class="fu">toString</span>() {
+        <span class="co">// ...</span>
+    }
+}</code></pre></div>
+<p>Enfin, à l'affichage, supprimer l'appel à la méthode <code>toString()</code>.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">Rational sum = ...
+<span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(sum);</code></pre></div>
+<p>On vient de redéfinir la méthode <code>toString()</code> qui est définie sur la super-classe de toutes les classes Java : <code>Object</code>.</p>
+<ol style="list-style-type: decimal">
+<li>Tout en conservant l'annotation <code>@Override</code>, essayer de supprimer le <code>public</code> du <code>toString()</code>.</li>
+<li>Essayer de renommer la méthode <code>toString()</code>.</li>
+<li>Regarder l'implémentation de la méthode <code>PrintStream.println(Object)</code>.</li>
+</ol>
+<h3 id="invariant-et-bug"><span class="header-section-number">1.15.2</span> Invariant et bug</h3>
+<p>Tester le programme avec d'autres valeurs. Créer plusieurs configurations de lancement dans votre IDE pour cela (run configurations).</p>
+<p>Trouver des invariants à l'opération <code>+</code>. Par exemple, <code>0 + 1/2 = 1/2 + 0 = 1/2</code>. De manière générale : <code>0 + n/d = n/d + 0 = n/d</code>.</p>
+<p>Si vous cassez un invariant vous savez que vous avez un bug.</p>
+<h3 id="exercice-2"><span class="header-section-number">1.15.3</span> Exercice 2</h3>
+<p>Modifier le format d'entrée au programme. Exemple :</p>
+<pre><code>$ java Rational 1/4 2/8
+16/32</code></pre>
+<p>Utiliser <code>String.split(String regex)</code>.</p>
+<h3 id="exercice-3"><span class="header-section-number">1.15.4</span> Exercice 3</h3>
+<p>Modifier le format d'entrée au programme. Exemple :</p>
+<pre><code>$ java Rational 1/4 + 2/8
+16/32</code></pre>
+<h3 id="exercice-4"><span class="header-section-number">1.15.5</span> Exercice 4</h3>
+<p>Afficher la forme canonique du nombre rationel. Exemple :</p>
+<pre><code>$ java Rational 1/4 + 2/8
+1/2</code></pre>
+<p>Indice : utiliser le PGCD pour cela.</p>
+<h3 id="exercice-5"><span class="header-section-number">1.15.6</span> Exercice 5</h3>
+<p>Traiter la différence de nombres rationels. Exemple :</p>
+<pre><code>$ java Rational 1/4 - 2/8
+0/1</code></pre>
+<h3 id="exercice-6"><span class="header-section-number">1.15.7</span> Exercice 6</h3>
+<p>Simplifier la sortie quand le résultat est zéro. Exemple :</p>
+<pre><code>$ java Rational 1/4 - 2/8
+0</code></pre>
+<h3 id="exercice-7"><span class="header-section-number">1.15.8</span> Exercice 7</h3>
+<p>Traiter les nombres négatifs. À la construction de l'objet, normaliser les signes. Afficher un moins seulement devant le numérateur uniquement si le nombre rationel est négatif. Exemple :</p>
+<pre><code>$ java Rational 1/3 - 2/3
+-1/3</code></pre>
+<h3 id="exercice-8"><span class="header-section-number">1.15.9</span> Exercice 8</h3>
+<p>Calculer le produit de 2 nombres rationels. Exemple :</p>
+<pre><code>$ java Rational 1/4 * 1/2
+1/8</code></pre>
+<h3 id="exercice-9"><span class="header-section-number">1.15.10</span> Exercice 9</h3>
+<p>Calculer le ratio de 2 nombres rationels. Exemple :</p>
+<pre><code>$ java Rational 1/4 / 1/2
+2/1</code></pre>
+<h3 id="exercice-10"><span class="header-section-number">1.15.11</span> Exercice 10</h3>
+<p>Simplifier la sortie quand le dénominateur est 1. Exemple :</p>
+<pre><code>$ java Rational 1/4 / 1/2
+2</code></pre>
+<h3 id="exercice-11"><span class="header-section-number">1.15.12</span> Exercice 11</h3>
+<p>Tester l'égalité de 2 nombres rationels. Exemple :</p>
+<pre><code>$ java Rational 1/4 == 2/8
+true</code></pre>
+<h3 id="exercice-12"><span class="header-section-number">1.15.13</span> Exercice 12</h3>
+<p>Gérer la réduction (c.à.d. la forme canonique) de la fraction au moment ou le numérateur et le dénominateur sont calculés. Observer ce qui change dans le programme. Puis gérer la réduction dans une méthode dédiée (statique puis non statique).</p>
+<h3 id="exercice-13"><span class="header-section-number">1.15.14</span> Exercice 13</h3>
+<p>Modifier les méthodes d'addition, soustraction, multiplication et division de sorte qu'elles ne prennent plus qu'un paramètre plutôt que deux. Par exemple :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> Rational {
+    Rational <span class="fu">add</span>(Rational b) {
+        <span class="co">// ...</span>
+    }
+}</code></pre></div>
+<p>Il faut remplacer l'ancien paramètre <code>a</code> par l'objet receveur de la méthode.</p>
+<h3 id="exercice-14"><span class="header-section-number">1.15.15</span> Exercice 14</h3>
+<p>Créer une classe <code>IntegerNumber</code> qui étend <code>RationalNumber</code>. Tester son comportement avec un nouveau <code>main(String[])</code>.</p>
+<h3 id="exercice-15"><span class="header-section-number">1.15.16</span> Exercice 15</h3>
+<p>Brancher cette classe lorsque le dénominateur est 1. Observer les changements avant de revenir en arrière.</p>
+<p>Par exemple :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> Rational {
+    Rational <span class="fu">sum</span>(Rational b) {
+        <span class="dt">int</span> sumDenuminator = ...
+        <span class="kw">if</span> (sumDenuminator == <span class="dv">1</span>) {
+            <span class="kw">return</span> <span class="kw">new</span> <span class="fu">IntegerRational</span>(sumNumerator);
+        }
+        <span class="co">// ...</span>
+    }
+}</code></pre></div>
+<h3 id="exercice-16"><span class="header-section-number">1.15.17</span> Exercice 16</h3>
+<p>Introduire une méthode statique fabriquant selon que le dénominateur est 1 ou pas un RationalNumber ou un IntegerNumber.</p>
+<h3 id="exercice-17"><span class="header-section-number">1.15.18</span> Exercice 17</h3>
+<p>Redéfinir la méthode <code>toString()</code> de <code>IntegerNumber</code> pour n'afficher que le numérateur.</p>
+<h3 id="exercice-18"><span class="header-section-number">1.15.19</span> Exercice 18</h3>
+<p>En suivant le même chemin, introduire une sous-classe <code>ZeroNumber</code>. Quelles méthodes peuvent-être redéfinies ?</p>
 </body>
 </html>
