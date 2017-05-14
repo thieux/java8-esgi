@@ -96,6 +96,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#exercice-16"><span class="toc-section-number">1.15.17</span> Exercice 16</a></li>
 <li><a href="#exercice-17"><span class="toc-section-number">1.15.18</span> Exercice 17</a></li>
 <li><a href="#exercice-18"><span class="toc-section-number">1.15.19</span> Exercice 18</a></li>
+<li><a href="#correction"><span class="toc-section-number">1.15.20</span> Correction</a></li>
+</ul></li>
+<li><a href="#héritage"><span class="toc-section-number">1.16</span> Héritage</a><ul>
+<li><a href="#affectations"><span class="toc-section-number">1.16.1</span> Affectations</a></li>
+<li><a href="#constructeur-super"><span class="toc-section-number">1.16.2</span> Constructeur super</a></li>
+<li><a href="#redéfinition"><span class="toc-section-number">1.16.3</span> Redéfinition</a></li>
+<li><a href="#périmètre-et-air"><span class="toc-section-number">1.16.4</span> Périmètre et air</a></li>
+<li><a href="#exercice"><span class="toc-section-number">1.16.5</span> Exercice</a></li>
+<li><a href="#style-objet"><span class="toc-section-number">1.16.6</span> Style objet</a></li>
+<li><a href="#exercice-19"><span class="toc-section-number">1.16.7</span> Exercice</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -501,8 +511,8 @@ bits.<span class="fu">add</span>(<span class="st">&quot;1&quot;</span>);
 <h3 id="exercice-1"><span class="header-section-number">1.15.1</span> Exercice 1</h3>
 <p>Ecrire un programme qui prend en arguments 4 nombres (n1, d1, n2, d2) et affiche la somme : <span class="math inline"><em>n</em>1/<em>d</em>1 + <em>n</em>2/<em>d</em>2</span>. Exemple :</p>
 <pre><code>$ java Rational 1 4 2 8
-1/2</code></pre>
-<p>Ici <code>1 4</code> se lit <span class="math inline">1/4</span> et <code>2 8</code> se lit <span class="math inline">1/8</span>.</p>
+16/32</code></pre>
+<p>Ici <code>1 4</code> se lit <span class="math inline">1/4</span> et <code>2 8</code> se lit <span class="math inline">2/8</span>.</p>
 <ol style="list-style-type: decimal">
 <li>Ecrire une méthode et une seule, le <code>main(String[])</code> qui affiche la somme des 2 nombres rationels encodés sous 4 arguments.</li>
 <li>Introduire 2 champs de classe (numérateur et dénominateur) et un constructeur qui les initialise.</li>
@@ -541,7 +551,7 @@ Rational sum = <span class="fu">add</span>(left, right);
 <p>Modifier le format d'entrée au programme. Exemple :</p>
 <pre><code>$ java Rational 1/4 2/8
 16/32</code></pre>
-<p>Utiliser <code>String.split(String regex)</code>.</p>
+<p>Utiliser <code>String.split(String regex)</code>. Voir https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#split-java.lang.String-</p>
 <h3 id="exercice-3"><span class="header-section-number">1.15.4</span> Exercice 3</h3>
 <p>Modifier le format d'entrée au programme. Exemple :</p>
 <pre><code>$ java Rational 1/4 + 2/8
@@ -567,14 +577,18 @@ Rational sum = <span class="fu">add</span>(left, right);
 <p>Calculer le produit de 2 nombres rationels. Exemple :</p>
 <pre><code>$ java Rational 1/4 * 1/2
 1/8</code></pre>
+<ol style="list-style-type: decimal">
+<li>Vérifier que le nombre d'arguments est exactement 3.</li>
+<li>Protéger l'argument <code>*</code> avec des guillemets simple '*' <a href="https://www.gnu.org/software/bash/manual/html_node/Filename-Expansion.html#Filename-Expansion">l'expansion des noms de fichiers du shell</a>.</li>
+</ol>
 <h3 id="exercice-9"><span class="header-section-number">1.15.10</span> Exercice 9</h3>
 <p>Calculer le ratio de 2 nombres rationels. Exemple :</p>
-<pre><code>$ java Rational 1/4 / 1/2
+<pre><code>$ java Rational 2/3 / 1/3
 2/1</code></pre>
 <h3 id="exercice-10"><span class="header-section-number">1.15.11</span> Exercice 10</h3>
 <p>Simplifier la sortie quand le dénominateur est 1. Exemple :</p>
-<pre><code>$ java Rational 1/4 / 1/2
-2</code></pre>
+<pre><code>$ java Rational 2/3 / 1/3
+2/1</code></pre>
 <h3 id="exercice-11"><span class="header-section-number">1.15.12</span> Exercice 11</h3>
 <p>Tester l'égalité de 2 nombres rationels. Exemple :</p>
 <pre><code>$ java Rational 1/4 == 2/8
@@ -609,5 +623,336 @@ true</code></pre>
 <p>Redéfinir la méthode <code>toString()</code> de <code>IntegerNumber</code> pour n'afficher que le numérateur.</p>
 <h3 id="exercice-18"><span class="header-section-number">1.15.19</span> Exercice 18</h3>
 <p>En suivant le même chemin, introduire une sous-classe <code>ZeroNumber</code>. Quelles méthodes peuvent-être redéfinies ?</p>
+<h3 id="correction"><span class="header-section-number">1.15.20</span> Correction</h3>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> fr.arolla.java8esgi.rational;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> Rational {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+        <span class="kw">if</span> (args.<span class="fu">length</span> != <span class="dv">3</span>) {
+            <span class="bu">System</span>.<span class="fu">err</span>.<span class="fu">println</span>(<span class="bu">String</span>.<span class="fu">join</span>(<span class="st">&quot; &quot;</span>, args));
+            <span class="bu">System</span>.<span class="fu">err</span>.<span class="fu">println</span>(<span class="st">&quot;Usage: &lt;n1&gt;/&lt;d1&gt; &lt;operator&gt; &lt;n2&gt;/&lt;d2&gt;&quot;</span>);
+            <span class="bu">System</span>.<span class="fu">err</span>.<span class="fu">println</span>(<span class="st">&quot;Available operators: + - x / ==&quot;</span>);
+            <span class="bu">System</span>.<span class="fu">exit</span>(<span class="dv">1</span>);
+        }
+        Rational left = <span class="fu">parseRational</span>(args[<span class="dv">0</span>]);
+        Rational right = <span class="fu">parseRational</span>(args[<span class="dv">2</span>]);
+        <span class="bu">String</span> operator = args[<span class="dv">1</span>];
+
+        <span class="bu">Object</span> result = <span class="kw">null</span>;
+        <span class="kw">switch</span> (operator) {
+            <span class="kw">case</span> <span class="st">&quot;+&quot;</span>:
+                result = left.<span class="fu">add</span>(right);
+                <span class="kw">break</span>;
+            <span class="kw">case</span> <span class="st">&quot;-&quot;</span>:
+                result = left.<span class="fu">substract</span>(right);
+                <span class="kw">break</span>;
+            <span class="kw">case</span> <span class="st">&quot;x&quot;</span>:
+                result = left.<span class="fu">multiply</span>(right);
+                <span class="kw">break</span>;
+            <span class="kw">case</span> <span class="st">&quot;/&quot;</span>:
+                result = left.<span class="fu">divide</span>(right);
+                <span class="kw">break</span>;
+            <span class="kw">case</span> <span class="st">&quot;==&quot;</span>:
+                result = left.<span class="fu">isEqualTo</span>(right);
+                <span class="kw">break</span>;
+            <span class="kw">default</span>:
+                <span class="bu">System</span>.<span class="fu">err</span>.<span class="fu">println</span>(<span class="st">&quot;Unknown operator: &quot;</span> + operator);
+                <span class="bu">System</span>.<span class="fu">exit</span>(<span class="dv">2</span>);
+        }
+
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(result);
+    }
+
+    <span class="kw">private</span> <span class="dt">static</span> Rational <span class="fu">parseRational</span>(<span class="bu">String</span> arg) {
+        <span class="bu">String</span>[] tokens = arg.<span class="fu">split</span>(<span class="st">&quot;/&quot;</span>);
+        <span class="dt">int</span> numerator = <span class="bu">Integer</span>.<span class="fu">parseInt</span>(tokens[<span class="dv">0</span>]);
+        <span class="dt">int</span> denominator = <span class="bu">Integer</span>.<span class="fu">parseInt</span>(tokens[<span class="dv">1</span>]);
+        <span class="kw">return</span> <span class="fu">createRational</span>(numerator, denominator);
+    }
+
+    <span class="kw">private</span> <span class="dt">static</span> Rational <span class="fu">createRational</span>(<span class="dt">int</span> numerator, <span class="dt">int</span> denominator) {
+        <span class="dt">int</span> gcd = Gcd.<span class="fu">computeGcd</span>(numerator, denominator);
+        <span class="dt">int</span> canonicalNumerator = numerator / gcd;
+        <span class="dt">int</span> canonicalDenominator = denominator / gcd;
+
+        <span class="dt">int</span> normalizedNumerator;
+        <span class="dt">int</span> normalizedDenominator;
+        <span class="kw">if</span> (canonicalNumerator * canonicalDenominator &lt; <span class="dv">0</span>) {
+            normalizedNumerator = -<span class="bu">Math</span>.<span class="fu">abs</span>(canonicalNumerator);
+            normalizedDenominator = <span class="bu">Math</span>.<span class="fu">abs</span>(canonicalDenominator);
+        } <span class="kw">else</span> {
+            normalizedNumerator = canonicalNumerator;
+            normalizedDenominator = canonicalDenominator;
+        }
+        <span class="kw">if</span> (normalizedNumerator == <span class="dv">0</span>) {
+            <span class="kw">return</span> <span class="kw">new</span> <span class="fu">ZeroNumber</span>();
+        }
+        <span class="kw">if</span> (normalizedDenominator == <span class="dv">1</span>) {
+            <span class="kw">return</span> <span class="kw">new</span> <span class="fu">IntegerNumber</span>(normalizedNumerator);
+        }
+        <span class="kw">return</span> <span class="kw">new</span> <span class="fu">Rational</span>(normalizedNumerator, normalizedDenominator);
+    }
+
+    <span class="kw">private</span> <span class="dt">final</span> <span class="dt">int</span> numerator;
+    <span class="kw">private</span> <span class="dt">final</span> <span class="dt">int</span> denominator;
+
+    <span class="kw">public</span> <span class="fu">Rational</span>(<span class="dt">int</span> numerator, <span class="dt">int</span> denominator) {
+        <span class="kw">this</span>.<span class="fu">numerator</span> = numerator;
+        <span class="kw">this</span>.<span class="fu">denominator</span> = denominator;
+    }
+
+    <span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">isEqualTo</span>(Rational right) {
+        <span class="kw">return</span> <span class="fu">areEqual</span>(<span class="kw">this</span>, right);
+    }
+
+    <span class="kw">private</span> <span class="dt">static</span> <span class="dt">boolean</span> <span class="fu">areEqual</span>(Rational left, Rational right) {
+        <span class="kw">return</span> (left.<span class="fu">numerator</span> * right.<span class="fu">denominator</span>) == (left.<span class="fu">denominator</span> * right.<span class="fu">numerator</span>);
+    }
+
+    <span class="kw">public</span> Rational <span class="fu">divide</span>(Rational right) {
+        <span class="kw">return</span> <span class="fu">divide</span>(<span class="kw">this</span>, right);
+    }
+
+    <span class="kw">private</span> <span class="dt">static</span> Rational <span class="fu">divide</span>(Rational left, Rational right) {
+        <span class="dt">int</span> resultNumerator = left.<span class="fu">numerator</span> * right.<span class="fu">denominator</span>;
+        <span class="dt">int</span> resultDenominator = left.<span class="fu">denominator</span> * right.<span class="fu">numerator</span>;
+        <span class="kw">return</span> <span class="fu">createRational</span>(resultNumerator, resultDenominator);
+    }
+
+    <span class="kw">public</span> Rational <span class="fu">multiply</span>(Rational right) {
+        <span class="kw">return</span> <span class="fu">multiply</span>(<span class="kw">this</span>, right);
+    }
+
+    <span class="kw">private</span> <span class="dt">static</span> Rational <span class="fu">multiply</span>(Rational left, Rational right) {
+        <span class="dt">int</span> resultNumerator = left.<span class="fu">numerator</span> * right.<span class="fu">numerator</span>;
+        <span class="dt">int</span> resultDenominator = left.<span class="fu">denominator</span> * right.<span class="fu">denominator</span>;
+        <span class="kw">return</span> <span class="fu">createRational</span>(resultNumerator, resultDenominator);
+    }
+
+    <span class="kw">public</span> Rational <span class="fu">substract</span>(Rational right) {
+        <span class="kw">return</span> <span class="fu">substract</span>(<span class="kw">this</span>, right);
+    }
+
+    <span class="kw">private</span> <span class="dt">static</span> Rational <span class="fu">substract</span>(Rational left, Rational right) {
+        <span class="dt">int</span> resultNumerator = left.<span class="fu">numerator</span> * right.<span class="fu">denominator</span> - right.<span class="fu">numerator</span> * left.<span class="fu">denominator</span>;
+        <span class="dt">int</span> resultDenominator = left.<span class="fu">denominator</span> * right.<span class="fu">denominator</span>;
+        <span class="kw">return</span> <span class="fu">createRational</span>(resultNumerator, resultDenominator);
+    }
+
+    <span class="kw">public</span> Rational <span class="fu">add</span>(Rational right) {
+        <span class="kw">return</span> <span class="fu">add</span>(<span class="kw">this</span>, right);
+    }
+
+    <span class="kw">private</span> <span class="dt">static</span> Rational <span class="fu">add</span>(Rational left, Rational right) {
+        <span class="dt">int</span> resultNumerator = left.<span class="fu">numerator</span> * right.<span class="fu">denominator</span> + right.<span class="fu">numerator</span> * left.<span class="fu">denominator</span>;
+        <span class="dt">int</span> resultDenominator = left.<span class="fu">denominator</span> * right.<span class="fu">denominator</span>;
+        <span class="kw">return</span> <span class="fu">createRational</span>(resultNumerator, resultDenominator);
+    }
+
+    <span class="kw">public</span> <span class="dt">int</span> <span class="fu">getNumerator</span>() {
+        <span class="kw">return</span> numerator;
+    }
+
+    <span class="at">@Override</span>
+    <span class="kw">public</span> <span class="bu">String</span> <span class="fu">toString</span>() {
+        <span class="kw">return</span> numerator + <span class="st">&quot;/&quot;</span> + denominator;
+    }
+}
+
+<span class="kw">class</span> IntegerNumber <span class="kw">extends</span> Rational {
+
+    <span class="kw">public</span> <span class="fu">IntegerNumber</span>(<span class="dt">int</span> numerator) {
+        <span class="kw">super</span>(numerator, <span class="dv">1</span>);
+    }
+
+    <span class="at">@Override</span>
+    <span class="kw">public</span> <span class="bu">String</span> <span class="fu">toString</span>() {
+        <span class="kw">return</span> <span class="st">&quot;&quot;</span> + <span class="fu">getNumerator</span>();
+    }
+}
+
+<span class="kw">class</span> ZeroNumber <span class="kw">extends</span> IntegerNumber {
+    <span class="kw">public</span> <span class="fu">ZeroNumber</span>() {
+        <span class="kw">super</span>(<span class="dv">0</span>);
+    }
+
+    <span class="at">@Override</span>
+    <span class="kw">public</span> <span class="bu">String</span> <span class="fu">toString</span>() {
+        <span class="kw">return</span> <span class="st">&quot;0&quot;</span>;
+    }
+}</code></pre></div>
+<h2 id="héritage"><span class="header-section-number">1.16</span> Héritage</h2>
+<p>En Java, <code>extends</code> signale une relation d'héritage entre 2 classes. On dit que la classe fille hérite de la classe mère. La classe mère est dite &quot;générique&quot;. La classe fille est dite &quot;spécifique&quot;.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">class</span> Person {
+    <span class="kw">public</span> <span class="bu">String</span> <span class="fu">getDescription</span>() {
+        <span class="kw">return</span> <span class="st">&quot;Je suis une personne.&quot;</span>;
+    }
+}</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">class</span> Employee <span class="kw">extends</span> Person {
+    <span class="at">@Override</span>
+    <span class="kw">public</span> <span class="bu">String</span> <span class="fu">getDescription</span>() {
+        <span class="kw">return</span> <span class="st">&quot;Je suis un employé.&quot;</span>;
+    }
+}</code></pre></div>
+<h3 id="affectations"><span class="header-section-number">1.16.1</span> Affectations</h3>
+<p>Le type de la <code>lvalue</code> (pour &quot;left-value&quot;) est, dans ces 2 exemples, identique au type effectivement instancié.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">Person p = <span class="kw">new</span> <span class="fu">Person</span>();
+<span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(p.<span class="fu">getDescription</span>());
+<span class="co">// Je suis une personne.</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">Employee e = <span class="kw">new</span> <span class="fu">Employee</span>();
+<span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(e.<span class="fu">getDescription</span>());
+<span class="co">// Je suis un employé.</span></code></pre></div>
+<p>L'affectation d'un objet d'un type à une référence d'un super-type est toujours légale.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">Person p = <span class="kw">new</span> <span class="fu">Employee</span>();
+<span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(p.<span class="fu">getDescription</span>());</code></pre></div>
+<p>L'affectation d'un objet d'un type à une référence d'un sous-type nécessite une conversion.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">Person p = <span class="kw">new</span> <span class="fu">Employee</span>();
+Employee e = (Employee) p; <span class="co">// cast</span>
+<span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(e.<span class="fu">getDescription</span>());</code></pre></div>
+<p>En revanche, l'opération de conversion échoue parfois. Le cas échéant, une exception est levée à l'exécution : <code>ClassCastException</code>.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">Person p = <span class="kw">new</span> <span class="fu">Person</span>();
+Employee e = (Employee) p;
+<span class="co">// Person cannot be cast to Employee</span></code></pre></div>
+<p>Un objet déclaré <code>String</code> ne peut jamais (même en y mettant du nôtre), être à l'exécution de type <code>Person</code>. La classe <code>Person</code> n'hérite pas de <code>String</code>.</p>
+<p>Par conséquent, le code ci-dessous ne compile pas car la conversion n'est pas permise :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">String</span> s = <span class="st">&quot;hello&quot;</span>;
+Person p = (Person) s;
+<span class="co">// incompatible types</span>
+<span class="co">// String cannot be converted to Person</span></code></pre></div>
+<h3 id="constructeur-super"><span class="header-section-number">1.16.2</span> Constructeur super</h3>
+<p>Etant donné la super classe :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> RationalNumber {
+    <span class="kw">private</span> <span class="dt">int</span> numerator;
+    <span class="kw">private</span> <span class="dt">int</span> denominator;
+
+    <span class="kw">public</span> <span class="fu">RationalNumber</span>(<span class="dt">int</span> numerator, <span class="dt">int</span> denominator) {
+        <span class="kw">this</span>.<span class="fu">numerator</span> = numerator;
+        <span class="kw">this</span>.<span class="fu">denominator</span> = denominator;
+    }
+    ...
+}</code></pre></div>
+<p>Ecrire cette sous classe :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> IntegerNumber <span class="kw">extends</span> RationalNumber {
+}</code></pre></div>
+<p>Donne l'erreur de compilation suivante :</p>
+<pre><code>constructor RationalNumber in class RationalNumber cannot be applied to given types;
+  required: int,int
+  found: no arguments
+  reason: actual and formal argument lists differ in length</code></pre>
+<p>Une classe qui ne définit pas de constructeur explicitement comme <code>IntegerNumber</code>, définit implicitement un constructeur par défaut. Tout constructeur doit appeler le constructeur de sa classe mère. Ici le constructeur par défaut de <code>IntegerNumber</code> appelle implicitement le constructeur par défaut de <code>RationalNumber</code>. Or il n'existe pas de constructeur par défaut pour <code>RationalNumber</code> puisque l'on en a définit un explicitement.</p>
+<p>La solution consiste à créer un constructeur qui appelle le constructeur de la super-classe avec le mot clé <code>super</code>.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> IntegerNumber <span class="kw">extends</span> RationalNumber {
+    <span class="kw">public</span> <span class="fu">IntegerNumber</span>(<span class="dt">int</span> numerator) {
+        <span class="kw">super</span>(numerator, <span class="dv">1</span>);
+    }
+}</code></pre></div>
+<h3 id="redéfinition"><span class="header-section-number">1.16.3</span> Redéfinition</h3>
+<p>Pour redéfinir une méthode dans une classe fille il est de bon ton d'utiliser l'annotation <code>@Override</code>. <code>@Override</code> n'est pas obligatoire pour des raisons de rétro-compatibilité avec Java 1.4 qui n'avait pas le concept d'annotation. Cette annotation s'applique aux méthodes uniquement (d'autres annotations peuvent s'appliquer aux classes, champs, paramètre, etc.).</p>
+<p>Toute erreur de saisie dans le nom de la méthode ou bien dans les types des paramètres sera détectée par le compilateur si le but était de redéfinir la méthode.</p>
+<p>Par exemple la classe mère définit la méthode <code>show()</code> :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> RationalNumber {
+    <span class="kw">public</span> <span class="bu">String</span> <span class="fu">show</span>() {
+        <span class="kw">return</span> <span class="kw">this</span>.<span class="fu">numerator</span> + <span class="st">&quot;/&quot;</span> + <span class="kw">this</span>.<span class="fu">denominator</span>;
+    }
+    ...
+}</code></pre></div>
+<p>On a l'intention de redéfinir la méthode <code>show()</code> dans la classe fille. Or ici on s'est trompé et on l'a nommé <code>display</code> (et la classe mère ne définit pas de méthode <code>display()</code>).</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> IntegerNumber <span class="kw">extends</span> RationalNumber {
+    ...
+
+    <span class="at">@Override</span>
+    <span class="kw">public</span> <span class="bu">String</span> <span class="fu">display</span>() {
+        <span class="kw">return</span> <span class="st">&quot;&quot;</span> + numerator;
+    }
+}</code></pre></div>
+<p>Le message du compilateur ressemble à ceci :</p>
+<pre><code>method does not override or implement a method from a supertype</code></pre>
+<p>De la même manière si on nomme correctement la méthode mais qu'on change les paramètres formels on obtiendra une erreur de compilation :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="at">@Override</span>
+<span class="kw">public</span> <span class="bu">String</span> <span class="fu">show</span>(<span class="dt">boolean</span> newLine) {
+    <span class="kw">return</span> <span class="st">&quot;&quot;</span> + numerator + (newLine ? <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span> : <span class="st">&quot;&quot;</span>);
+}</code></pre></div>
+<h3 id="périmètre-et-air"><span class="header-section-number">1.16.4</span> Périmètre et air</h3>
+<p>Voici un exemple de code procédural :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> Geometry {
+
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="fu">area</span>(<span class="kw">new</span> <span class="fu">Circle</span>(<span class="dv">10</span>)));
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="fu">area</span>(<span class="kw">new</span> <span class="bu">Rectangle</span>(<span class="dv">3</span>, <span class="dv">4</span>)));
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="fu">area</span>(<span class="kw">new</span> <span class="fu">Square</span>(<span class="dv">5</span>)));
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="fu">area</span>(<span class="st">&quot;hello&quot;</span>)); <span class="co">// IllegalArgumentException</span>
+    }
+
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">double</span> <span class="fu">area</span>(<span class="bu">Object</span> shape) {
+        <span class="kw">if</span> (shape <span class="kw">instanceof</span> Circle) {
+            Circle circle = (Circle) shape;
+            <span class="kw">return</span> circle.<span class="fu">radius</span> * circle.<span class="fu">radius</span> * <span class="bu">Math</span>.<span class="fu">PI</span>;
+        }
+        <span class="kw">if</span> (shape <span class="kw">instanceof</span> <span class="bu">Rectangle</span>) {
+            <span class="bu">Rectangle</span> circle = (<span class="bu">Rectangle</span>) shape;
+            <span class="kw">return</span> circle.<span class="fu">width</span> * circle.<span class="fu">height</span>;
+        }
+        <span class="kw">if</span> (shape <span class="kw">instanceof</span> Square) {
+            Square circle = (Square) shape;
+            <span class="kw">return</span> circle.<span class="fu">side</span> * circle.<span class="fu">side</span>;
+        }
+        <span class="kw">throw</span> <span class="kw">new</span> <span class="bu">IllegalArgumentException</span>(<span class="st">&quot;Unknown shape: &quot;</span> + shape.<span class="fu">getClass</span>());
+    }
+
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">double</span> <span class="fu">perimeter</span>(<span class="bu">Object</span> shape) {
+        <span class="kw">if</span> (shape <span class="kw">instanceof</span> Circle) {
+            Circle circle = (Circle) shape;
+            <span class="kw">return</span> <span class="dv">2</span> * circle.<span class="fu">radius</span> * <span class="bu">Math</span>.<span class="fu">PI</span>;
+        }
+        <span class="kw">if</span> (shape <span class="kw">instanceof</span> <span class="bu">Rectangle</span>) {
+            <span class="bu">Rectangle</span> circle = (<span class="bu">Rectangle</span>) shape;
+            <span class="kw">return</span> <span class="dv">2</span> * circle.<span class="fu">width</span> + <span class="dv">2</span> * circle.<span class="fu">height</span>;
+        }
+        <span class="kw">if</span> (shape <span class="kw">instanceof</span> Square) {
+            Square circle = (Square) shape;
+            <span class="kw">return</span> <span class="dv">4</span> * circle.<span class="fu">side</span>;
+        }
+        <span class="kw">throw</span> <span class="kw">new</span> <span class="bu">IllegalArgumentException</span>(<span class="st">&quot;Unknown shape: &quot;</span> + shape.<span class="fu">getClass</span>());
+    }
+}</code></pre></div>
+<h3 id="exercice"><span class="header-section-number">1.16.5</span> Exercice</h3>
+<ol style="list-style-type: decimal">
+<li>Ecrire une méthode <code>main(String[])</code> qui teste le calcul du périmètre d'un rectangle.</li>
+<li>Coder la classe Rectangle.</li>
+<li>Ecrire et tester les classes pour le carré et le cercle.</li>
+<li>Tester le calcul de l'air pour les 3 types de formes.</li>
+</ol>
+<h3 id="style-objet"><span class="header-section-number">1.16.6</span> Style objet</h3>
+<p>Pour traiter de manière uniforme une variété d'objets de types potentiellement différents, Java fournit le concept d'interface. C'est une sorte de classe abstraite qui fournit seulement un contrat. Le contrat doit être satisfait par le fournisseur et par le consommateur. Le fournisseur du contrat correspond à la classe qui implémente l'interface. Le consommateur correspond à la classe qui invoque une méthode de l'interface en question.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">interface</span> <span class="bu">Shape</span> {
+    <span class="dt">double</span> <span class="fu">area</span>();
+    <span class="dt">double</span> <span class="fu">perimeter</span>();
+}</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> Circle <span class="kw">implements</span> <span class="bu">Shape</span> {
+    <span class="kw">private</span> <span class="dt">final</span> <span class="dt">double</span> radius;
+
+    <span class="kw">public</span> <span class="fu">Circle</span>(<span class="dt">double</span> radius) {
+        <span class="kw">this</span>.<span class="fu">radius</span> = radius;
+    }
+
+    <span class="at">@Override</span>
+    <span class="kw">public</span> <span class="dt">double</span> <span class="fu">area</span>() {
+        <span class="kw">return</span> radius * radius * <span class="bu">Math</span>.<span class="fu">PI</span>;
+    }
+
+    <span class="at">@Override</span>
+    <span class="kw">public</span> <span class="dt">double</span> <span class="fu">perimeter</span>() {
+        <span class="kw">return</span> <span class="dv">2</span> * <span class="bu">Math</span>.<span class="fu">PI</span> * radius;
+    }
+}</code></pre></div>
+<h3 id="exercice-19"><span class="header-section-number">1.16.7</span> Exercice</h3>
+<p>Dans cet exercice, on va réécrire le code procédural de <code>Geometry</code> dans un style objet. Il faut pour cela créer un nouveau projet (pour ne pas faire de conflit avec les classes Circle, Rectangle et Square de l'exercice précédant). La classe Geometry définissait les 2 méthodes perimeter et area. Ces 2 méthodes supportaient les 3 types de formes. Dans cet exercice, chaque classe de forme (c-à-d. Circle, Rectangle et Square) définira ces 2 méthodes. On aura donc au total 3 définitions pour le périmètre et 3 définitions pour l'aire.</p>
+<ol style="list-style-type: decimal">
+<li>Tester et expérimenter dans un <code>main(String[])</code> le calcul du périmètre d'un cercle.</li>
+<li>Tester le calcul de l'aire pour le cercle.</li>
+<li>Ecrire et tester la classe pour le carré (périmètre et air).</li>
+<li>Ecrire et tester la classe pour le rectangle (idem).</li>
+</ol>
+<p>L'avantage de cette solution est que l'on peut facilement ajouter de nouvelles formes sans modifier le code existant.</p>
 </body>
 </html>
