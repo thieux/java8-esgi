@@ -50,7 +50,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="header">
 <h1 class="title">Cours Java 8 AL ESGI</h1>
 <h2 class="author">Mathieu Pauly @ Arolla</h2>
-<h3 class="date">Première rédaction mars 2017 (dernière mise à jour : 17/04/2017)</h3>
+<h3 class="date">Première rédaction mars 2017 (dernière mise à jour : 04/09/2017)</h3>
 </div>
 <div id="TOC">
 <ul>
@@ -2052,7 +2052,7 @@ bufferedWriter.<span class="fu">close</span>(); <span class="co">// ferme le flu
 <div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">BufferedReader</span> bufferedReader = <span class="kw">new</span> <span class="bu">BufferedReader</span>(<span class="kw">new</span> <span class="bu">StringReader</span>(<span class="st">&quot;a</span><span class="sc">\n</span><span class="st">b</span><span class="sc">\n</span><span class="st">c&quot;</span>));
 <span class="bu">String</span> line = bufferedReader.<span class="fu">readLine</span>(); <span class="co">// &quot;a&quot;</span>
 <span class="bu">String</span> character = bufferedReader.<span class="fu">read</span>(); <span class="co">// 98 pour &#39;b&#39;</span></code></pre></div>
-<p>Ici on a utilisé un tampon (<code>BufferedReader</code>) pour lire une information en mémoire (&quot;a&quot;).</p>
+<p>Ici on a utilisé un tampon (<code>BufferedReader</code>) pour lire une information en mémoire (<code>&quot;a\nb\nc&quot;</code>).</p>
 <p>L'intérêt est que la ligne de code qui utilise <code>read()</code> peut ignorer qu'elle consomme un <code>BufferedReader</code>. Pour elle tout se passe comme si elle consomme l'interface <code>Reader</code>.</p>
 <p>Pour résumer : un <code>BufferedReader</code> est construit à partir d'un autre <code>Reader</code> mais implémente lui même <code>Reader</code>.</p>
 <div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> <span class="bu">BufferedReader</span> <span class="kw">extends</span> <span class="bu">Reader</span> {
