@@ -44,6 +44,7 @@ code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Ann
 code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
 code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
   </style>
+  <link rel="stylesheet" href="pandoc.css" type="text/css" />
 </head>
 <body>
 <div id="header">
@@ -148,6 +149,42 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#correction-hashcode-et-equals"><span class="toc-section-number">1.19.5</span> Correction : hashCode et equals</a></li>
 <li><a href="#correction-lettre-anonyme"><span class="toc-section-number">1.19.6</span> Correction : lettre anonyme</a></li>
 </ul></li>
+<li><a href="#autoboxing"><span class="toc-section-number">1.20</span> Autoboxing</a></li>
+</ul></li>
+<li><a href="#flux-de-caractères"><span class="toc-section-number">2</span> Flux de caractères</a><ul>
+<li><a href="#lire-un-caractère-à-partir-dun-fichier"><span class="toc-section-number">2.1</span> Lire un caractère à partir d'un fichier</a></li>
+<li><a href="#écrire-un-caractère-dans-un-fichier"><span class="toc-section-number">2.2</span> Écrire un caractère dans un fichier</a></li>
+<li><a href="#exercice-1-2"><span class="toc-section-number">2.3</span> Exercice 1</a></li>
+<li><a href="#exercice-2-2"><span class="toc-section-number">2.4</span> Exercice 2</a></li>
+<li><a href="#exercice-3-1"><span class="toc-section-number">2.5</span> Exercice 3</a></li>
+</ul></li>
+<li><a href="#flux-doctets"><span class="toc-section-number">3</span> Flux d'octets</a><ul>
+<li><a href="#lecture"><span class="toc-section-number">3.1</span> Lecture</a></li>
+<li><a href="#écriture"><span class="toc-section-number">3.2</span> Écriture</a></li>
+<li><a href="#lecture-et-écriture"><span class="toc-section-number">3.3</span> Lecture et écriture</a></li>
+<li><a href="#exercice-4-1"><span class="toc-section-number">3.4</span> Exercice 4</a></li>
+<li><a href="#exercice-5-1"><span class="toc-section-number">3.5</span> Exercice 5</a></li>
+<li><a href="#résumé-1"><span class="toc-section-number">3.6</span> Résumé</a></li>
+</ul></li>
+<li><a href="#file-et-path"><span class="toc-section-number">4</span> File et Path</a><ul>
+<li><a href="#chemin-constant"><span class="toc-section-number">4.1</span> Chemin constant</a></li>
+<li><a href="#exercice-6-1"><span class="toc-section-number">4.2</span> Exercice 6</a></li>
+<li><a href="#composer-et-décomposer-un-chemin"><span class="toc-section-number">4.3</span> Composer et décomposer un chemin</a></li>
+<li><a href="#exercice-7-1"><span class="toc-section-number">4.4</span> Exercice 7</a></li>
+<li><a href="#lister-et-créer-un-répertoire"><span class="toc-section-number">4.5</span> Lister et créer un répertoire</a></li>
+</ul></li>
+<li><a href="#flux-orienté-ligne"><span class="toc-section-number">5</span> Flux orienté ligne</a><ul>
+<li><a href="#bufferedreader"><span class="toc-section-number">5.1</span> BufferedReader</a></li>
+<li><a href="#exercice8"><span class="toc-section-number">5.2</span> Exercice 8</a></li>
+<li><a href="#bufferedwriter"><span class="toc-section-number">5.3</span> BufferedWriter</a></li>
+<li><a href="#exercice-9-1"><span class="toc-section-number">5.4</span> Exercice 9</a></li>
+<li><a href="#exercice-10-1"><span class="toc-section-number">5.5</span> Exercice 10</a></li>
+<li><a href="#reader-et-writer"><span class="toc-section-number">5.6</span> Reader et Writer</a></li>
+<li><a href="#inputstream-et-outputstream"><span class="toc-section-number">5.7</span> InputStream et OutputStream</a></li>
+<li><a href="#inputstream-outputstream-reader-et-writer"><span class="toc-section-number">5.8</span> InputStream, OutputStream, Reader et Writer</a></li>
+<li><a href="#exercice-11-1"><span class="toc-section-number">5.9</span> Exercice 11</a></li>
+<li><a href="#exercice-12-1"><span class="toc-section-number">5.10</span> Exercice 12</a></li>
+<li><a href="#sources"><span class="toc-section-number">5.11</span> Sources</a></li>
 </ul></li>
 </ul>
 </div>
@@ -1212,7 +1249,7 @@ Dog buzz = <span class="kw">new</span> <span class="fu">Dog</span>(<span class="
     <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;hello&quot;</span>);
   }
 }
-<span class="kw">public</span> <span class="kw">class</span> Cat {
+<span class="kw">public</span> <span class="kw">class</span> Cat <span class="kw">extends</span> Animal {
   <span class="at">@Override</span> <span class="co">// fortement conseillé mais pas obligatoire</span>
   <span class="kw">public</span> <span class="bu">String</span> <span class="fu">printHello</span>() {
     <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Meouw&quot;</span>);
@@ -1754,5 +1791,356 @@ map.<span class="fu">put</span>(<span class="kw">null</span>, <span class="dv">1
 
 }</code></pre></div>
 <p>Dans cette implémentation, on a utilisé la méthode <code>Map.getOrDefault(Object key, V defaultValue)</code> plutôt que de gérer le cas d'une valeur <code>null</code> nous même.</p>
+<h2 id="autoboxing"><span class="header-section-number">1.20</span> Autoboxing</h2>
+<p>En Java les variable de types primitifs (les principaux étant <code>int</code>, <code>double</code>, <code>boolean</code>, <code>char</code>, etc.) sont stockés sur la pile. Ils sont comparés en valeur contrairement aux type références (les objets).</p>
+<p>Chaque type primitif est associé à un type référence (par ex. <code>Integer</code>, <code>Double</code>, <code>Boolean</code>, <code>Character</code>). On les appelle type &quot;wrapper&quot;. Ceci parce que chaque type référence encapsule une valeur immuable d'un type primitif.</p>
+<p>Une fois créé, un objet wrapper ne peut plus être modifié :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">Integer</span> n = <span class="kw">new</span> <span class="bu">Integer</span>(<span class="dv">16</span>);
+<span class="dt">int</span> i = n.<span class="fu">intValue</span>();
+<span class="dt">int</span> diffSign = n.<span class="fu">compareTo</span>(n);
+<span class="dt">double</span> d = n.<span class="fu">doubleValue</span>();
+<span class="bu">String</span> s = n.<span class="fu">toString</span>();
+<span class="co">// etc.</span></code></pre></div>
+<p>Il n'existe pas de méthode pour modifier l'objet Integer précédement créé.</p>
+<p>Pour modifier l'objet il faut créer un nouvel objet et modifier la référence <code>n</code> (c'est à dire réaffecter un nouvel objet à la même variable).</p>
+<pre><code>Integer n = new Integer(16);
+n = new Integer(17);
+assert n != n;</code></pre>
+<p>L'instruction <code>assert</code> vérifie que la condition n != n est vrai. Si ce n'est pas le cas, une <code>java.lang.AssertionError</code> est lancée.</p>
+<p>Heureusement à partir de Java 5, le langage supporte l'auto-boxing et l'auto-unboxing.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">Integer</span> n = <span class="kw">new</span> <span class="bu">Integer</span>(<span class="dv">42</span>);
+n++; <span class="co">// extrait le int, l&#39;incrémente et l&#39;emballe dans un nouvel Integer</span>
+assert n == <span class="dv">43</span>;</code></pre></div>
+<p>Voici une démonstration de l'état des références pour ce qui vient de se passer :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">Integer</span> n = <span class="kw">new</span> <span class="bu">Integer</span>(<span class="dv">42</span>);
+<span class="bu">Integer</span> before = n;
+n++;
+<span class="bu">Integer</span> after = n;
+assert before != after;</code></pre></div>
+<p>Avant Java 5 on devait procéder ainsi :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">Integer</span> n = <span class="kw">new</span> <span class="bu">Integer</span>(<span class="dv">42</span>);
+<span class="dt">int</span> i = n.<span class="fu">intValue</span>();
+i++;
+n = <span class="kw">new</span> <span class="bu">Integer</span>(i);
+assert n == <span class="dv">43</span>;</code></pre></div>
+<p>Il faut cependant savoir que les objets créés peuvent être les mêmes pour des raisons de performance. C'est le cas des Integer plus petit que 127.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">Integer</span> i1 = <span class="dv">127</span>;
+<span class="bu">Integer</span> i2 = <span class="dv">127</span>;
+
+assert i1 == i2;</code></pre></div>
+<p>En revanche dès 128, les objets créés sont différents :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">Integer</span> i1 = <span class="dv">128</span>;
+<span class="bu">Integer</span> i2 = <span class="dv">128</span>;
+
+assert i1 != i2;</code></pre></div>
+<p>Il faut cependant faire très attention au référence null qui sont déballées (unboxing).</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">Integer</span> n = <span class="kw">null</span>;
+<span class="dt">int</span> i = n; <span class="co">// java.lang.NullPointerException</span></code></pre></div>
+<h1 id="flux-de-caractères"><span class="header-section-number">2</span> Flux de caractères</h1>
+<h2 id="lire-un-caractère-à-partir-dun-fichier"><span class="header-section-number">2.1</span> Lire un caractère à partir d'un fichier</h2>
+<p>Pour lire un fichier texte, on utilise par commodité la classe <code>FileReader</code>.</p>
+<p>Le constructeur ouvre une connexion au fichier (représenté par un descripteur de fichier).</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="co">// nom de fichier : data.txt</span>
+<span class="bu">FileReader</span> inputStream = <span class="kw">new</span> <span class="bu">FileReader</span>(<span class="st">&quot;data.txt&quot;</span>);</code></pre></div>
+<p>Attention, une <code>java.io.FileNotFoundException</code> est jetée si :</p>
+<ul>
+<li>le nom de fichier ne correspond aucun fichier ou ;</li>
+<li>il représente un répertoire ou ;</li>
+<li>pour une autre obscure raison.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> c = inputStream.<span class="fu">read</span>();</code></pre></div>
+<p>Cette méthode bloque jusqu'à ce que :</p>
+<ul>
+<li>un caractère soit disponible ;</li>
+<li>la fin du fichier soit atteinte ;</li>
+<li>une erreur d'entrée sortie survienne.</li>
+</ul>
+<p>La méthode <code>read()</code> :</p>
+<ul>
+<li>renvoie le caractère lu, comme un entier entre 0 et 65535 (0x00-0xffff) ;</li>
+<li>vaut <code>-1</code> si la fin du fichier est atteinte ;</li>
+<li>jette une <code>java.io.IOException</code> en cas d'erreur.</li>
+</ul>
+<h2 id="écrire-un-caractère-dans-un-fichier"><span class="header-section-number">2.2</span> Écrire un caractère dans un fichier</h2>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">FileWriter</span> outputStream = <span class="kw">new</span> <span class="bu">FileWriter</span>(<span class="st">&quot;out.txt&quot;</span>);</code></pre></div>
+<p>Crée un descripteur de fichier représentant la connexion au fichier. De plus, un fichier &quot;out.txt&quot; est créé sur le disque.</p>
+<p>Attention, une <code>java.io.IOException</code> peut-être jetée :</p>
+<ul>
+<li>si le nom correspond à un répertoire ;</li>
+<li>si le fichier ne peut-être créé ou ouvert.</li>
+</ul>
+<p>Pour écrire un caractère :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> a = <span class="dv">97</span>;
+outputStream.<span class="fu">write</span>(a);</code></pre></div>
+<p>Le caractère à écrire doit être contenu dans les 16 bits de poids faible de l'entier passé en paramètre. Les 16 bits de poids forts sont ignorés.</p>
+<h2 id="exercice-1-2"><span class="header-section-number">2.3</span> Exercice 1</h2>
+<p>Écrire un programme de copie de fichier texte.</p>
+<ul>
+<li>Créer un fichier &quot;input.txt&quot; contenant le texte &quot;hello world&quot;.</li>
+<li>Le programme doit créer un fichier &quot;output.txt&quot; contenant le texte &quot;hello world&quot;.</li>
+</ul>
+<p>Modifiez ce programme de sorte de sorte de faire une mutation dans les bits de poids forts du caractère à écrire :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> a = (<span class="dv">1</span> &lt;&lt; <span class="dv">16</span>) | c;
+<span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(a);
+outputStream.<span class="fu">write</span>(c);</code></pre></div>
+<p>Le fichier &quot;output.txt&quot; devrait toujours être la copie exacte du fichier &quot;input.txt&quot;.</p>
+<h2 id="exercice-2-2"><span class="header-section-number">2.4</span> Exercice 2</h2>
+<p>Écrire un programme qui copie un fichier à la fin d'un autre fichier.</p>
+<ul>
+<li>Éditer le fichier &quot;input.txt&quot; et écrire &quot;bépo&quot;.</li>
+<li>Lancer le programme 2 fois : le fichier destination doit contenir &quot;bépobépo&quot;.</li>
+</ul>
+<h2 id="exercice-3-1"><span class="header-section-number">2.5</span> Exercice 3</h2>
+<ul>
+<li>Éditer le fichier &quot;input.txt&quot; avec IntelliJ.</li>
+<li>Modifier l'encodage à US-ASCII.</li>
+<li>Relancer le programme.</li>
+<li>Observer l'erreur dans le fichier destination.</li>
+</ul>
+<h1 id="flux-doctets"><span class="header-section-number">3</span> Flux d'octets</h1>
+<h2 id="lecture"><span class="header-section-number">3.1</span> Lecture</h2>
+<p>Pour ouvrir en lecture un flux de bytes bruts (sans décodage) :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">FileInputStream</span> in = <span class="kw">new</span> <span class="bu">FileInputStream</span>(<span class="st">&quot;input.txt&quot;</span>);</code></pre></div>
+<h2 id="écriture"><span class="header-section-number">3.2</span> Écriture</h2>
+<p>Pour ouvrir un flux en écriture de bytes bruts (sans encodage) :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">FileOutputStream</span> out = <span class="kw">new</span> <span class="bu">FileOutputStream</span>(<span class="st">&quot;output.txt&quot;</span>);</code></pre></div>
+<h2 id="lecture-et-écriture"><span class="header-section-number">3.3</span> Lecture et écriture</h2>
+<p>Le protocole <code>c = in.read()</code> et <code>out.write(c)</code> sont identique à <code>FileReader</code> et <code>FileWriter</code>.</p>
+<h2 id="exercice-4-1"><span class="header-section-number">3.4</span> Exercice 4</h2>
+<ul>
+<li>Reprendre le fichier US-ASCII de l'exercice 3.</li>
+<li>Écrire un programme de copie non sensible à l'encodage par défaut de Java.</li>
+</ul>
+<h2 id="exercice-5-1"><span class="header-section-number">3.5</span> Exercice 5</h2>
+<ul>
+<li>Reprendre le fichier US-ASCII de l'exercice 4.</li>
+<li>Relancer le programme de l'exercice 4 en modifiant le chemin courant (run configurations, working directory).</li>
+</ul>
+<h2 id="résumé-1"><span class="header-section-number">3.6</span> Résumé</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Ouvrir</th>
+<th>Fermer</th>
+<th>Lire</th>
+<th>Écrire</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>new</td>
+<td>close</td>
+<td>read</td>
+<td>write</td>
+</tr>
+</tbody>
+</table>
+<p>Tout programme se voit attribuer un répertoire courant (CWD). Ce chemin devient la racine de tout les fichiers dénotés par des chemins relatifs.</p>
+<p>Tenter d'ouvrir une connexion à un fichier qui n'existe pas lève une exception :</p>
+<pre><code>Exception in thread &quot;main&quot; java.io.FileNotFoundException: input.txt (Le fichier spécifié est introuvable)</code></pre>
+<p>Écrire dans un fichier avec <code>write(int)</code> ne garanti pas que les données seront effectivement écrites physiquement (par exemple sur disque). Pour garantir que les octets sauvés dans un tampon (par des appels à <code>write</code>) sont effectivement écrit par le système d'exploitation il faut utiliser <code>flush()</code>.</p>
+<p>Quand on a terminé d'utiliser la connexion au fichier, il est recommandé de le fermer en utilisant <code>close()</code>. Par ailleurs, avant que la connexion soit fermée, les octets restant dans le tampon sont déchargés avec <code>flush()</code>. L'idiome de programmation est donc d'utiliser <code>close()</code> mais pas <code>flush()</code>.</p>
+<p>Attention, une fois la connexion au fichier fermée on ne peut plus écrire dedans. Cela donne le message suivant :</p>
+<pre><code>Exception in thread &quot;main&quot; java.io.IOException: Stream closed</code></pre>
+<p>Quand un programme effectue des entrées/sorties, il utilise des ressources chères et limitées. La méthode <code>close()</code> les libère.</p>
+<h1 id="file-et-path"><span class="header-section-number">4</span> File et Path</h1>
+<p><code>C:\Users\mathieupauly\AppData\Local\Temp</code> ou <code>/tmp</code> sont des chemins absolus de fichier. Ils représentent tout 2 un répertoire.</p>
+<p><code>Temp</code> est un chemin relatif.</p>
+<p>En Java, un chemin est représenté par la classe <code>java.nio.file.Path</code>.</p>
+<p>Dans le vocabulaire de <code>Path</code>, <code>Temp</code> est le <code>fileName</code>, <code>C:\Users\mathieupauly\AppData\Local\Temp</code> est le <code>parent</code>, et <code>C:\</code> le <code>root</code>.</p>
+<h2 id="chemin-constant"><span class="header-section-number">4.1</span> Chemin constant</h2>
+<p>Représenter un chemin :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">Path p = Paths.<span class="fu">get</span>(<span class="st">&quot;/tmp/foo&quot;</span>);</code></pre></div>
+<p>Attention, cela ne fait pas d'opération sur le système de fichier.</p>
+<p>Pour récupérer le répertoire parent d'un chemin :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">Path example = Paths.<span class="fu">get</span>(<span class="st">&quot;example.txt&quot;</span>);
+
+Path parent = example.<span class="fu">getParent</span>(); <span class="co">// null</span>
+Path root = path.<span class="fu">getRoot</span>(); <span class="co">// null</span>
+Path fileName = path.<span class="fu">getFileName</span>(); <span class="co">// example.txt</span></code></pre></div>
+<p>Ici le parent était <code>null</code> car il ne contient que la composante <code>fileName</code>.</p>
+<p>En revanche, quand on transforme le premier chemin en chemin absolu :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">Path example = Paths.<span class="fu">get</span>(<span class="st">&quot;example.txt&quot;</span>).<span class="fu">toAbsolutePath</span>(); 
+<span class="co">// C:\Users\mathieupauly\Documents\java8-esgi\java8-esgi-examples\example.txt</span>
+
+Path parent = example.<span class="fu">getParent</span>();
+<span class="co">// C:\Users\mathieupauly\Documents\java8-esgi\java8-esgi-examples</span></code></pre></div>
+<p>Pour représenter un chemin avec 2 composantes (un répertoire contenant un fichier) :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">Path p = Paths.<span class="fu">get</span>(<span class="st">&quot;examples&quot;</span>, <span class="st">&quot;hello.txt&quot;</span>);</code></pre></div>
+<p>Dans ce cas, le <code>root</code> de <code>p</code> sera <code>null</code>, et son <code>parent</code> vaudra <code>examples</code>.</p>
+<h2 id="exercice-6-1"><span class="header-section-number">4.2</span> Exercice 6</h2>
+<p>Écrire un programme qui affiche le chemin absolu du répertoire courant.</p>
+<h2 id="composer-et-décomposer-un-chemin"><span class="header-section-number">4.3</span> Composer et décomposer un chemin</h2>
+<p>Pour concatèner (ou résoudre) 2 composants d'un chemin.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">Path p = Paths
+    .<span class="fu">get</span>(<span class="st">&quot;auie&quot;</span>)
+    .<span class="fu">resolve</span>(<span class="st">&quot;tsrn&quot;</span>); <span class="co">// auie\tsrn</span></code></pre></div>
+<p>Attention, si le composant de droite est absolu, le chemin de gauche est ignoré.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">Path p = Paths
+    .<span class="fu">get</span>(<span class="st">&quot;auie&quot;</span>)
+    .<span class="fu">resolve</span>(<span class="st">&quot;C:</span><span class="sc">\\</span><span class="st">tsrn&quot;</span>); <span class="co">// C:\tsrn</span></code></pre></div>
+<p>L'opération inverse de décomposition (ou relativisation) consiste à trouver un chemin entre 2 points (eux mêmes représentés par des chemins).</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">Path p1 = Paths.<span class="fu">get</span>(<span class="st">&quot;eee&quot;</span>);
+Path p2 = Paths.<span class="fu">get</span>(<span class="st">&quot;ttttt&quot;</span>);
+Path navigation = p1.<span class="fu">relativize</span>(p2);  <span class="co">// ..\ttttt</span></code></pre></div>
+<p>Exemple avec des chemins absolus.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">Path p1 = Paths.<span class="fu">get</span>(<span class="st">&quot;C:</span><span class="sc">\\</span><span class="st">Users</span><span class="sc">\\</span><span class="st">mathieupauly&quot;</span>);
+Path p2 = Paths.<span class="fu">get</span>(<span class="st">&quot;C:</span><span class="sc">\\</span><span class="st">Program Files (x86)&quot;</span>);
+Path navigation = p1.<span class="fu">relativize</span>(p2); <span class="co">// ..\..\Program Files (x86)</span></code></pre></div>
+<h2 id="exercice-7-1"><span class="header-section-number">4.4</span> Exercice 7</h2>
+<p>Écrire un programme qui crée autant de fichier que spécifié en argument.</p>
+<ul>
+<li>Si on lance le programme avec 10 comme argument, on doit créer 10 fichiers vides nommés 1.txt, 2.txt, etc.</li>
+<li>Les fichiers doivent être créés dans le répertoire temporaire <code>System.getProperty(&quot;java.io.tmpdir&quot;)</code>.</li>
+</ul>
+<h2 id="lister-et-créer-un-répertoire"><span class="header-section-number">4.5</span> Lister et créer un répertoire</h2>
+<p>Pour lire le contenu d'un dossier :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">Path currentDirectory = Paths.<span class="fu">get</span>(<span class="st">&quot;.&quot;</span>);
+DirectoryStream&lt;Path&gt; content = Files.<span class="fu">newDirectoryStream</span>(currentDirectory);
+<span class="kw">for</span> (Path p : content) {
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(p);
+}
+<span class="co">// .\.idea</span>
+<span class="co">// .\input.txt</span>
+<span class="co">// .\java8-esgi-examples.iml</span>
+<span class="co">// .\output.txt</span>
+<span class="co">// .\pom.xml</span>
+<span class="co">// .\src</span>
+<span class="co">// .\target</span></code></pre></div>
+<p>Pour créer un dossier :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">Files.<span class="fu">createDirectory</span>(Paths.<span class="fu">get</span>(<span class="st">&quot;example&quot;</span>));</code></pre></div>
+<p>Si on essaie de créer un dossier qui existe déjà, une exception est levée : <code>java.nio.file.FileAlreadyExistsException: example</code>.</p>
+<p>Pour savoir si un chemin dénote un répertoire :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">boolean</span> directory = Files.<span class="fu">isDirectory</span>(Paths.<span class="fu">get</span>(<span class="st">&quot;.&quot;</span>)); <span class="co">// true</span></code></pre></div>
+<h1 id="flux-orienté-ligne"><span class="header-section-number">5</span> Flux orienté ligne</h1>
+<h2 id="bufferedreader"><span class="header-section-number">5.1</span> BufferedReader</h2>
+<p>Pour lire du texte de manière plus efficace qu'avec <code>FileReader</code> on utilisera <code>BufferedReader</code>. Il faut remarquer que dans &quot;buffered&quot; &quot;reader&quot; il n'y a pas le mot &quot;file&quot;. En effet, un <code>BufferedReader</code> est conçu pour lire dans un flux quelconque (un <code>Reader</code>).</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">BufferedReader</span> bufferedReader = <span class="kw">new</span> <span class="bu">BufferedReader</span>(<span class="kw">new</span> <span class="bu">FileReader</span>(<span class="st">&quot;input.txt&quot;</span>));
+<span class="bu">String</span> line = bufferedReader.<span class="fu">readLine</span>();
+bufferedReader.<span class="fu">close</span>(); <span class="co">// ferme le flux sous-jacent (ici FileReader)</span></code></pre></div>
+<p>Noter que <code>readLine()</code> lit jusqu'à trouver un <code>\n</code> ou <code>\r\n</code> mais n'inclut pas cette fin de ligne dans l'objet retourné.</p>
+<h2 id="exercice8"><span class="header-section-number">5.2</span> Exercice 8</h2>
+<p>Écrire un programme qui lit dans un fichier &quot;doublons.txt&quot; affiche les lignes uniques.</p>
+<p>Par exemple &quot;doublons.txt&quot; contiendra :</p>
+<pre><code>file
+file
+input
+stream
+reader
+stream</code></pre>
+<p>Le programme doit afficher :</p>
+<pre><code>file
+input
+stream
+reader</code></pre>
+<h2 id="bufferedwriter"><span class="header-section-number">5.3</span> BufferedWriter</h2>
+<p>De la même manière, <code>BufferedWriter</code> est conçu pour rendre <code>FileWriter</code> performant et plus simple à utiliser. Un writer bufferisé écrit des lots plus gros de données en une seule fois. Le fait de minimiser le nombre de lectures (opération lente) économise des ressources.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">BufferedWriter</span> bufferedWriter = <span class="kw">new</span> <span class="bu">BufferedWriter</span>(<span class="kw">new</span> <span class="bu">FileWriter</span>(<span class="st">&quot;test.txt&quot;</span>));
+bufferedWriter.<span class="fu">write</span>(<span class="st">&quot;hello&quot;</span>);
+bufferedWriter.<span class="fu">newLine</span>();
+bufferedWriter.<span class="fu">close</span>(); <span class="co">// ferme le flux sous-jacent (ici FileWriter)</span>
+<span class="co">// hello\r\n</span></code></pre></div>
+<h2 id="exercice-9-1"><span class="header-section-number">5.4</span> Exercice 9</h2>
+<p>Modifier le programme de l'exercice 8 pour écrire dans un fichier plutôt que d'afficher.</p>
+<h2 id="exercice-10-1"><span class="header-section-number">5.5</span> Exercice 10</h2>
+<p>Écrire un programme qui copie le contenu direct d'un répertoire. Le répertoire à copier sera donné en premier argument du programme. Le répertoire destination sera donné en second argument.</p>
+<p>Par exemple si on invoque le programme avec les arguments : <code>'C:\Program Files\Java\jdk1.8.0_60' 'C:\Users\mathieupauly\AppData\Local\Temp'</code>, alors le répertoire <code>Temp</code> contiendra entre autres les répertoires <code>bin</code>, <code>jre</code>, <code>lib</code> et entre autres les fichiers <code>COPYRIGHT</code>, <code>LICENSE</code>, etc.</p>
+<h2 id="reader-et-writer"><span class="header-section-number">5.6</span> Reader et Writer</h2>
+<p>Comme vu précédement, <code>BufferedReader</code> n'est pas obligé de lire ses données à partir d'un fichier. Même principe pour <code>BufferedWriter</code> qui peut écrire dans un flux quelconque.</p>
+<p>Un flux en lecture seule est représenté par <code>Reader</code>. Un flux en écriture est lui représenté par <code>Writer</code>. Ces 2 classes sont des abstractions car elles ne manipulent pas un flux en particulier.</p>
+<p>En revanches elles permettent de composer des flux complexes en permettant de faire varier le média physique en jeu (par ex. en fichier ou en mémoire) ainsi que le paramétrage de lecture/écriture (par ex. utilisation d'un tampon ou non).</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">BufferedReader</span> bufferedReader = <span class="kw">new</span> <span class="bu">BufferedReader</span>(<span class="kw">new</span> <span class="bu">StringReader</span>(<span class="st">&quot;a</span><span class="sc">\n</span><span class="st">b</span><span class="sc">\n</span><span class="st">c&quot;</span>));
+<span class="bu">String</span> line = bufferedReader.<span class="fu">readLine</span>(); <span class="co">// &quot;a&quot;</span>
+<span class="bu">String</span> character = bufferedReader.<span class="fu">read</span>(); <span class="co">// 98 pour &#39;b&#39;</span></code></pre></div>
+<p>Ici on a utilisé un tampon (<code>BufferedReader</code>) pour lire une information en mémoire (&quot;a&quot;).</p>
+<p>L'intérêt est que la ligne de code qui utilise <code>read()</code> peut ignorer qu'elle consomme un <code>BufferedReader</code>. Pour elle tout se passe comme si elle consomme l'interface <code>Reader</code>.</p>
+<p>Pour résumer : un <code>BufferedReader</code> est construit à partir d'un autre <code>Reader</code> mais implémente lui même <code>Reader</code>.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> <span class="bu">BufferedReader</span> <span class="kw">extends</span> <span class="bu">Reader</span> {
+    <span class="kw">public</span> <span class="bu">BufferedReader</span>(<span class="bu">Reader</span> in) {
+        <span class="co">// ...</span>
+    }
+    <span class="co">// ...</span>
+}</code></pre></div>
+<p>On peut tenir exactement le même raisonnement avec BufferedWriter et Writer.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">StringWriter</span> out = <span class="kw">new</span> <span class="bu">StringWriter</span>();
+<span class="bu">BufferedWriter</span> bufferedWriter = <span class="kw">new</span> <span class="bu">BufferedWriter</span>(out);
+bufferedWriter.<span class="fu">write</span>(<span class="st">&quot;one&quot;</span>);
+bufferedWriter.<span class="fu">newLine</span>();
+bufferedWriter.<span class="fu">write</span>(<span class="st">&quot;two&quot;</span>);
+bufferedWriter.<span class="fu">close</span>();
+<span class="bu">String</span> content = out.<span class="fu">toString</span>(); <span class="co">// one\ntwo</span></code></pre></div>
+<p>La ligne de code qui utilise <code>write(String)</code> ne sait pas qu'elle écrit dans un <code>StringBuffer</code> (utilisé par <code>StringWriter</code>). De plus, elle ne sait pas qu'elle écrit dans un tampon.</p>
+<p>Pour résumer, <code>BufferedWriter</code> est construit sur un autre <code>Writer</code> et implémente lui même <code>Writer</code>.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> <span class="bu">BufferedWriter</span> <span class="kw">extends</span> <span class="bu">Writer</span> {
+    <span class="kw">public</span> <span class="bu">BufferedWriter</span>(<span class="bu">Writer</span> out) {
+        <span class="co">// ...</span>
+    }
+}</code></pre></div>
+<p>Ce motif de conception (design pattern) dans lequel une classe expose la même interface qu'elle consomme est nommé «Décorateur» d'après le «Gang of Four» (GOF).</p>
+<h2 id="inputstream-et-outputstream"><span class="header-section-number">5.7</span> InputStream et OutputStream</h2>
+<p>Une abstraction similaire existe du côté des flux orientés octets. Un <code>FileInputStream</code> (resp. <code>FileOutputStream</code>) peut-être bufferisé à l'aide d'un <code>BufferedInputStream</code> (resp. <code>BufferedOutputStream</code>). Remarquons une fois de plus l'absence du mot file dans &quot;buffered&quot; &quot;input&quot; &quot;stream&quot;.</p>
+<p>Pour lire de manière plus efficace dans un flux binaire :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">BufferedInputStream</span> bufferedInputStream = <span class="kw">new</span> <span class="bu">BufferedInputStream</span>(<span class="kw">new</span> <span class="bu">FileInputStream</span>(<span class="st">&quot;input.txt&quot;</span>));
+<span class="dt">int</span> c = bufferedInputStream.<span class="fu">read</span>();
+bufferedInputStream.<span class="fu">close</span>(); <span class="co">// ferme le flux sous-jacent</span></code></pre></div>
+<p>Et pour écrire :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">BufferedOutputStream</span> bufferedOutputStream = <span class="kw">new</span> <span class="bu">BufferedOutputStream</span>(<span class="kw">new</span> <span class="bu">FileOutputStream</span>(<span class="st">&quot;out.txt&quot;</span>));
+bufferedOutputStream.<span class="fu">write</span>(<span class="dv">97</span>);
+bufferedOutputStream.<span class="fu">close</span>(); <span class="co">// ferme le flux sous-jacent</span></code></pre></div>
+<p>Un <code>BufferedInputStream</code> (resp. <code>BufferedOutputStream</code>) est construit sur un <code>InputStream</code> (resp. <code>OutputStream</code>) et implémente également l'interface <code>InputStream</code> (resp. <code>OutputStream</code>). C'est à dire que ces flux orientés octets bufferisés ne sont pas forcément construit sur un flux fichier. Les classes <code>InputStream</code> et <code>OutputStream</code> sont des flux d'octets quelconques.</p>
+<p>La classe de lecture d'un flux bufferisé est définie ainsi dans le JDK :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> <span class="bu">BufferedOutputStream</span> <span class="kw">extends</span> <span class="bu">FilterOutputStream</span> {
+    <span class="kw">protected</span> <span class="bu">OutputStream</span> out;
+    <span class="kw">public</span> <span class="bu">FilterOutputStream</span>(<span class="bu">OutputStream</span> out) {
+        <span class="kw">this</span>.<span class="fu">out</span> = out;
+    }
+    <span class="co">// ...</span>
+}</code></pre></div>
+<p>Avec la définition suivante :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> <span class="bu">FilterOutputStream</span> <span class="kw">extends</span> <span class="bu">OutputStream</span> {
+    <span class="co">// ...</span>
+}</code></pre></div>
+<p>Et la classe d'écriture de flux bufferisé est définie ainsi dans le JDK :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> <span class="bu">BufferedInputStream</span> <span class="kw">extends</span> <span class="bu">FilterInputStream</span> {
+    <span class="kw">public</span> <span class="bu">BufferedInputStream</span>(<span class="bu">InputStream</span> in) {
+        <span class="co">// ...</span>
+    }
+}</code></pre></div>
+<p>Avec la définition suivante :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> <span class="bu">FilterInputStream</span> <span class="kw">extends</span> <span class="bu">InputStream</span> { 
+    <span class="co">// ...</span>
+}</code></pre></div>
+<p>C'est encore le motif de conception «Décorateur» (GOF) qui est utilisé ici dans lequel une classe expose la même interface qu'elle consomme.</p>
+<h2 id="inputstream-outputstream-reader-et-writer"><span class="header-section-number">5.8</span> InputStream, OutputStream, Reader et Writer</h2>
+<p>De plus, on peut convertir un flux orienté octet en un flux orienté caractère ou ligne grâce à ces abstractions (<code>InputStream</code>, <code>OutputStream</code>, <code>Reader</code> et <code>Writer</code>). En effet, il existe aussi un 2 adaptateurs qui font le pont entre un flux binaire (byte-oriented) et un flux texte : <code>InputStreamReader</code> et <code>OutputStreamWriter</code>.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">BufferedReader</span> bufferedReader = <span class="kw">new</span> <span class="bu">BufferedReader</span>(<span class="kw">new</span> <span class="bu">InputStreamReader</span>(<span class="kw">new</span> <span class="bu">FileInputStream</span>(<span class="st">&quot;in.txt&quot;</span>)));
+<span class="bu">BufferedWriter</span> bufferedWriter = <span class="kw">new</span> <span class="bu">BufferedWriter</span>(<span class="kw">new</span> <span class="bu">OutputStreamWriter</span>(<span class="kw">new</span> <span class="bu">FileOutputStream</span>(<span class="st">&quot;out.txt&quot;</span>)));</code></pre></div>
+<h2 id="exercice-11-1"><span class="header-section-number">5.9</span> Exercice 11</h2>
+<p>Cet exercice est une réécriture du programme de l'exercice précédant. C'est à dire que le but est toujours de faire une copie du contenu direct d'un répertoire. En revanche nous allons séparer le programme en 2 programmes : un lecteur et un écrivain. Le lecteur lira le contenu d'un répertoire. L'écrivain écrira la copie.</p>
+<ul>
+<li>écrire un fichier <code>list.csv</code> contenant le texte suivant :</li>
+</ul>
+<pre class="csv"><code>bin
+lib</code></pre>
+<ul>
+<li>écrire le programme écrivain qui écrit dans le répertoire donné en argument mais lit dans le <code>list.csv</code> la liste de répertoires à créer (ici <code>bin</code> et <code>lib</code>).</li>
+<li>ajouter une colonne au fichier <code>list.csv</code> pour avoir :</li>
+</ul>
+<pre class="csv"><code>bin;directory
+lib;directory
+LICENSE;file</code></pre>
+<ul>
+<li>modifier le programme écrivain de sorte de prendre en compte les fichiers normaux.</li>
+<li>écrire un programme lecteur qui lit le répertoire donné en argument (comme l'exercice précédant) mais écrit dans le fichier <code>list.csv</code> (dans lequel chaque ligne à la structure name;type).</li>
+</ul>
+<p>On lancera donc 2 programmes pour réaliser la copie :</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">java</span> ContentReader <span class="st">&#39;C:\Program Files\Java\jdk1.8.0_60&#39;</span>
+<span class="ex">java</span> ContentWriter <span class="st">&#39;C:\Users\mathieupauly\AppData\Local\Temp&#39;</span></code></pre></div>
+<h2 id="exercice-12-1"><span class="header-section-number">5.10</span> Exercice 12</h2>
+<p>Modifier les 2 programmes de sorte que la description précédement écrite dans le fichier <code>list.csv</code> soit écrite par <code>ContentReader</code> sur sa sortie standard et lu par <code>ContentWriter</code> sur son entrée standard. On n'utilisera donc plus le fichier <code>list.csv</code>.</p>
+<p>Le programmes devront donc être coordonnés à l'aide d'un «pipe» (<code>|</code>). La sortie du premier programme est redirigé dans l'entrée du second.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">java</span> ContentReader <span class="st">&#39;C:\Program Files\Java\jdk1.8.0_60&#39;</span> <span class="kw">|</span> <span class="ex">java</span> ContentWriter <span class="st">&#39;C:\Users\mathieupauly\AppData\Local\Temp&#39;</span></code></pre></div>
+<h2 id="sources"><span class="header-section-number">5.11</span> Sources</h2>
+<p>https://docs.oracle.com/javase/tutorial/essential/io/</p>
 </body>
 </html>
