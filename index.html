@@ -3044,7 +3044,7 @@ if (l&#39;action 1 est succès) {
 <p>Si notre programme était plus complexe qu'une séquence, les <code>if</code> codant le métier et les <code>if</code> traitant des erreurs seraient mélangés et donnerait un code encore plus compliqué que celui-ci.</p>
 <p>De plus, le mécanisme de traçage permet de montrer la source d'une erreur. Dans de nombreux langages, trouver la ligne responsable d'une erreur à l'exécution est une tâche ardue.</p>
 <h2 id="catégories-dexceptions"><span class="header-section-number">6.9</span> Catégories d'exceptions</h2>
-<p>Le compilateur et l'environnement d'exécution distingue 3 catégories : les <code>Exception</code>, les <code>RuntimeException</code> et les <code>Error</code>. Les <code>Exception</code> (et les classes filles, sauf RuntimeException) que nous avons vu jusqu'ici obligent le programmeur à (1) propager ou à (2) traiter. En revanche, il existe une catégorie spéciale d'exception qui n'obligent pas le programmeur à quoi que ce soit.</p>
+<p>Le compilateur et l'environnement d'exécution distinguent 3 catégories : les <code>Exception</code>, les <code>RuntimeException</code> et les <code>Error</code>. Les <code>Exception</code> (et les classes filles, sauf RuntimeException) que nous avons vu jusqu'ici obligent le programmeur à (1) propager ou à (2) traiter. En revanche, il existe une catégorie spéciale d'exception qui n'obligent pas le programmeur à quoi que ce soit.</p>
 <p>Par défaut donc les <code>Exception</code> sont vérifiées (checked). Parmis elles, les <code>RuntimeException</code> sont exemptées de vérification (unchecked).</p>
 <p>Ainsi, on pourra compiler le code suivant :</p>
 <div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">void</span> <span class="fu">fail</span>() {
@@ -3133,7 +3133,7 @@ Recherche ambigüe : 2 résultats trouvés ! </code></pre>
 <h2 id="exercice-4-2"><span class="header-section-number">6.13</span> Exercice 4</h2>
 <p>Modifier le programme précédent pour rendre le programme interactif. Le programme ne prend plus d'argument mais lit sur son entrée standard.</p>
 <p>De plus, le programme ne doit pas s'arréter quand une recherche donne 0 ou plus de 2 résultats.</p>
-<p>Pour terminer le programme on utilisera un signal du système (CTRL+C).</p>
+<p>Pour terminer le programme on utilisera le pseudo caractère de fin de fichier (EOF) qu'on écrit avec CTRL-D.</p>
 <p>Exemple de session :</p>
 <pre class="shell"><code>$ java BookPrice
 &gt; monde
