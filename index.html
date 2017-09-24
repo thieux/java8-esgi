@@ -50,7 +50,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="header">
 <h1 class="title">Cours Java 8 AL ESGI</h1>
 <h2 class="author">Mathieu Pauly @ Arolla</h2>
-<h3 class="date">Première rédaction mars 2017 (dernière mise à jour : 04/09/2017)</h3>
+<h3 class="date">Première rédaction mars 2017 (dernière mise à jour : 22/09/2017)</h3>
 </div>
 <div id="TOC">
 <ul>
@@ -157,6 +157,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#exercice-1-2"><span class="toc-section-number">2.3</span> Exercice 1</a></li>
 <li><a href="#exercice-2-2"><span class="toc-section-number">2.4</span> Exercice 2</a></li>
 <li><a href="#exercice-3-1"><span class="toc-section-number">2.5</span> Exercice 3</a></li>
+<li><a href="#corrections"><span class="toc-section-number">2.6</span> Corrections</a></li>
 </ul></li>
 <li><a href="#flux-doctets"><span class="toc-section-number">3</span> Flux d'octets</a><ul>
 <li><a href="#lecture"><span class="toc-section-number">3.1</span> Lecture</a></li>
@@ -164,7 +165,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#lecture-et-écriture"><span class="toc-section-number">3.3</span> Lecture et écriture</a></li>
 <li><a href="#exercice-4-1"><span class="toc-section-number">3.4</span> Exercice 4</a></li>
 <li><a href="#exercice-5-1"><span class="toc-section-number">3.5</span> Exercice 5</a></li>
-<li><a href="#résumé-1"><span class="toc-section-number">3.6</span> Résumé</a></li>
+<li><a href="#corrections-1"><span class="toc-section-number">3.6</span> Corrections</a></li>
+<li><a href="#résumé-1"><span class="toc-section-number">3.7</span> Résumé</a></li>
 </ul></li>
 <li><a href="#file-et-path"><span class="toc-section-number">4</span> File et Path</a><ul>
 <li><a href="#chemin-constant"><span class="toc-section-number">4.1</span> Chemin constant</a></li>
@@ -172,6 +174,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#composer-et-décomposer-un-chemin"><span class="toc-section-number">4.3</span> Composer et décomposer un chemin</a></li>
 <li><a href="#exercice-7-1"><span class="toc-section-number">4.4</span> Exercice 7</a></li>
 <li><a href="#lister-et-créer-un-répertoire"><span class="toc-section-number">4.5</span> Lister et créer un répertoire</a></li>
+<li><a href="#corrections-2"><span class="toc-section-number">4.6</span> Corrections</a></li>
 </ul></li>
 <li><a href="#flux-orienté-ligne"><span class="toc-section-number">5</span> Flux orienté ligne</a><ul>
 <li><a href="#bufferedreader"><span class="toc-section-number">5.1</span> BufferedReader</a></li>
@@ -184,7 +187,29 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#inputstream-outputstream-reader-et-writer"><span class="toc-section-number">5.8</span> InputStream, OutputStream, Reader et Writer</a></li>
 <li><a href="#exercice-11-1"><span class="toc-section-number">5.9</span> Exercice 11</a></li>
 <li><a href="#exercice-12-1"><span class="toc-section-number">5.10</span> Exercice 12</a></li>
-<li><a href="#sources"><span class="toc-section-number">5.11</span> Sources</a></li>
+<li><a href="#corrections-3"><span class="toc-section-number">5.11</span> Corrections</a></li>
+<li><a href="#sources"><span class="toc-section-number">5.12</span> Sources</a></li>
+</ul></li>
+<li><a href="#les-exceptions"><span class="toc-section-number">6</span> Les exceptions</a><ul>
+<li><a href="#throw-et-throws"><span class="toc-section-number">6.1</span> Throw et throws</a></li>
+<li><a href="#try-et-catch"><span class="toc-section-number">6.2</span> Try et Catch</a></li>
+<li><a href="#bloc-et-portée"><span class="toc-section-number">6.3</span> Bloc et portée</a></li>
+<li><a href="#exceptions-maisons"><span class="toc-section-number">6.4</span> Exceptions maisons</a></li>
+<li><a href="#multicatch"><span class="toc-section-number">6.5</span> Multicatch</a></li>
+<li><a href="#chaînage"><span class="toc-section-number">6.6</span>  Chaînage</a></li>
+<li><a href="#quelques-exceptions-communes"><span class="toc-section-number">6.7</span> Quelques exceptions communes</a><ul>
+<li><a href="#nullpointerexception"><span class="toc-section-number">6.7.1</span> NullPointerException</a></li>
+<li><a href="#arrayindexoutofboundsexception"><span class="toc-section-number">6.7.2</span> ArrayIndexOutOfBoundsException</a></li>
+<li><a href="#illegalargumentexception"><span class="toc-section-number">6.7.3</span> IllegalArgumentException</a></li>
+<li><a href="#stackoverflowerror"><span class="toc-section-number">6.7.4</span> StackOverflowError</a></li>
+</ul></li>
+<li><a href="#intérêt-des-exceptions"><span class="toc-section-number">6.8</span> Intérêt des exceptions</a></li>
+<li><a href="#catégories-dexceptions"><span class="toc-section-number">6.9</span> Catégories d'exceptions</a></li>
+<li><a href="#exercice-1-3"><span class="toc-section-number">6.10</span> Exercice 1</a></li>
+<li><a href="#exercice-2-3"><span class="toc-section-number">6.11</span> Exercice 2</a></li>
+<li><a href="#exercice-3-2"><span class="toc-section-number">6.12</span> Exercice 3</a></li>
+<li><a href="#exercice-4-2"><span class="toc-section-number">6.13</span> Exercice 4</a></li>
+<li><a href="#exercice-5-2"><span class="toc-section-number">6.14</span> Exercice 5</a></li>
 </ul></li>
 </ul>
 </div>
@@ -1893,10 +1918,74 @@ outputStream.<span class="fu">write</span>(c);</code></pre></div>
 <h2 id="exercice-3-1"><span class="header-section-number">2.5</span> Exercice 3</h2>
 <ul>
 <li>Éditer le fichier &quot;input.txt&quot; avec IntelliJ.</li>
-<li>Modifier l'encodage à US-ASCII.</li>
+<li>Modifier l'encodage à ISO-8859-1.</li>
 <li>Relancer le programme.</li>
 <li>Observer l'erreur dans le fichier destination.</li>
 </ul>
+<h2 id="corrections"><span class="header-section-number">2.6</span> Corrections</h2>
+<p>Exercice 1 : voici une première version incomplète :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">FileReader</span> fileReader = <span class="kw">new</span> <span class="bu">FileReader</span>(<span class="st">&quot;input.txt&quot;</span>);
+<span class="bu">FileWriter</span> fileWriter = <span class="kw">new</span> <span class="bu">FileWriter</span>(<span class="st">&quot;output.txt&quot;</span>);
+fileWriter.<span class="fu">write</span>(fileReader.<span class="fu">read</span>());</code></pre></div>
+<p>Avec le fichier input.txt contenant la ligne :</p>
+<pre><code>hello world</code></pre>
+<p>Le programme crée un fichier <code>output.txt</code> qui a le mauvais goût d'être <em>vide</em>.</p>
+<p>Deuxième version en fermant le fichier de sortie :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">FileReader</span> fileReader = <span class="kw">new</span> <span class="bu">FileReader</span>(<span class="st">&quot;input.txt&quot;</span>);
+<span class="bu">FileWriter</span> fileWriter = <span class="kw">new</span> <span class="bu">FileWriter</span>(<span class="st">&quot;output.txt&quot;</span>);
+fileWriter.<span class="fu">write</span>(fileReader.<span class="fu">read</span>());
+fileWriter.<span class="fu">close</span>();</code></pre></div>
+<p>Le fichier output.txt contiendra une seule lettre : <code>h</code>.</p>
+<p>Dernière version sans gestion d'exception (cf. « Les exceptions ») :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> fr.arolla.java8esgi.basicio.ex1;</span>
+
+<span class="kw">import</span><span class="im"> java.io.FileReader;</span>
+<span class="kw">import</span><span class="im"> java.io.FileWriter;</span>
+<span class="kw">import</span><span class="im"> java.io.IOException;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> Ex1 {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">IOException</span> {
+        <span class="bu">FileReader</span> fileReader = <span class="kw">new</span> <span class="bu">FileReader</span>(<span class="st">&quot;input.txt&quot;</span>);
+        <span class="bu">FileWriter</span> fileWriter = <span class="kw">new</span> <span class="bu">FileWriter</span>(<span class="st">&quot;output.txt&quot;</span>);
+
+        <span class="dt">int</span> character;
+        <span class="kw">while</span> ((character = fileReader.<span class="fu">read</span>()) != -<span class="dv">1</span>) {
+            fileWriter.<span class="fu">write</span>(character);
+        }
+        fileWriter.<span class="fu">close</span>(); <span class="co">// déclenche l&#39;écriture sur disque</span>
+        fileReader.<span class="fu">close</span>(); <span class="co">// rend les ressource à l&#39;OS</span>
+    }
+}</code></pre></div>
+<p>On pourra réécrire ce programme de la manière suivante pour localiser la logique de copie :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">IOException</span> {
+    <span class="bu">FileReader</span> reader = <span class="kw">new</span> <span class="bu">FileReader</span>(<span class="st">&quot;input.txt&quot;</span>);
+    <span class="bu">FileWriter</span> writer = <span class="kw">new</span> <span class="bu">FileWriter</span>(<span class="st">&quot;output.txt&quot;</span>);
+
+    <span class="fu">copy</span>(reader, writer);
+
+    writer.<span class="fu">close</span>();
+    reader.<span class="fu">close</span>();
+}
+
+<span class="kw">private</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">copy</span>(<span class="bu">FileReader</span> fileReader, <span class="bu">FileWriter</span> fileWriter) <span class="kw">throws</span> <span class="bu">IOException</span> {
+    <span class="dt">int</span> character;
+    <span class="kw">while</span> ((character = fileReader.<span class="fu">read</span>()) != -<span class="dv">1</span>) {
+        fileWriter.<span class="fu">write</span>(character);
+    }
+}</code></pre></div>
+<p>Exercice 2 : pour écrire à la fin du fichier on activera le mode <code>append</code> :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">IOException</span> {
+    <span class="bu">FileReader</span> reader = <span class="kw">new</span> <span class="bu">FileReader</span>(<span class="st">&quot;input.txt&quot;</span>);
+    <span class="bu">FileWriter</span> writer = <span class="kw">new</span> <span class="bu">FileWriter</span>(<span class="st">&quot;output.txt&quot;</span>, <span class="kw">true</span>);
+
+    <span class="fu">copy</span>(reader, writer);
+
+    writer.<span class="fu">close</span>();
+    reader.<span class="fu">close</span>();
+}</code></pre></div>
+<p>Exercice 3 : en modifiant l'encodage du fichier input.txt à ISO-8859-1, le fichier output pourra ressembler à :</p>
+<pre><code>b?po</code></pre>
+<p>On a perdu de l'information. On a un <em>bug</em> !</p>
 <h1 id="flux-doctets"><span class="header-section-number">3</span> Flux d'octets</h1>
 <h2 id="lecture"><span class="header-section-number">3.1</span> Lecture</h2>
 <p>Pour ouvrir en lecture un flux de bytes bruts (sans décodage) :</p>
@@ -1908,15 +1997,40 @@ outputStream.<span class="fu">write</span>(c);</code></pre></div>
 <p>Le protocole <code>c = in.read()</code> et <code>out.write(c)</code> sont identique à <code>FileReader</code> et <code>FileWriter</code>.</p>
 <h2 id="exercice-4-1"><span class="header-section-number">3.4</span> Exercice 4</h2>
 <ul>
-<li>Reprendre le fichier US-ASCII de l'exercice 3.</li>
+<li>Reprendre le fichier ISO-8859-1 de l'exercice 3.</li>
 <li>Écrire un programme de copie non sensible à l'encodage par défaut de Java.</li>
 </ul>
 <h2 id="exercice-5-1"><span class="header-section-number">3.5</span> Exercice 5</h2>
 <ul>
-<li>Reprendre le fichier US-ASCII de l'exercice 4.</li>
+<li>Reprendre le fichier ISO-8859-1 de l'exercice 4.</li>
 <li>Relancer le programme de l'exercice 4 en modifiant le chemin courant (run configurations, working directory).</li>
 </ul>
-<h2 id="résumé-1"><span class="header-section-number">3.6</span> Résumé</h2>
+<h2 id="corrections-1"><span class="header-section-number">3.6</span> Corrections</h2>
+<p>Pour corriger le bug d'encodage on utilisera des flux orientés octets qui n'interprètent pas la séquence d'octets lue.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> fr.arolla.java8esgi.basicio.ex4;</span>
+
+<span class="kw">import</span><span class="im"> java.io.*;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> Ex4 {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">IOException</span> {
+        <span class="bu">FileInputStream</span> reader = <span class="kw">new</span> <span class="bu">FileInputStream</span>(<span class="st">&quot;input.txt&quot;</span>);
+        <span class="bu">FileOutputStream</span> writer = <span class="kw">new</span> <span class="bu">FileOutputStream</span>(<span class="st">&quot;output.txt&quot;</span>, <span class="kw">true</span>);
+
+        <span class="fu">copy</span>(reader, writer);
+
+        writer.<span class="fu">close</span>();
+        reader.<span class="fu">close</span>();
+    }
+
+    <span class="kw">private</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">copy</span>(<span class="bu">FileInputStream</span> fileReader, <span class="bu">FileOutputStream</span> fileWriter) 
+        <span class="kw">throws</span> <span class="bu">IOException</span> {
+        <span class="dt">int</span> character;
+        <span class="kw">while</span> ((character = fileReader.<span class="fu">read</span>()) != -<span class="dv">1</span>) {
+            fileWriter.<span class="fu">write</span>(character);
+        }
+    }
+}</code></pre></div>
+<h2 id="résumé-1"><span class="header-section-number">3.7</span> Résumé</h2>
 <table>
 <thead>
 <tr class="header">
@@ -1943,6 +2057,7 @@ outputStream.<span class="fu">write</span>(c);</code></pre></div>
 <p>Attention, une fois la connexion au fichier fermée on ne peut plus écrire dedans. Cela donne le message suivant :</p>
 <pre><code>Exception in thread &quot;main&quot; java.io.IOException: Stream closed</code></pre>
 <p>Quand un programme effectue des entrées/sorties, il utilise des ressources chères et limitées. La méthode <code>close()</code> les libère.</p>
+<p>Les <code>Reader</code> et <code>Writer</code> sont orientés caractères tandis que <code>InputStream</code> et <code>OutputStream</code> sont orientés octets. L'interprétation des octets en caractères par <code>Reader</code> et <code>Writer</code> est faite par ses classes. En revanche, les classes <code>InputStream</code> et <code>OutputStream</code> laissent le développeur décider de la sémantique à donner au flux d'octets.</p>
 <h1 id="file-et-path"><span class="header-section-number">4</span> File et Path</h1>
 <p><code>C:\Users\mathieupauly\AppData\Local\Temp</code> ou <code>/tmp</code> sont des chemins absolus de fichier. Ils représentent tout 2 un répertoire.</p>
 <p><code>Temp</code> est un chemin relatif.</p>
@@ -2012,6 +2127,56 @@ DirectoryStream&lt;Path&gt; content = Files.<span class="fu">newDirectoryStream<
 <p>Si on essaie de créer un dossier qui existe déjà, une exception est levée : <code>java.nio.file.FileAlreadyExistsException: example</code>.</p>
 <p>Pour savoir si un chemin dénote un répertoire :</p>
 <div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">boolean</span> directory = Files.<span class="fu">isDirectory</span>(Paths.<span class="fu">get</span>(<span class="st">&quot;.&quot;</span>)); <span class="co">// true</span></code></pre></div>
+<h2 id="corrections-2"><span class="header-section-number">4.6</span> Corrections</h2>
+<p>L'exercice 6 : en première approximation on peut calculer le chemin absolu :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(Paths.<span class="fu">get</span>(<span class="st">&quot;.&quot;</span>).<span class="fu">toAbsolutePath</span>());
+<span class="co">// C:\Users\mathieupauly\Documents\java8-esgi\java8-esgi-examples\.</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(Paths.<span class="fu">get</span>(<span class="st">&quot;.&quot;</span>).<span class="fu">toAbsolutePath</span>().<span class="fu">normalize</span>());
+<span class="co">// C:\Users\mathieupauly\Documents\java8-esgi\java8-esgi-examples</span></code></pre></div>
+<p>On pourra plus simplement utiliser :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="bu">System</span>.<span class="fu">getProperty</span>(<span class="st">&quot;user.dir&quot;</span>));</code></pre></div>
+<p>Ou également :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="kw">new</span> <span class="bu">File</span>(<span class="st">&quot;.&quot;</span>).<span class="fu">getCanonicalFile</span>());</code></pre></div>
+<p>Exercice 7 :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> fr.arolla.java8esgi.basicio;</span>
+
+<span class="kw">import</span><span class="im"> java.io.FileWriter;</span>
+<span class="kw">import</span><span class="im"> java.io.IOException;</span>
+<span class="kw">import</span><span class="im"> java.nio.file.Files;</span>
+<span class="kw">import</span><span class="im"> java.nio.file.Path;</span>
+<span class="kw">import</span><span class="im"> java.nio.file.Paths;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> Ex7 {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">IOException</span> {
+        <span class="bu">String</span> temporaryDirectory = <span class="bu">System</span>.<span class="fu">getProperty</span>(<span class="st">&quot;java.io.tmpdir&quot;</span>);
+        <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt;= <span class="dv">10</span>; i++) {
+            Path path = Paths.<span class="fu">get</span>(temporaryDirectory, i + <span class="st">&quot;.txt&quot;</span>);
+            <span class="kw">new</span> <span class="bu">FileWriter</span>(path.<span class="fu">toFile</span>());
+        }
+    }
+}</code></pre></div>
+<p>Exercice 8 : on utilisera un <code>Set</code> pour ne pas conserver les doublons.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> fr.arolla.java8esgi.basicio.ex8;</span>
+
+<span class="kw">import</span><span class="im"> java.io.BufferedReader;</span>
+<span class="kw">import</span><span class="im"> java.io.FileReader;</span>
+<span class="kw">import</span><span class="im"> java.io.IOException;</span>
+<span class="kw">import</span><span class="im"> java.util.HashSet;</span>
+<span class="kw">import</span><span class="im"> java.util.Set;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> Ex8 {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">IOException</span> {
+        <span class="bu">BufferedReader</span> bufferedReader = <span class="kw">new</span> <span class="bu">BufferedReader</span>(<span class="kw">new</span> <span class="bu">FileReader</span>(<span class="st">&quot;doublons.txt&quot;</span>));
+        <span class="bu">Set</span>&lt;<span class="bu">String</span>&gt; uniqueLines = <span class="kw">new</span> <span class="bu">HashSet</span>&lt;&gt;();
+        <span class="bu">String</span> line;
+        <span class="kw">while</span> ((line = bufferedReader.<span class="fu">readLine</span>()) != <span class="kw">null</span>) {
+            <span class="kw">if</span> (!uniqueLines.<span class="fu">contains</span>(line)) {
+                <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(line);
+            }
+            uniqueLines.<span class="fu">add</span>(line);
+        }
+    }
+}</code></pre></div>
 <h1 id="flux-orienté-ligne"><span class="header-section-number">5</span> Flux orienté ligne</h1>
 <h2 id="bufferedreader"><span class="header-section-number">5.1</span> BufferedReader</h2>
 <p>Pour lire du texte de manière plus efficace qu'avec <code>FileReader</code> on utilisera <code>BufferedReader</code>. Il faut remarquer que dans &quot;buffered&quot; &quot;reader&quot; il n'y a pas le mot &quot;file&quot;. En effet, un <code>BufferedReader</code> est conçu pour lire dans un flux quelconque (un <code>Reader</code>).</p>
@@ -2044,7 +2209,7 @@ bufferedWriter.<span class="fu">close</span>(); <span class="co">// ferme le flu
 <p>Modifier le programme de l'exercice 8 pour écrire dans un fichier plutôt que d'afficher.</p>
 <h2 id="exercice-10-1"><span class="header-section-number">5.5</span> Exercice 10</h2>
 <p>Écrire un programme qui copie le contenu direct d'un répertoire. Le répertoire à copier sera donné en premier argument du programme. Le répertoire destination sera donné en second argument.</p>
-<p>Par exemple si on invoque le programme avec les arguments : <code>'C:\Program Files\Java\jdk1.8.0_60' 'C:\Users\mathieupauly\AppData\Local\Temp'</code>, alors le répertoire <code>Temp</code> contiendra entre autres les répertoires <code>bin</code>, <code>jre</code>, <code>lib</code> et entre autres les fichiers <code>COPYRIGHT</code>, <code>LICENSE</code>, etc.</p>
+<p>Par exemple si on invoque le programme avec les arguments : <code>&quot;C:\Program Files\Java\jdk1.8.0_60&quot; &quot;C:\Users\mathieupauly\AppData\Local\Temp&quot;</code>, alors le répertoire <code>Temp</code> contiendra entre autres les répertoires <code>bin</code>, <code>jre</code>, <code>lib</code> et entre autres les fichiers <code>COPYRIGHT</code>, <code>LICENSE</code>, etc.</p>
 <h2 id="reader-et-writer"><span class="header-section-number">5.6</span> Reader et Writer</h2>
 <p>Comme vu précédement, <code>BufferedReader</code> n'est pas obligé de lire ses données à partir d'un fichier. Même principe pour <code>BufferedWriter</code> qui peut écrire dans un flux quelconque.</p>
 <p>Un flux en lecture seule est représenté par <code>Reader</code>. Un flux en écriture est lui représenté par <code>Writer</code>. Ces 2 classes sont des abstractions car elles ne manipulent pas un flux en particulier.</p>
@@ -2134,13 +2299,881 @@ LICENSE;file</code></pre>
 <li>écrire un programme lecteur qui lit le répertoire donné en argument (comme l'exercice précédant) mais écrit dans le fichier <code>list.csv</code> (dans lequel chaque ligne à la structure name;type).</li>
 </ul>
 <p>On lancera donc 2 programmes pour réaliser la copie :</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">java</span> ContentReader <span class="st">&#39;C:\Program Files\Java\jdk1.8.0_60&#39;</span>
-<span class="ex">java</span> ContentWriter <span class="st">&#39;C:\Users\mathieupauly\AppData\Local\Temp&#39;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">java</span> ContentReader <span class="st">&quot;C:\Program Files\Java\jdk1.8.0_60&quot;</span>
+<span class="ex">java</span> ContentWriter <span class="st">&quot;C:\Users\mathieupauly\AppData\Local\Temp&quot;</span></code></pre></div>
 <h2 id="exercice-12-1"><span class="header-section-number">5.10</span> Exercice 12</h2>
 <p>Modifier les 2 programmes de sorte que la description précédement écrite dans le fichier <code>list.csv</code> soit écrite par <code>ContentReader</code> sur sa sortie standard et lu par <code>ContentWriter</code> sur son entrée standard. On n'utilisera donc plus le fichier <code>list.csv</code>.</p>
 <p>Le programmes devront donc être coordonnés à l'aide d'un «pipe» (<code>|</code>). La sortie du premier programme est redirigé dans l'entrée du second.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">java</span> ContentReader <span class="st">&#39;C:\Program Files\Java\jdk1.8.0_60&#39;</span> <span class="kw">|</span> <span class="ex">java</span> ContentWriter <span class="st">&#39;C:\Users\mathieupauly\AppData\Local\Temp&#39;</span></code></pre></div>
-<h2 id="sources"><span class="header-section-number">5.11</span> Sources</h2>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">java</span> ContentReader <span class="st">&quot;C:\Program Files\Java\jdk1.8.0_60&quot;</span> <span class="kw">|</span> <span class="ex">java</span> ContentWriter <span class="st">&quot;C:\Users\mathieupauly\AppData\Local\Temp&quot;</span></code></pre></div>
+<h2 id="corrections-3"><span class="header-section-number">5.11</span> Corrections</h2>
+<p>Exercice 9 : on conserve le type de l'objet <code>System.out</code> (<code>PrintStream</code>) mais on change l'instance concrète qui sera connectée sur un fichier.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> fr.arolla.java8esgi.basicio.ex9;</span>
+
+<span class="kw">import</span><span class="im"> java.io.BufferedReader;</span>
+<span class="kw">import</span><span class="im"> java.io.FileReader;</span>
+<span class="kw">import</span><span class="im"> java.io.IOException;</span>
+<span class="kw">import</span><span class="im"> java.io.PrintStream;</span>
+<span class="kw">import</span><span class="im"> java.util.HashSet;</span>
+<span class="kw">import</span><span class="im"> java.util.Set;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> Ex9 {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">IOException</span> {
+        <span class="bu">BufferedReader</span> bufferedReader = <span class="kw">new</span> <span class="bu">BufferedReader</span>(<span class="kw">new</span> <span class="bu">FileReader</span>(<span class="st">&quot;doublons.txt&quot;</span>));
+        <span class="bu">PrintStream</span> out = <span class="kw">new</span> <span class="bu">PrintStream</span>(<span class="st">&quot;sansDoublon.txt&quot;</span>);
+        <span class="bu">Set</span>&lt;<span class="bu">String</span>&gt; uniqueLines = <span class="kw">new</span> <span class="bu">HashSet</span>&lt;&gt;();
+        <span class="bu">String</span> line;
+        <span class="kw">while</span> ((line = bufferedReader.<span class="fu">readLine</span>()) != <span class="kw">null</span>) {
+            <span class="kw">if</span> (!uniqueLines.<span class="fu">contains</span>(line)) {
+                out.<span class="fu">println</span>(line);
+            }
+            uniqueLines.<span class="fu">add</span>(line);
+        }
+        bufferedReader.<span class="fu">close</span>();
+        out.<span class="fu">close</span>();
+    }
+}</code></pre></div>
+<p>Exercice 10 : on parcourt le contenu du répertoire source en se demandant pour chaque chemin à copier s'il référence un répertoire ou un fichier normal (pas un périphérique par ex.).</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> fr.arolla.java8esgi.basicio.ex10;</span>
+
+<span class="kw">import</span><span class="im"> java.io.IOException;</span>
+<span class="kw">import</span><span class="im"> java.nio.file.DirectoryStream;</span>
+<span class="kw">import</span><span class="im"> java.nio.file.Files;</span>
+<span class="kw">import</span><span class="im"> java.nio.file.Path;</span>
+<span class="kw">import</span><span class="im"> java.nio.file.Paths;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> Ex10 {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">IOException</span> {
+        <span class="bu">String</span> source = args[<span class="dv">0</span>];
+        <span class="bu">String</span> destination = args[<span class="dv">1</span>];
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Copy from: &quot;</span> + source + <span class="st">&quot; to: &quot;</span> + destination);
+        Path destinationDirectory = Paths.<span class="fu">get</span>(destination);
+        DirectoryStream&lt;Path&gt; stream = Files.<span class="fu">newDirectoryStream</span>(Paths.<span class="fu">get</span>(source));
+        <span class="kw">for</span> (Path toCopy : stream) {
+            Path toCreate = destinationDirectory.<span class="fu">resolve</span>(toCopy.<span class="fu">getFileName</span>());
+            <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Create: &quot;</span> + toCreate + <span class="st">&quot;...&quot;</span>);
+            <span class="kw">if</span> (Files.<span class="fu">isDirectory</span>(toCopy)) {
+                Files.<span class="fu">createDirectory</span>(toCreate);
+            } <span class="kw">else</span> <span class="kw">if</span> (Files.<span class="fu">isRegularFile</span>(toCopy)) {
+                Files.<span class="fu">createFile</span>(toCreate);
+            } <span class="kw">else</span> {
+                <span class="bu">System</span>.<span class="fu">err</span>.<span class="fu">println</span>(<span class="st">&quot;Cannot process &quot;</span> + toCopy);
+            }
+        }
+        stream.<span class="fu">close</span>();
+        out.<span class="fu">close</span>();
+    }
+}</code></pre></div>
+<pre><code>Copy from: C:\Program Files\Java\jdk1.8.0_60 to: C:\Users\mathieupauly\AppData\Local\Temp
+Create: C:\Users\mathieupauly\AppData\Local\Temp\bin...
+Create: C:\Users\mathieupauly\AppData\Local\Temp\COPYRIGHT...
+Create: C:\Users\mathieupauly\AppData\Local\Temp\db...
+Create: C:\Users\mathieupauly\AppData\Local\Temp\include...
+Create: C:\Users\mathieupauly\AppData\Local\Temp\javafx-src.zip...
+Create: C:\Users\mathieupauly\AppData\Local\Temp\jre...
+Create: C:\Users\mathieupauly\AppData\Local\Temp\lib...
+Create: C:\Users\mathieupauly\AppData\Local\Temp\LICENSE...
+Create: C:\Users\mathieupauly\AppData\Local\Temp\README.html...
+Create: C:\Users\mathieupauly\AppData\Local\Temp\release...
+Create: C:\Users\mathieupauly\AppData\Local\Temp\src.zip...
+Create: C:\Users\mathieupauly\AppData\Local\Temp\THIRDPARTYLICENSEREADME-JAVAFX.txt...
+Create: C:\Users\mathieupauly\AppData\Local\Temp\THIRDPARTYLICENSEREADME.txt...</code></pre>
+<p>Exercice 11 :</p>
+<p>Le programme de lecture du répertoire source pourra être lancé en premier.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> fr.arolla.java8esgi.basicio.ex11;</span>
+
+<span class="kw">import</span><span class="im"> java.io.IOException;</span>
+<span class="kw">import</span><span class="im"> java.io.PrintStream;</span>
+<span class="kw">import</span><span class="im"> java.nio.file.DirectoryStream;</span>
+<span class="kw">import</span><span class="im"> java.nio.file.Files;</span>
+<span class="kw">import</span><span class="im"> java.nio.file.Path;</span>
+<span class="kw">import</span><span class="im"> java.nio.file.Paths;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> ContentReader {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">IOException</span> {
+        <span class="bu">String</span> source = args[<span class="dv">0</span>];
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Copy from: &quot;</span> + source);
+        DirectoryStream&lt;Path&gt; stream = Files.<span class="fu">newDirectoryStream</span>(Paths.<span class="fu">get</span>(source));
+        <span class="bu">PrintStream</span> out = <span class="kw">new</span> <span class="bu">PrintStream</span>(<span class="st">&quot;list.csv&quot;</span>);
+        <span class="kw">for</span> (Path toCopy : stream) {
+            Path fileName = toCopy.<span class="fu">getFileName</span>();
+            <span class="kw">if</span> (Files.<span class="fu">isDirectory</span>(toCopy)) {
+                out.<span class="fu">println</span>(fileName + <span class="st">&quot;;&quot;</span> + <span class="st">&quot;directory&quot;</span>);
+            } <span class="kw">else</span> <span class="kw">if</span> (Files.<span class="fu">isRegularFile</span>(toCopy)) {
+                out.<span class="fu">println</span>(fileName + <span class="st">&quot;;&quot;</span> + <span class="st">&quot;file&quot;</span>);
+            } <span class="kw">else</span> {
+                out.<span class="fu">println</span>(fileName + <span class="st">&quot;;&quot;</span> + <span class="st">&quot;unknown&quot;</span>);
+            }
+        }
+        stream.<span class="fu">close</span>();
+        out.<span class="fu">close</span>();
+    }
+}</code></pre></div>
+<pre><code>bin;directory
+COPYRIGHT;file
+db;directory
+include;directory
+javafx-src.zip;file
+jre;directory
+lib;directory
+LICENSE;file
+README.html;file
+release;file
+src.zip;file
+THIRDPARTYLICENSEREADME-JAVAFX.txt;file
+THIRDPARTYLICENSEREADME.txt;file</code></pre>
+<p>Puis on lancera l'écrivain :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> fr.arolla.java8esgi.basicio.ex11;</span>
+
+<span class="kw">import</span><span class="im"> java.io.BufferedReader;</span>
+<span class="kw">import</span><span class="im"> java.io.FileReader;</span>
+<span class="kw">import</span><span class="im"> java.io.IOException;</span>
+<span class="kw">import</span><span class="im"> java.nio.file.Files;</span>
+<span class="kw">import</span><span class="im"> java.nio.file.Path;</span>
+<span class="kw">import</span><span class="im"> java.nio.file.Paths;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> ContentWriter {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">IOException</span> {
+        <span class="bu">String</span> destination = args[<span class="dv">0</span>];
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Copy to: &quot;</span> + destination);
+        Path destinationDirectory = Paths.<span class="fu">get</span>(destination);
+        <span class="bu">BufferedReader</span> listing = <span class="kw">new</span> <span class="bu">BufferedReader</span>(<span class="kw">new</span> <span class="bu">FileReader</span>(<span class="st">&quot;list.csv&quot;</span>));
+        <span class="bu">String</span> line;
+        <span class="kw">while</span> ((line = listing.<span class="fu">readLine</span>()) != <span class="kw">null</span>) {
+            <span class="bu">String</span>[] columns = line.<span class="fu">split</span>(<span class="st">&quot;;&quot;</span>);
+            <span class="bu">String</span> filename = columns[<span class="dv">0</span>];
+            <span class="bu">String</span> type = columns[<span class="dv">1</span>];
+            Path toCreate = destinationDirectory.<span class="fu">resolve</span>(filename);
+            <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Create: &quot;</span> + toCreate + <span class="st">&quot;...&quot;</span>);
+            <span class="kw">switch</span> (type) {
+                <span class="kw">case</span> <span class="st">&quot;directory&quot;</span>:
+                    Files.<span class="fu">createDirectory</span>(toCreate);
+                    <span class="kw">break</span>;
+                <span class="kw">case</span> <span class="st">&quot;file&quot;</span>:
+                    Files.<span class="fu">createFile</span>(toCreate);
+                    <span class="kw">break</span>;
+                <span class="kw">default</span>:
+                    <span class="bu">System</span>.<span class="fu">err</span>.<span class="fu">println</span>(<span class="st">&quot;Cannot process &quot;</span> + toCreate + <span class="st">&quot; (unknown type)&quot;</span>);
+                    <span class="kw">break</span>;
+            }
+        }
+        listing.<span class="fu">close</span>();
+    }
+}</code></pre></div>
+<pre><code>Copy to: C:\Users\mathieupauly\AppData\Local\Temp
+Create: C:\Users\mathieupauly\AppData\Local\Temp\bin...
+Create: C:\Users\mathieupauly\AppData\Local\Temp\COPYRIGHT...
+Create: C:\Users\mathieupauly\AppData\Local\Temp\db...
+Create: C:\Users\mathieupauly\AppData\Local\Temp\include...
+Create: C:\Users\mathieupauly\AppData\Local\Temp\javafx-src.zip...
+Create: C:\Users\mathieupauly\AppData\Local\Temp\jre...
+Create: C:\Users\mathieupauly\AppData\Local\Temp\lib...
+Create: C:\Users\mathieupauly\AppData\Local\Temp\LICENSE...
+Create: C:\Users\mathieupauly\AppData\Local\Temp\README.html...
+Create: C:\Users\mathieupauly\AppData\Local\Temp\release...
+Create: C:\Users\mathieupauly\AppData\Local\Temp\src.zip...
+Create: C:\Users\mathieupauly\AppData\Local\Temp\THIRDPARTYLICENSEREADME-JAVAFX.txt...
+Create: C:\Users\mathieupauly\AppData\Local\Temp\THIRDPARTYLICENSEREADME.txt...</code></pre>
+<p>Exercice 12 : pour le lecteur, on change <code>new PrintStream(&quot;list.csv&quot;)</code> à <code>System.out</code> ; pour l'écrivain, on substitue <code>new FileReader(&quot;list.csv&quot;)</code> par <code>new InputStreamReader(System.in)</code>.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> fr.arolla.java8esgi.basicio.ex12;</span>
+
+<span class="kw">import</span><span class="im"> java.io.IOException;</span>
+<span class="kw">import</span><span class="im"> java.nio.file.DirectoryStream;</span>
+<span class="kw">import</span><span class="im"> java.nio.file.Files;</span>
+<span class="kw">import</span><span class="im"> java.nio.file.Path;</span>
+<span class="kw">import</span><span class="im"> java.nio.file.Paths;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> ContentReader {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">IOException</span> {
+        <span class="bu">String</span> source = args[<span class="dv">0</span>];
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Copy from: &quot;</span> + source);
+        DirectoryStream&lt;Path&gt; stream = Files.<span class="fu">newDirectoryStream</span>(Paths.<span class="fu">get</span>(source));
+        <span class="kw">for</span> (Path toCopy : stream) {
+            Path fileName = toCopy.<span class="fu">getFileName</span>();
+            <span class="kw">if</span> (Files.<span class="fu">isDirectory</span>(toCopy)) {
+                <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(fileName + <span class="st">&quot;;&quot;</span> + <span class="st">&quot;directory&quot;</span>);
+            } <span class="kw">else</span> <span class="kw">if</span> (Files.<span class="fu">isRegularFile</span>(toCopy)) {
+                <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(fileName + <span class="st">&quot;;&quot;</span> + <span class="st">&quot;file&quot;</span>);
+            } <span class="kw">else</span> {
+                <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(fileName + <span class="st">&quot;;&quot;</span> + <span class="st">&quot;unknown&quot;</span>);
+            }
+        }
+        stream.<span class="fu">close</span>();
+    }
+}</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> fr.arolla.java8esgi.basicio.ex12;</span>
+
+<span class="kw">import</span><span class="im"> java.io.BufferedReader;</span>
+<span class="kw">import</span><span class="im"> java.io.IOException;</span>
+<span class="kw">import</span><span class="im"> java.io.InputStreamReader;</span>
+<span class="kw">import</span><span class="im"> java.nio.file.Files;</span>
+<span class="kw">import</span><span class="im"> java.nio.file.Path;</span>
+<span class="kw">import</span><span class="im"> java.nio.file.Paths;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> ContentWriter {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">IOException</span> {
+        <span class="bu">String</span> destination = args[<span class="dv">0</span>];
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Copy to: &quot;</span> + destination);
+        Path destinationDirectory = Paths.<span class="fu">get</span>(destination);
+        <span class="bu">BufferedReader</span> listing = <span class="kw">new</span> <span class="bu">BufferedReader</span>(<span class="kw">new</span> <span class="bu">InputStreamReader</span>(<span class="bu">System</span>.<span class="fu">in</span>));
+        <span class="bu">String</span> line;
+        <span class="kw">while</span> ((line = listing.<span class="fu">readLine</span>()) != <span class="kw">null</span>) {
+            <span class="bu">String</span>[] columns = line.<span class="fu">split</span>(<span class="st">&quot;;&quot;</span>);
+            <span class="bu">String</span> filename = columns[<span class="dv">0</span>];
+            <span class="bu">String</span> type = columns[<span class="dv">1</span>];
+            Path toCreate = destinationDirectory.<span class="fu">resolve</span>(filename);
+            <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Create: &quot;</span> + toCreate + <span class="st">&quot;...&quot;</span>);
+            <span class="kw">switch</span> (type) {
+                <span class="kw">case</span> <span class="st">&quot;directory&quot;</span>:
+                    Files.<span class="fu">createDirectory</span>(toCreate);
+                    <span class="kw">break</span>;
+                <span class="kw">case</span> <span class="st">&quot;file&quot;</span>:
+                    Files.<span class="fu">createFile</span>(toCreate);
+                    <span class="kw">break</span>;
+                <span class="kw">default</span>:
+                    <span class="bu">System</span>.<span class="fu">err</span>.<span class="fu">println</span>(<span class="st">&quot;Cannot process &quot;</span> + toCreate + <span class="st">&quot; (unknown type)&quot;</span>);
+                    <span class="kw">break</span>;
+            }
+        }
+        listing.<span class="fu">close</span>();
+    }
+}</code></pre></div>
+<p>Une erreur courante de programmation consiste à oublier de libérer les ressources (BufferedReader, BufferedOutputStream, DirectoryStream, etc). Dans le pire, des cas cela aboutit à des fuites mémoires.</p>
+<h2 id="sources"><span class="header-section-number">5.12</span> Sources</h2>
 <p>https://docs.oracle.com/javase/tutorial/essential/io/</p>
+<h1 id="les-exceptions"><span class="header-section-number">6</span> Les exceptions</h1>
+<p>Dans le chapitre d'introduction aux entrées/sorties nous avons utilisé des méthodes pouvant générer des exceptions.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">void</span> <span class="fu">touchLock</span>() {
+    <span class="kw">new</span> <span class="bu">FileOutputStream</span>(<span class="st">&quot;lock.txt&quot;</span>); <span class="co">// unreported exception java.io.FileNotFoundException;</span>
+                                      <span class="co">// must be caught or declared to be thrown</span>
+}</code></pre></div>
+<p>Ce code ne compile pas.</p>
+<p>Le contructeur de <code>FileOutputStream</code> déclare dans la section <code>Throws</code> de sa <a href="https://docs.oracle.com/javase/8/docs/api/java/io/FileOutputStream.html#FileOutputStream-java.lang.String-">Javadoc</a> qu'une <code>FileNotFoundException</code> est levée si le fichier existe mais correspond à un répertoire ou bien quand le fichier n'existe pas et ne peut pas être créé, etc.</p>
+<p>Le contructeur est déclaré comme comme cela dans le JDK :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="bu">FileOutputStream</span>(<span class="bu">String</span> name) <span class="kw">throws</span> <span class="bu">FileNotFoundException</span> {
+   ...
+}</code></pre></div>
+<p>Quand on appelle une méthode qui peut lever des exceptions, la méthode appelante doit ou bien :</p>
+<ul>
+<li>déclarer elle même l'exception (<code>throws</code>);</li>
+<li>ou bien la traiter (<code>try</code> et <code>catch</code>).</li>
+</ul>
+<h2 id="throw-et-throws"><span class="header-section-number">6.1</span> Throw et throws</h2>
+<p>Ce code ne compile pas :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+    <span class="kw">throw</span> <span class="kw">new</span> <span class="bu">Exception</span>(); <span class="co">// unreported exception</span>
+}</code></pre></div>
+<p>On peut corriger en déclarant l'exception.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">Exception</span> {
+    <span class="kw">throw</span> <span class="kw">new</span> <span class="bu">Exception</span>();
+}</code></pre></div>
+<p>Une exception est un objet comme un autre. Ce qui le distingue d'un autre objet classique est qu'il peut être lancé (<code>throw</code>) au contexte appelant sans passer par le flot d'exécution habituel (if, return, etc.). L'expression <code>new Exception()</code> est un <code>Object</code> comme un autre. On pourrait donc écrire :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">Exception</span> {
+    <span class="bu">Exception</span> e = <span class="kw">new</span> <span class="bu">Exception</span>();
+    <span class="kw">throw</span> e;
+}</code></pre></div>
+<p>Le code suivant ne compile pas car le 2e <code>println</code> n'est jamais atteignable :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">Exception</span> {
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;before&quot;</span>);
+    <span class="kw">throw</span> <span class="kw">new</span> <span class="bu">Exception</span>();
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;before&quot;</span>); <span class="co">// unreachable statement</span>
+}</code></pre></div>
+<p>En effet, l'exception levée entre les 2 lignes de <code>println</code> interrompt la méthode <code>main(String[] args)</code>.</p>
+<p>L'erreur de compilation est similaire à l'erreur produite avec un <code>return</code> :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">Exception</span> {
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;before&quot;</span>);
+    <span class="kw">return</span>;
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;after&quot;</span>); <span class="co">// unreachable statement</span>
+}</code></pre></div>
+<p>En revanche, pour l'exposer on peut en quelque sorte tromper le compilateur Java pour corriger l'erreur de compilation :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">Exception</span> {
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;before&quot;</span>);
+    <span class="kw">if</span> (<span class="kw">true</span>) {
+        <span class="kw">throw</span> <span class="kw">new</span> <span class="bu">Exception</span>();
+    }
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;after&quot;</span>); <span class="co">// OK</span>
+}</code></pre></div>
+<p>Même si ce code est sémantiquement équivalent (<code>if (true) foo();</code> est équivalent à <code>foo();</code>) le compilateur considère uniquement la forme du <code>if</code> et pas la condition.</p>
+<p>Le programme pourra afficher :</p>
+<pre><code>before
+Exception in thread &quot;main&quot; java.lang.Exception
+    at fr.arolla.java8esgi.exceptions.Demo.main(Demo.java:7)</code></pre>
+<p>Mais également :</p>
+<pre><code>Exception in thread &quot;main&quot; java.lang.Exception
+    at fr.arolla.java8esgi.exceptions.Demo.main(Demo.java:7)
+before</code></pre>
+<p>Note secondaire : on peut se demander pourquoi les messages affichés sur la sortie standard sont comme dilués dans la trace. La raison est que la méthode <code>printStackTrace()</code> affiche sur la sortie erreur qui n'est pas bufferisée (sinon l'erreur risquerait de n'être jamais affichée). Une donnée écrite dans un buffer ne sera effectivement écrite que lorsque nécessaire. L'ordre d'affichage n'est pas garanti entre le flux de sortie standard (<code>out</code>) et le flux d'erreur standard (<code>err</code>).</p>
+<p>On réécrit (on dit aussi &quot;refactor&quot;) le programme on faisant une extraction d'une méthode <code>foo</code> :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">Exception</span> {
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;before&quot;</span>);
+    <span class="fu">foo</span>();
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;after&quot;</span>);
+}
+
+<span class="kw">private</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">foo</span>() <span class="kw">throws</span> <span class="bu">Exception</span> {
+    <span class="kw">if</span> (<span class="kw">true</span>) {
+        <span class="kw">throw</span> <span class="kw">new</span> <span class="bu">Exception</span>();
+    }
+}</code></pre></div>
+<p>La méthode appelante (main) et appelée (foo) ont maintenant la même clause <code>throws</code>. Dans ce cas, la clause <code>throws</code> est virale. Elle a infecté celui qui l'appelait. En choisissant la même tactique (déclaration avec <code>throws</code>), le dernier appelant (<code>main(String[] args)</code>) est aussi en quelque sorte infecté. Si une exception est levé la JVM s'arretera.</p>
+<p>Quand une exception est levée, le flot d'exécution normal est interrompu. La JVM dépile la fonction en cours, puis sa fonction appelante et ainsi de suite jusqu'à la méthode <code>main</code>. En bref, le programme est interrompu. Le programme stoppe et la JVM affiche la pile d'exécution ayant causé l'exception.</p>
+<p>Une réécriture doit s'appliquer à laisser inchangé le comportement pour l'utilisateur. Mais certains aspect techniques peuvent changer comme la &quot;stack trace&quot; :</p>
+<pre><code>before
+Exception in thread &quot;main&quot; java.lang.Exception
+    at fr.arolla.java8esgi.exceptions.Demo.foo(Demo.java:12)
+    at fr.arolla.java8esgi.exceptions.Demo.main(Demo.java:6)</code></pre>
+<p>Le programme affiche toujours &quot;before&quot; (comportement inchangé) mais la &quot;stack trace&quot; est maintenant composée de 2 lignes.</p>
+<p>Continuons l'expérience :</p>
+<pre><code>before
+Exception in thread &quot;main&quot; java.lang.Exception
+    at fr.arolla.java8esgi.exceptions.Demo.bar(Demo.java:16)
+    at fr.arolla.java8esgi.exceptions.Demo.foo(Demo.java:11)
+    at fr.arolla.java8esgi.exceptions.Demo.main(Demo.java:6)</code></pre>
+<p>Remarquons qu'en première ligne de la &quot;stack trace&quot; est toujours la fonction la plus profonde dans la pile d'exécution (&quot;stack&quot;). Cette ligne correspond toujours à l'endroit qui a levé l'exception.</p>
+<p>Analysons la première ligne : <code>fr.arolla.java8esgi.exceptions.Demo.bar(Demo.java:16)</code>.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Exemple</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>fr.arolla.java8esgi.exceptions</td>
+<td align="center">package</td>
+</tr>
+<tr class="even">
+<td>Demo</td>
+<td align="center">class</td>
+</tr>
+<tr class="odd">
+<td>bar</td>
+<td align="center">method</td>
+</tr>
+<tr class="even">
+<td>Demo.java</td>
+<td align="center">source file</td>
+</tr>
+<tr class="odd">
+<td>16</td>
+<td align="center">line number</td>
+</tr>
+</tbody>
+</table>
+<h2 id="try-et-catch"><span class="header-section-number">6.2</span> Try et Catch</h2>
+<p>Quand dans une fonction on appelle du code qui peut lever une exception (directement avec <code>throw</code> ou bien indirectement en appelant une méthode qui déclare <code>throws</code>) on peut déclarer ou gérer.</p>
+<p>On a vu comment déclarer avec throws. On gère avec <code>try</code> et <code>catch</code>.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+    <span class="kw">try</span> {
+        <span class="kw">if</span> (<span class="kw">true</span>) <span class="kw">throw</span> <span class="kw">new</span> <span class="bu">Exception</span>(<span class="st">&quot;1&quot;</span>);
+        <span class="kw">if</span> (<span class="kw">true</span>) <span class="kw">throw</span> <span class="kw">new</span> <span class="bu">Exception</span>(<span class="st">&quot;2&quot;</span>);
+        <span class="kw">if</span> (<span class="kw">true</span>) <span class="kw">throw</span> <span class="kw">new</span> <span class="bu">Exception</span>(<span class="st">&quot;3&quot;</span>);
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;OK&quot;</span>);
+    } <span class="kw">catch</span> (<span class="bu">Exception</span> e) {
+        e.<span class="fu">printStackTrace</span>();
+    }
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Life continues&quot;</span>);
+}</code></pre></div>
+<p>Ceci affichera probablement :</p>
+<pre><code>java.lang.Exception: 1
+    at fr.arolla.java8esgi.exceptions.Demo.main(Demo.java:6)
+Life continues</code></pre>
+<p>Il faut noter que &quot;OK&quot; n'est pas affiché car le bloc <code>catch</code> a pris la main. Le bloc <code>try</code> a été interrompu définitivement. Mais le message &quot;Life continues&quot; est affiché comme si rien ne s'était passé.</p>
+<p>On peut éviter de remonter toute la pile d'appel et d'interrompre le programme. Il est parfois préférable de traiter l'exception localement de sorte que le programme continue quand même. On dira d'un tel programme qu'il fait de son mieux (best-effort).</p>
+<p>Pour éviter qu'une exception ne soit propagée, on doit l'intercepter. Le code qui produit l'exception doit être embarqué dans un bloc <code>try {}</code>. Celui-ci doit-être suivi d'un bloc <code>catch {}</code> (ou <code>finally {}</code> mais nous verrons cela après).</p>
+<p>Si une exception est levée dans le try, le gestionnaire catch sera exécuté.</p>
+<h2 id="bloc-et-portée"><span class="header-section-number">6.3</span> Bloc et portée</h2>
+<p>Attention avec la portée des variables. Le code suivant ne compile pas :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+    <span class="kw">try</span> {
+        <span class="dt">boolean</span> ok = <span class="kw">false</span>;
+        <span class="kw">if</span> (<span class="kw">true</span>) <span class="kw">throw</span> <span class="kw">new</span> <span class="bu">Exception</span>(<span class="st">&quot;1&quot;</span>);
+        <span class="kw">if</span> (<span class="kw">true</span>) <span class="kw">throw</span> <span class="kw">new</span> <span class="bu">Exception</span>(<span class="st">&quot;2&quot;</span>);
+        <span class="kw">if</span> (<span class="kw">true</span>) <span class="kw">throw</span> <span class="kw">new</span> <span class="bu">Exception</span>(<span class="st">&quot;3&quot;</span>);
+    } <span class="kw">catch</span> (<span class="bu">Exception</span> e) {
+        e.<span class="fu">printStackTrace</span>();
+    }
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(ok); <span class="co">// cannot find symbol &quot;ok&quot;</span>
+}</code></pre></div>
+<p>C'est le même phénomène que</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+    {
+        <span class="bu">String</span> a = <span class="st">&quot;&quot;</span>;
+    }
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(a); <span class="co">// cannot find symbol &quot;a&quot;</span>
+}</code></pre></div>
+<p>Les variables définies dans un bloc sont locales à ce bloc et ne peuvent être référencée à l'extérieur. On parle de portée lexicale.</p>
+<p>Quand un calcul dépend d'une méthode pouvant lever une exception et qu'il est géré (try), il est recommandé aussi traiter ce calcul dans le bloc <code>try</code>.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+    <span class="kw">try</span> {
+        <span class="dt">boolean</span> ok = <span class="fu">getInfo</span>();
+        <span class="kw">if</span> (ok) {
+            <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;hello&quot;</span>);
+        }
+    } <span class="kw">catch</span> (<span class="bu">Exception</span> e) {
+        e.<span class="fu">printStackTrace</span>();
+    }
+}
+
+<span class="kw">private</span> <span class="dt">static</span> <span class="dt">boolean</span> <span class="fu">getInfo</span>() <span class="kw">throws</span> <span class="bu">Exception</span> {
+    <span class="kw">if</span> (<span class="kw">true</span>) <span class="kw">throw</span> <span class="kw">new</span> <span class="bu">Exception</span>(<span class="st">&quot;1&quot;</span>);
+    <span class="kw">return</span> <span class="kw">false</span>;
+}</code></pre></div>
+<p>et non pas :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+    <span class="dt">boolean</span> ok = <span class="kw">false</span>;
+    <span class="kw">try</span> {
+        ok = <span class="fu">getInfo</span>();
+    } <span class="kw">catch</span> (<span class="bu">Exception</span> e) {
+        e.<span class="fu">printStackTrace</span>();
+    }
+    <span class="kw">if</span> (ok) {
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;hello&quot;</span>);
+    }
+}
+
+<span class="kw">private</span> <span class="dt">static</span> <span class="dt">boolean</span> <span class="fu">getInfo</span>() <span class="kw">throws</span> <span class="bu">Exception</span> {
+    <span class="kw">if</span> (<span class="kw">true</span>) <span class="kw">throw</span> <span class="kw">new</span> <span class="bu">Exception</span>(<span class="st">&quot;1&quot;</span>);
+    <span class="kw">return</span> <span class="kw">false</span>;
+}</code></pre></div>
+<h2 id="exceptions-maisons"><span class="header-section-number">6.4</span> Exceptions maisons</h2>
+<p>Il n'est pas recommandé de lever <code>Exception</code> directement car cela est trop générique. On perd la possibilité de filtrer statiquement par type d'exception. On devrait utiliser des exceptions spécifiques.</p>
+<p>Mais ce code ne compile pas.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> UserDefinedExceptions {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+        <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">CustomerNotFoundException</span>(); <span class="co">// incompatible types:</span>
+        <span class="co">// fr.arolla.java8esgi.exceptions.CustomerNotFoundException </span>
+        <span class="co">// cannot be converted to java.lang.Throwable</span>
+    }
+}
+
+<span class="kw">class</span> CustomerNotFoundException {
+
+}</code></pre></div>
+<p>C'est une erreur similaire à :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+    <span class="kw">throw</span> <span class="kw">new</span> <span class="bu">Object</span>(); <span class="co">// incompatible types</span>
+}</code></pre></div>
+<p>La solution consiste à faire hériter notre exception maison de Exception :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> UserDefinedExceptions {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> CustomerNotFoundException {
+        <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">CustomerNotFoundException</span>();
+    }
+}
+
+<span class="kw">class</span> CustomerNotFoundException <span class="kw">extends</span> <span class="bu">Exception</span> {
+
+}</code></pre></div>
+<p>Comme CustomerNotFoundException est un sous-type de Exception on peut déclarer que notre main peut lancer une exception plus générique.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> CustomerNotFoundException {
+    <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">CustomerNotFoundException</span>();
+}</code></pre></div>
+<p>On pourra également décider de traiter l'erreur avec un try/catch.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+    <span class="kw">try</span> {
+        <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">CustomerNotFoundException</span>();
+    } <span class="kw">catch</span> (CustomerNotFoundException e) {
+        e.<span class="fu">printStackTrace</span>();
+    }
+}</code></pre></div>
+<p>On pourra attraper plus d'exception :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+    <span class="kw">try</span> {
+        <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">CustomerNotFoundException</span>();
+    } <span class="kw">catch</span> (<span class="bu">Exception</span> e) {
+        e.<span class="fu">printStackTrace</span>();
+    }
+}</code></pre></div>
+<p>Si notre code peut lancer plusieurs types d'exceptions (c'est quand même le but quand on est capable de filtrer).</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> UserDefinedExceptions {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+        <span class="kw">try</span> {
+            <span class="kw">if</span> (<span class="kw">true</span>) <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">CustomerNotFoundException</span>();
+            <span class="kw">if</span> (<span class="kw">true</span>) <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">DuplicateCustomerException</span>();
+        } <span class="kw">catch</span> (<span class="bu">Exception</span> e) {
+            e.<span class="fu">printStackTrace</span>();
+        }
+    }
+}
+
+<span class="kw">class</span> CustomerNotFoundException <span class="kw">extends</span> <span class="bu">Exception</span> {
+
+}
+
+<span class="kw">class</span> DuplicateCustomerException <span class="kw">extends</span> <span class="bu">Exception</span> {
+
+}</code></pre></div>
+<p>Dans ce cas c'est la CustomerNotFoundException qui est lancée et gérée par le bloc catch.</p>
+<p>Mais en inversant :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">try</span> {
+    <span class="kw">if</span> (<span class="kw">true</span>) <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">DuplicateCustomerException</span>();
+    <span class="kw">if</span> (<span class="kw">true</span>) <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">CustomerNotFoundException</span>();
+} <span class="kw">catch</span> (<span class="bu">Exception</span> e) {
+    e.<span class="fu">printStackTrace</span>();
+}</code></pre></div>
+<p>Ici c'est DuplicateCustomerException qui est lancée et rattrapée.</p>
+<p>Si on ne souhaite pas traiter toute les exceptions on pourra ajouter plusieurs gestionnaire spécifiques plutôt qu'un seul générique.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+    <span class="kw">try</span> {
+        <span class="kw">if</span> (<span class="kw">true</span>) <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">DuplicateCustomerException</span>();
+        <span class="kw">if</span> (<span class="kw">true</span>) <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">CustomerNotFoundException</span>();
+    } <span class="kw">catch</span> (DuplicateCustomerException e) {
+        e.<span class="fu">printStackTrace</span>();
+    } <span class="kw">catch</span> (CustomerNotFoundException e) {
+        e.<span class="fu">printStackTrace</span>();
+    }
+}</code></pre></div>
+<p>Mais attention à l'ordre des gestionnaires. L'exemple suivant ne compile pas car le premier bloc va traiter toute les exceptions laissant le 2e gestionnaire inutile.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+    <span class="kw">try</span> {
+        <span class="kw">if</span> (<span class="kw">true</span>) <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">DuplicateCustomerException</span>();
+        <span class="kw">if</span> (<span class="kw">true</span>) <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">CustomerNotFoundException</span>();
+    } <span class="kw">catch</span> (<span class="bu">Exception</span> e) { 
+        <span class="bu">System</span>.<span class="fu">err</span>.<span class="fu">println</span>(<span class="st">&quot;1&quot;</span>);
+    } <span class="kw">catch</span> (CustomerNotFoundException e) { <span class="co">// exception CustomerNotFoundException </span>
+                                            <span class="co">// has already been caught</span>
+        <span class="bu">System</span>.<span class="fu">err</span>.<span class="fu">println</span>(<span class="st">&quot;2&quot;</span>);
+    }
+}</code></pre></div>
+<p>En revanche avoir un catch qui attrape les exceptions des blocs précédents n'est pas un problème :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+    <span class="kw">try</span> {
+        <span class="kw">if</span> (<span class="kw">true</span>) <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">DuplicateCustomerException</span>();
+        <span class="kw">if</span> (<span class="kw">true</span>) <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">CustomerNotFoundException</span>();
+    } <span class="kw">catch</span> (DuplicateCustomerException e) {
+        <span class="bu">System</span>.<span class="fu">err</span>.<span class="fu">println</span>(<span class="st">&quot;1&quot;</span>);
+    } <span class="kw">catch</span> (<span class="bu">Exception</span> e) {
+        <span class="bu">System</span>.<span class="fu">err</span>.<span class="fu">println</span>(<span class="st">&quot;2&quot;</span>);
+    }
+}</code></pre></div>
+<h2 id="multicatch"><span class="header-section-number">6.5</span> Multicatch</h2>
+<p>Notons que pour plus de lisibilité, Java 7 a ajouté une syntaxe pour les catch multiples :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+    <span class="kw">try</span> {
+        <span class="kw">if</span> (<span class="kw">true</span>) <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">DuplicateCustomerException</span>();
+        <span class="kw">if</span> (<span class="kw">true</span>) <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">CustomerNotFoundException</span>();
+    } <span class="kw">catch</span> (DuplicateCustomerException | CustomerNotFoundException e) {
+        <span class="bu">System</span>.<span class="fu">err</span>.<span class="fu">println</span>(<span class="st">&quot;1&quot;</span>);
+    }
+}</code></pre></div>
+<p>On peut tout à fait relancer une exeption qu'on a attrapée (le code qui suit ne compile pas pour une autre raison).</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+    <span class="kw">try</span> {
+        <span class="kw">if</span> (<span class="kw">true</span>) <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">DuplicateCustomerException</span>();
+        <span class="kw">if</span> (<span class="kw">true</span>) <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">CustomerNotFoundException</span>();
+    } <span class="kw">catch</span> (DuplicateCustomerException | CustomerNotFoundException ex) {
+        <span class="kw">throw</span> e; <span class="co">// unreported exception CustomerNotFoundException; </span>
+                 <span class="co">// must be caught or declared to be thrown</span>
+    }
+}</code></pre></div>
+<p>À ce stade, une question nous brule tous les lèvres : quel est le type de <code>ex</code> ?</p>
+<p>Son type est le dénominateur commun entre <code>DuplicateCustomerException</code> et <code>CustomerNotFoundException</code> : le super type commun le plus proche. Dans notre cas c'est <code>Exception</code>.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">Exception</span> {
+    <span class="kw">try</span> {
+        <span class="kw">if</span> (<span class="kw">true</span>) <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">DuplicateCustomerException</span>();
+        <span class="kw">if</span> (<span class="kw">true</span>) <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">CustomerNotFoundException</span>();
+    } <span class="kw">catch</span> (DuplicateCustomerException | CustomerNotFoundException ex) {
+        <span class="kw">throw</span> e;
+    }
+}</code></pre></div>
+<p>Pourtant le compilateur arrive aussi à calculer les types spécifique qui pourront être levés :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> DuplicateCustomerException, CustomerNotFoundException {
+    <span class="kw">try</span> {
+        <span class="kw">if</span> (<span class="kw">true</span>) <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">DuplicateCustomerException</span>();
+        <span class="kw">if</span> (<span class="kw">true</span>) <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">CustomerNotFoundException</span>();
+    } <span class="kw">catch</span> (DuplicateCustomerException | CustomerNotFoundException e) {
+        <span class="kw">throw</span> e;
+    }
+}</code></pre></div>
+<h2 id="chaînage"><span class="header-section-number">6.6</span>  Chaînage</h2>
+<p>Il est souvent souhaitable d'encapsuler des exceptions dans d'autre exceptions plus abstraites. L'exception encapsulée est nommée « cause ». Dans la plupart des cas, les exceptions sont chaînées entre elles.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">Exception</span> {
+    <span class="kw">try</span> {
+        <span class="kw">if</span> (<span class="kw">true</span>) <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">CustomerNotFoundException</span>(); <span class="co">// line 6</span>
+    } <span class="kw">catch</span> (CustomerNotFoundException ex) {
+        <span class="kw">throw</span> <span class="kw">new</span> <span class="bu">Exception</span>(ex); <span class="co">// line 8</span>
+    }
+}</code></pre></div>
+<p>L'expression <code>new Exception(e)</code> construit une nouvelle exception sur sa cause <code>ex</code>.</p>
+<p>Le programme affichera une trace contenant l'exception cause :</p>
+<pre><code>Exception in thread &quot;main&quot; java.lang.Exception: fr.arolla.java8esgi.exceptions.demo.CustomerNotFoundException
+    at fr.arolla.java8esgi.exceptions.demo.UserDefinedExceptions.main(UserDefinedExceptions.java:8)
+Caused by: fr.arolla.java8esgi.exceptions.demo.CustomerNotFoundException
+    at fr.arolla.java8esgi.exceptions.demo.UserDefinedExceptions.main(UserDefinedExceptions.java:6)</code></pre>
+<p>En revanche, en ne construisant pas une nouvelle exception on perd le contexte de capture :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">Exception</span> {
+    <span class="kw">try</span> {
+        <span class="kw">if</span> (<span class="kw">true</span>) <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">CustomerNotFoundException</span>(); <span class="co">// line 6</span>
+    } <span class="kw">catch</span> (CustomerNotFoundException ex) {
+        <span class="kw">throw</span> ex;
+    }
+}</code></pre></div>
+<pre><code>Exception in thread &quot;main&quot; fr.arolla.java8esgi.exceptions.demo.CustomerNotFoundException
+    at fr.arolla.java8esgi.exceptions.demo.UserDefinedExceptions.main(UserDefinedExceptions.java:6)</code></pre>
+<p>C'est une bonne pratique d'encapsuler une exception attrapée plutôt que de relancer la relancer (&quot;rethrow&quot;).</p>
+<p>Pour combiner l'encapsulation et la généricité des exceptions on écrira donc :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> UserDefinedExceptions {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">Exception</span> {
+        <span class="kw">try</span> {
+            <span class="kw">if</span> (<span class="kw">true</span>) <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">CustomerNotFoundException</span>();
+        } <span class="kw">catch</span> (CustomerNotFoundException ex) {
+            <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">MainException</span>(ex); <span class="co">// constructor MainException cannot be applied</span>
+        }
+    }
+}
+
+<span class="kw">class</span> MainException <span class="kw">extends</span> <span class="bu">Exception</span> {
+
+}</code></pre></div>
+<p>Attention ce code ne compile pas car MainException ne définit aucun contructeur à un argument.</p>
+<p>Corrigeons :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">class</span> MainException <span class="kw">extends</span> <span class="bu">Exception</span> {
+    <span class="kw">public</span> <span class="fu">MainException</span>(<span class="bu">Exception</span> ex) {
+
+    }
+}</code></pre></div>
+<p>Cependant il manque quelque chose. En effet, la trace n'affiche plus la cause :</p>
+<pre><code>Exception in thread &quot;main&quot; fr.arolla.java8esgi.exceptions.demo.MainException
+    at fr.arolla.java8esgi.exceptions.demo.UserDefinedExceptions.main(UserDefinedExceptions.java:8)</code></pre>
+<p>Il faut appeler explicitement le super constructeur de Exception pour bénéficier du chaînage :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">class</span> MainException <span class="kw">extends</span> <span class="bu">Exception</span> {
+    <span class="kw">public</span> <span class="fu">MainException</span>(<span class="bu">Exception</span> ex) {
+        <span class="kw">super</span>(ex);
+    }
+}</code></pre></div>
+<p>La trace indique maintenant l'exception de plus au niveau ainsi que sa cause :</p>
+<pre><code>Exception in thread &quot;main&quot; fr.arolla.java8esgi.exceptions.demo.MainException: fr.arolla.java8esgi.exceptions.demo.CustomerNotFoundException
+    at fr.arolla.java8esgi.exceptions.demo.UserDefinedExceptions.main(UserDefinedExceptions.java:8)
+Caused by: fr.arolla.java8esgi.exceptions.demo.CustomerNotFoundException
+    at fr.arolla.java8esgi.exceptions.demo.UserDefinedExceptions.main(UserDefinedExceptions.java:6)</code></pre>
+<p>Bien évidement la chaîne pourra comporter autant d'exception que l'on veut (ici 2) :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">Exception</span> {
+    <span class="kw">try</span> {
+        <span class="fu">activateCustomer</span>();
+    } <span class="kw">catch</span> (CustomerNotFoundException ex) {
+        <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">MainException</span>(ex);
+    }
+}
+
+<span class="kw">private</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">activateCustomer</span>() <span class="kw">throws</span> CustomerNotFoundException {
+    <span class="kw">try</span> {
+        <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">NoSuchRecordException</span>();
+    } <span class="kw">catch</span> (NoSuchRecordException e) {
+        <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">CustomerNotFoundException</span>(e);
+    }
+}</code></pre></div>
+<pre><code>Exception in thread &quot;main&quot; fr.arolla.java8esgi.exceptions.demo.MainException: fr.arolla.java8esgi.exceptions.demo.CustomerNotFoundException: fr.arolla.java8esgi.exceptions.demo.NoSuchRecordException
+    at fr.arolla.java8esgi.exceptions.demo.UserDefinedExceptions.main(UserDefinedExceptions.java:8)
+Caused by: fr.arolla.java8esgi.exceptions.demo.CustomerNotFoundException: fr.arolla.java8esgi.exceptions.demo.NoSuchRecordException
+    at fr.arolla.java8esgi.exceptions.demo.UserDefinedExceptions.activateCustomer(UserDefinedExceptions.java:16)
+    at fr.arolla.java8esgi.exceptions.demo.UserDefinedExceptions.main(UserDefinedExceptions.java:6)
+Caused by: fr.arolla.java8esgi.exceptions.demo.NoSuchRecordException
+    at fr.arolla.java8esgi.exceptions.demo.UserDefinedExceptions.activateCustomer(UserDefinedExceptions.java:14)
+    ... 1 more</code></pre>
+<p>Comme on peut s'y attendre, l'instruction <code>throw</code> entraine les mêmes contraintes (vis-à-vis de l'appelant) que l'appel d'une méthode qui déclare lancer (throws) une exception.</p>
+<h2 id="quelques-exceptions-communes"><span class="header-section-number">6.7</span> Quelques exceptions communes</h2>
+<h3 id="nullpointerexception"><span class="header-section-number">6.7.1</span> NullPointerException</h3>
+<p>C'est l'erreur qui représente probablement au moins 50% des bugs des applications Java.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> fr.arolla.java8esgi.exceptions;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> NullPointerDemo {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+        <span class="bu">Object</span> o = <span class="kw">null</span>;
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(o.<span class="fu">hashCode</span>());
+    }
+}</code></pre></div>
+<p>Le programme termine en erreur avec la sortie suivante :</p>
+<pre><code>Exception in thread &quot;main&quot; java.lang.NullPointerException
+    at fr.arolla.java8esgi.exceptions.NullPointerDemo.main(NullPointerDemo.java:6)</code></pre>
+<h3 id="arrayindexoutofboundsexception"><span class="header-section-number">6.7.2</span> ArrayIndexOutOfBoundsException</h3>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> fr.arolla.java8esgi.exceptions;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> ArrayExceptions {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+        <span class="dt">int</span>[] values = <span class="kw">new</span> <span class="dt">int</span>[<span class="dv">0</span>];
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(values[<span class="dv">0</span>]);
+    }
+}</code></pre></div>
+<p>Le programme termine en erreur avec cette trace de l'API du JDK :</p>
+<pre><code>Exception in thread &quot;main&quot; java.lang.ArrayIndexOutOfBoundsException: 0
+    at fr.arolla.java8esgi.exceptions.ArrayExceptions.main(ArrayExceptions.java:6)</code></pre>
+<h3 id="illegalargumentexception"><span class="header-section-number">6.7.3</span> IllegalArgumentException</h3>
+<p>L'API du JDK lance cette exception lorsque le programmeur invoque une méthode avec un paramètre incorrect. Le développeur d'application est aussi encouragé à lancer cette exception lorsque un paramètre est invalide.</p>
+<p>Par exemple, l'instruction <code>Integer.parseInt(&quot;te&quot;);</code> lance une <code>NumberFormatException</code> qui est une spécialisation de <code>IllegalArgumentException</code>.</p>
+<h3 id="stackoverflowerror"><span class="header-section-number">6.7.4</span> StackOverflowError</h3>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> fr.arolla.java8esgi.exceptions;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> StackOverflowDemo {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+        <span class="fu">foo</span>();
+    }
+
+    <span class="kw">private</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">foo</span>() {
+        <span class="fu">foo</span>();
+    }
+}</code></pre></div>
+<p>Ce programme terminera aussi en erreur :</p>
+<pre><code>Exception in thread &quot;main&quot; java.lang.StackOverflowError
+    at fr.arolla.java8esgi.exceptions.StackOverflowDemo.foo(StackOverflowDemo.java:9)
+    at fr.arolla.java8esgi.exceptions.StackOverflowDemo.foo(StackOverflowDemo.java:9)
+    at fr.arolla.java8esgi.exceptions.StackOverflowDemo.foo(StackOverflowDemo.java:9)
+        ...</code></pre>
+<h2 id="intérêt-des-exceptions"><span class="header-section-number">6.8</span> Intérêt des exceptions</h2>
+<p>Les exceptions résolvent un problème dans l'écriture de programmes : le mélange de la logique principale et de la gestion d'erreurs. Les exceptions sont un moyen de séparer ces 2 considérations.</p>
+<p>Imaginons en effet le programme très simple (pas de règle logique =&gt; pas de <code>if</code>), qui exécute en 3 actions en séquence :</p>
+<pre><code>action 1
+action 2
+action 3</code></pre>
+<p>Tout programme devrait traiter les cas d'erreurs. Traditionnellement (par ex. en C) on utilise des code erreurs retournés par les fonctions appelées.</p>
+<pre><code>essayer l&#39;action 1
+if (l&#39;action 1 est succès) {
+   essayer l&#39;action 2
+   if (l&#39;action 2 est succès) {
+      essayer l&#39;action 3
+      if (l&#39;action 3 est succès) {
+         ...
+      } else {
+         traiter l&#39;erreur 3
+      }
+   } else {
+     traiter l&#39;erreur 2
+   }
+} else {
+  traiter l&#39;erreur 1
+}</code></pre>
+<p>Si notre programme était plus complexe qu'une séquence, les <code>if</code> codant le métier et les <code>if</code> traitant des erreurs seraient mélangés et donnerait un code encore plus compliqué que celui-ci.</p>
+<p>De plus, le mécanisme de traçage permet de montrer la source d'une erreur. Dans de nombreux langages, trouver la ligne responsable d'une erreur à l'exécution est une tâche ardue.</p>
+<h2 id="catégories-dexceptions"><span class="header-section-number">6.9</span> Catégories d'exceptions</h2>
+<p>Le compilateur et l'environnement d'exécution distingue 3 catégories : les <code>Exception</code>, les <code>RuntimeException</code> et les <code>Error</code>. Les <code>Exception</code> (et les classes filles, sauf RuntimeException) que nous avons vu jusqu'ici obligent le programmeur à (1) propager ou à (2) traiter. En revanche, il existe une catégorie spéciale d'exception qui n'obligent pas le programmeur à quoi que ce soit.</p>
+<p>Par défaut donc les <code>Exception</code> sont vérifiées (checked). Parmis elles, les <code>RuntimeException</code> sont exemptées de vérification (unchecked).</p>
+<p>Ainsi, on pourra compiler le code suivant :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">void</span> <span class="fu">fail</span>() {
+    <span class="kw">throw</span> <span class="kw">new</span> <span class="bu">RuntimeException</span>();
+}</code></pre></div>
+<p>De la même manière, on peut compiler :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">void</span> <span class="fu">checkNotNull</span>(<span class="bu">Object</span> a) {
+    <span class="kw">if</span> (a == <span class="kw">null</span>) {
+       <span class="kw">throw</span> <span class="kw">new</span> <span class="bu">NullPointerException</span>();
+    }
+}</code></pre></div>
+<p>Car <code>NullPointerException</code> est une classe dérivée de <code>RuntimeException</code>.</p>
+<p>Notons que bien qu'exempté de l'obligation, il est légal, <em>mais déconseillé</em> de déclarer et surtout de traiter une exception non vérifiée.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">void</span> <span class="fu">test</span>(<span class="bu">String</span> text) {
+    <span class="kw">try</span> {
+        <span class="fu">checkNotNull</span>(text);
+    } <span class="kw">catch</span> (<span class="bu">NullPointerException</span> e) { <span class="co">// à éviter !</span>
+        <span class="co">// ...</span>
+    }
+}
+
+<span class="dt">void</span> <span class="fu">checkNotNull</span>(<span class="bu">Object</span> a) <span class="kw">throws</span> <span class="bu">NullPointerException</span> {
+    <span class="kw">if</span> (a == <span class="kw">null</span>) {
+       <span class="kw">throw</span> <span class="kw">new</span> <span class="bu">NullPointerException</span>();
+    }
+}</code></pre></div>
+<p>Dans le cas général, il est déconseillé de traiter des exceptions non vérifiées car se sont des erreurs grave de programmation. Dans la plupart des cas, il est préférable que le programme ou le composant s'arrète plutôt qu'il soit dans un état incontrolable. Le programmeur devrait toujours s'assurer (par ex. à l'aide d'un <code>if</code>) qu'aucune &quot;runtime&quot; ne soit levée.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">class</span> A {
+    <span class="dt">void</span> <span class="fu">foo</span>(<span class="bu">String</span> text) {
+        <span class="kw">if</span> (text != <span class="kw">null</span>) { <span class="co">// on contrôle la situation</span>
+            <span class="fu">test</span>(text);
+        }
+    }
+}
+
+<span class="kw">class</span> B {
+    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">test</span>(<span class="bu">String</span> text) {
+        <span class="fu">checkNotNull</span>(text);
+    }
+
+    <span class="kw">private</span> <span class="dt">void</span> <span class="fu">checkNotNull</span>(<span class="bu">Object</span> a) <span class="kw">throws</span> <span class="bu">NullPointerException</span> {
+        <span class="kw">if</span> (a == <span class="kw">null</span>) {
+           <span class="kw">throw</span> <span class="kw">new</span> <span class="bu">NullPointerException</span>();
+        }
+    }
+}</code></pre></div>
+<p>En revanche, les erreurs vérifiées correspondent à des erreurs métiers (par ex. le possesseur d'une carte bleue est en découvert au moment d'un retrait) ou du à l'environnement (fichier inexistant, serveur injoignable, etc).</p>
+<p>Les <code>Error</code> pour finir sont lancées par la JVM elle même. Elle ne devraient pas être traitées par le programmeur d'application.</p>
+<h2 id="exercice-1-3"><span class="header-section-number">6.10</span> Exercice 1</h2>
+<p>Écrire une méthode qui prend en paramètres 2 objets non <code>null</code> et retourne la somme de leur <code>hashCode()</code>. Quelles exceptions devrait-on lancer si un des 2 paramètres est <code>null</code> ?</p>
+<h2 id="exercice-2-3"><span class="header-section-number">6.11</span> Exercice 2</h2>
+<ol style="list-style-type: decimal">
+<li>Écrire un programme qui affiche le titre entier du livre dont un mot-clé de recherche a été passé en argument.</li>
+<li>Quand aucun livre n'est trouvé, lancer une <code>BookNotFoundException</code>.</li>
+<li>Quand plus d'un livre est trouvé, lancer une <code>AmbiguousBookException</code>.</li>
+</ol>
+<p>Le fichier books.csv contiendra par exemple :</p>
+<pre><code>1984
+Le meilleur des mondes
+La guerre des mondes</code></pre>
+<p>Exemple de session :</p>
+<pre class="shell"><code>$ java BookPrice &quot;0000&quot;
+Exception in thread &quot;main&quot; BookNotFoundException: no book matches &quot;0000&quot;
+
+$ java BookPrice &quot;84&quot;
+1984
+
+$ java BookPrice &quot;Le&quot;
+Le meilleur des mondes
+
+$ java BookPrice &quot;mondes&quot;
+Exception in thread &quot;main&quot; AmbiguousBookException: 2 books matches &quot;mondes&quot;</code></pre>
+<h2 id="exercice-3-2"><span class="header-section-number">6.12</span> Exercice 3</h2>
+<p>Modifier le programme précédent de sorte d'afficher le prix du livre quand la recherche est fructueuse.</p>
+<p>Le programme se comportera de la façon suivante :</p>
+<pre class="shell"><code>$ cat books.csv
+1984;59.99 EUR
+Le Meilleur des Mondes;49.99 EUR
+La Guerre des Mondes;69.99 EUR
+
+$ java BookPrice &quot;84&quot;
+59.99 EUR
+
+$ java BookPrice &quot;monde&quot;
+Recherche ambigüe : 2 résultats trouvés ! </code></pre>
+<h2 id="exercice-4-2"><span class="header-section-number">6.13</span> Exercice 4</h2>
+<p>Modifier le programme précédent pour rendre le programme interactif. Le programme ne prend plus d'argument mais lit sur son entrée standard.</p>
+<p>De plus, le programme ne doit pas s'arréter quand une recherche donne 0 ou plus de 2 résultats.</p>
+<p>Pour terminer le programme on utilisera un signal du système (CTRL+C).</p>
+<p>Exemple de session :</p>
+<pre class="shell"><code>$ java BookPrice
+&gt; monde
+Recherche ambigüe : 2 résultats trouvés !
+&gt; 84 
+59.99 EUR
+&gt; ^C</code></pre>
+<h2 id="exercice-5-2"><span class="header-section-number">6.14</span> Exercice 5</h2>
+<p>Ecrire un ensemble de programmes qui simule une gestion naïve de comptes bancaires. Le système doit gérer au moins les 4 fonctions suivantes :</p>
+<ul>
+<li>dépot de l'argent sur un compte ;</li>
+<li>paiement ;</li>
+<li>paiement sans contact ;</li>
+<li>affichage du solde.</li>
+</ul>
+<p>Exemple de session :</p>
+<pre class="shell"><code>$ java MakeDeposit 200.00 Pauly
+Exception in thread &quot;main&quot; AccountNotFoundException: ...
+
+$ java CreateAccount Pauly
+OK
+
+$ java PerformContactlessPayment 19.00 Pauly
+OK
+
+$ java PerformPayment 100.00 Pauly
+OK
+
+$ java PerformPayment 300.00 Pauly
+Exception in thread &quot;main&quot; TooLowBalanceException...</code></pre>
+<p>Remarques :</p>
+<ul>
+<li>Le dépot se fait en euros.</li>
+<li>Un utilisateur a 0 ou 1 compte courant.</li>
+<li>Le montant d'un paiement sans contact est limité à 20 EUR.</li>
+<li>Le paiement sans contact jour est limité à 100 EUR.</li>
+<li>Le montant par semaine est limité à 400 EUR.</li>
+<li>Le solde glissant doit être affiché.</li>
+</ul>
+<p>Le code Java devra être composé de plusieurs classes (par ex. Bank, Amount, Payment, Deposit, Balance, etc.).</p>
+<p>On utilisera la classe <a href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html">LocalDateTime</a> pour vérifier de solde glissant sur un jour/semaine.</p>
 </body>
 </html>
