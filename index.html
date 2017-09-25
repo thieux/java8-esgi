@@ -2155,28 +2155,6 @@ DirectoryStream&lt;Path&gt; content = Files.<span class="fu">newDirectoryStream<
         }
     }
 }</code></pre></div>
-<p>Exercice 8 : on utilisera un <code>Set</code> pour ne pas conserver les doublons.</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> fr.arolla.java8esgi.basicio.ex8;</span>
-
-<span class="kw">import</span><span class="im"> java.io.BufferedReader;</span>
-<span class="kw">import</span><span class="im"> java.io.FileReader;</span>
-<span class="kw">import</span><span class="im"> java.io.IOException;</span>
-<span class="kw">import</span><span class="im"> java.util.HashSet;</span>
-<span class="kw">import</span><span class="im"> java.util.Set;</span>
-
-<span class="kw">public</span> <span class="kw">class</span> Ex8 {
-    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">IOException</span> {
-        <span class="bu">BufferedReader</span> bufferedReader = <span class="kw">new</span> <span class="bu">BufferedReader</span>(<span class="kw">new</span> <span class="bu">FileReader</span>(<span class="st">&quot;doublons.txt&quot;</span>));
-        <span class="bu">Set</span>&lt;<span class="bu">String</span>&gt; uniqueLines = <span class="kw">new</span> <span class="bu">HashSet</span>&lt;&gt;();
-        <span class="bu">String</span> line;
-        <span class="kw">while</span> ((line = bufferedReader.<span class="fu">readLine</span>()) != <span class="kw">null</span>) {
-            <span class="kw">if</span> (!uniqueLines.<span class="fu">contains</span>(line)) {
-                <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(line);
-            }
-            uniqueLines.<span class="fu">add</span>(line);
-        }
-    }
-}</code></pre></div>
 <h1 id="flux-orienté-ligne"><span class="header-section-number">5</span> Flux orienté ligne</h1>
 <h2 id="bufferedreader"><span class="header-section-number">5.1</span> BufferedReader</h2>
 <p>Pour lire du texte de manière plus efficace qu'avec <code>FileReader</code> on utilisera <code>BufferedReader</code>. Il faut remarquer que dans &quot;buffered&quot; &quot;reader&quot; il n'y a pas le mot &quot;file&quot;. En effet, un <code>BufferedReader</code> est conçu pour lire dans un flux quelconque (un <code>Reader</code>).</p>
@@ -2306,6 +2284,29 @@ LICENSE;file</code></pre>
 <p>Le programmes devront donc être coordonnés à l'aide d'un «pipe» (<code>|</code>). La sortie du premier programme est redirigé dans l'entrée du second.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">java</span> ContentReader <span class="st">&quot;C:\Program Files\Java\jdk1.8.0_60&quot;</span> <span class="kw">|</span> <span class="ex">java</span> ContentWriter <span class="st">&quot;C:\Users\mathieupauly\AppData\Local\Temp&quot;</span></code></pre></div>
 <h2 id="corrections-3"><span class="header-section-number">5.11</span> Corrections</h2>
+<p>Exercice 8 : on utilisera un <code>Set</code> pour ne pas conserver les doublons.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> fr.arolla.java8esgi.basicio.ex8;</span>
+
+<span class="kw">import</span><span class="im"> java.io.BufferedReader;</span>
+<span class="kw">import</span><span class="im"> java.io.FileReader;</span>
+<span class="kw">import</span><span class="im"> java.io.IOException;</span>
+<span class="kw">import</span><span class="im"> java.util.HashSet;</span>
+<span class="kw">import</span><span class="im"> java.util.Set;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> Ex8 {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">IOException</span> {
+        <span class="bu">BufferedReader</span> bufferedReader = <span class="kw">new</span> <span class="bu">BufferedReader</span>(<span class="kw">new</span> <span class="bu">FileReader</span>(<span class="st">&quot;doublons.txt&quot;</span>));
+        <span class="bu">Set</span>&lt;<span class="bu">String</span>&gt; uniqueLines = <span class="kw">new</span> <span class="bu">HashSet</span>&lt;&gt;();
+        <span class="bu">String</span> line;
+        <span class="kw">while</span> ((line = bufferedReader.<span class="fu">readLine</span>()) != <span class="kw">null</span>) {
+            <span class="kw">if</span> (!uniqueLines.<span class="fu">contains</span>(line)) {
+                <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(line);
+            }
+            uniqueLines.<span class="fu">add</span>(line);
+        }
+        bufferedReader.<span class="fu">close</span>();
+    }
+}</code></pre></div>
 <p>Exercice 9 : on conserve le type de l'objet <code>System.out</code> (<code>PrintStream</code>) mais on change l'instance concrète qui sera connectée sur un fichier.</p>
 <div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> fr.arolla.java8esgi.basicio.ex9;</span>
 
@@ -2543,8 +2544,9 @@ Create: C:\Users\mathieupauly\AppData\Local\Temp\THIRDPARTYLICENSEREADME.txt...<
 <h1 id="les-exceptions"><span class="header-section-number">6</span> Les exceptions</h1>
 <p>Dans le chapitre d'introduction aux entrées/sorties nous avons utilisé des méthodes pouvant générer des exceptions.</p>
 <div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">void</span> <span class="fu">touchLock</span>() {
-    <span class="kw">new</span> <span class="bu">FileOutputStream</span>(<span class="st">&quot;lock.txt&quot;</span>); <span class="co">// unreported exception java.io.FileNotFoundException;</span>
-                                      <span class="co">// must be caught or declared to be thrown</span>
+    <span class="bu">FileOutputStream</span> stream = <span class="kw">new</span> <span class="bu">FileOutputStream</span>(<span class="st">&quot;lock.txt&quot;</span>); <span class="co">// unreported exception java.io.FileNotFoundException;</span>
+                                                                <span class="co">// must be caught or declared to be thrown</span>
+    stream.<span class="fu">close</span>();
 }</code></pre></div>
 <p>Ce code ne compile pas.</p>
 <p>Le contructeur de <code>FileOutputStream</code> déclare dans la section <code>Throws</code> de sa <a href="https://docs.oracle.com/javase/8/docs/api/java/io/FileOutputStream.html#FileOutputStream-java.lang.String-">Javadoc</a> qu'une <code>FileNotFoundException</code> est levée si le fichier existe mais correspond à un répertoire ou bien quand le fichier n'existe pas et ne peut pas être créé, etc.</p>
