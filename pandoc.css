@@ -12,7 +12,7 @@ body {
     color: #333; 
 }
 pre {
-    border: 1px dotted gray;
+    border: 1px gray;
     background-color: #ececec;
     color: #1111111;
     padding: 0.5em;
@@ -22,12 +22,12 @@ code {
 }
 h1 a, h2 a, h3 a, h4 a, h5 a { 
     text-decoration: none;
-    color: #7a5ada; 
+    color: #333; 
 }
 h1, h2, h3, h4, h5 { font-family: verdana;
                      font-weight: bold;
-                     border-bottom: 1px dotted black;
-                     color: #7a5ada; }
+                     border-bottom: 1px black;
+                     color: #333; }
 h1 {
         font-size: 130%;
 }
