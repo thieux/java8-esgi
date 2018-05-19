@@ -50,7 +50,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="header">
 <h1 class="title">Cours Java 8 AL ESGI</h1>
 <h2 class="author">Mathieu Pauly @ Arolla</h2>
-<h3 class="date">Première rédaction mars 2017 (dernière mise à jour : 04/04/2018)</h3>
+<h3 class="date">Première rédaction mars 2017 (dernière mise à jour : 19/05/2018)</h3>
 </div>
 <div id="TOC">
 <ul>
@@ -261,6 +261,24 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#exercice-15-2"><span class="toc-section-number">7.21</span> Exercice 15</a></li>
 <li><a href="#exercice-16-2"><span class="toc-section-number">7.22</span> Exercice 16</a></li>
 <li><a href="#exercice-17-2"><span class="toc-section-number">7.23</span> Exercice 17</a></li>
+</ul></li>
+<li><a href="#annexes-et-précis"><span class="toc-section-number">8</span> Annexes et précis</a><ul>
+<li><a href="#florilège-à-ne-pas-écrire"><span class="toc-section-number">8.1</span> Florilège à ne pas écrire</a><ul>
+<li><a href="#pas-de-méthode-statique-abstraite-dans-une-interface"><span class="toc-section-number">8.1.1</span> Pas de méthode statique abstraite dans une interface</a></li>
+<li><a href="#pas-de-function"><span class="toc-section-number">8.1.2</span> Pas de function</a></li>
+<li><a href="#pas-de-return-avec-parenthèses"><span class="toc-section-number">8.1.3</span> Pas de return avec parenthèses</a></li>
+<li><a href="#pas-de-switch-sans-parenthèses"><span class="toc-section-number">8.1.4</span> Pas de switch sans parenthèses</a></li>
+<li><a href="#pas-de-duplication"><span class="toc-section-number">8.1.5</span> Pas de duplication</a></li>
+<li><a href="#pas-de-cast-entre-type-primitif-et-référence"><span class="toc-section-number">8.1.6</span> Pas de cast entre type primitif et référence</a></li>
+<li><a href="#pas-de-méthode-dans-une-méthode"><span class="toc-section-number">8.1.7</span> Pas de méthode dans une méthode</a></li>
+<li><a href="#faute-de-frappe-et-confusion"><span class="toc-section-number">8.1.8</span> Faute de frappe et confusion</a></li>
+</ul></li>
+<li><a href="#valeur-par-défaut"><span class="toc-section-number">8.2</span> Valeur par défaut</a><ul>
+<li><a href="#opérateur"><span class="toc-section-number">8.2.1</span> Opérateur ==</a></li>
+<li><a href="#types-primitifs"><span class="toc-section-number">8.2.2</span> Types primitifs</a></li>
+<li><a href="#décalage-de-bits"><span class="toc-section-number">8.2.3</span> Décalage de bits</a></li>
+</ul></li>
+<li><a href="#références"><span class="toc-section-number">8.3</span> Références</a></li>
 </ul></li>
 </ul>
 </div>
@@ -4363,5 +4381,229 @@ Pair&lt;<span class="bu">String</span>&gt; pair = Pair.<span class="fu">fromList
     output.<span class="fu">add</span>(right);
 }</code></pre></div>
 <p>Il faut retenir qu'on utilise une borne inférieure parce que <code>output</code> <em>consomme</em> des données (dont le type est la borne, ici <code>T</code>). Ici on a appelé uniquement la méthode <code>void add(T)</code> qui prend en paramètre un objet.</p>
+<h1 id="annexes-et-précis"><span class="header-section-number">8</span> Annexes et précis</h1>
+<h2 id="florilège-à-ne-pas-écrire"><span class="header-section-number">8.1</span> Florilège à ne pas écrire</h2>
+<h3 id="pas-de-méthode-statique-abstraite-dans-une-interface"><span class="header-section-number">8.1.1</span> Pas de méthode statique abstraite dans une interface</h3>
+<pre><code>interface Foo {
+    static void bar(); // Error: missing method body, or declare abstract
+}
+
+class BarFoo implements Foo {
+    @Override // oops
+    public static Object get() {
+        return null;
+    }
+}</code></pre>
+<p>Les interfaces sont destinées à contenir des méthodes abstraites et publiques (bien qu'on omette les modificateurs <code>public</code> et <code>abstract</code>).</p>
+<p>En effet :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">interface</span> Foo {
+    <span class="dt">void</span> <span class="fu">bar</span>();
+}</code></pre></div>
+<p>Est équivalent à :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">interface</span> Foo {
+    <span class="kw">public</span> <span class="kw">abstract</span> <span class="dt">void</span> <span class="fu">bar</span>();
+}</code></pre></div>
+<p>On ne peut pas hériter d'une méthode statique.</p>
+<p>Bien qu'il soit possible de placer un main dans une interface. Ce n'est pas recommandé :</p>
+<pre><code>public interface MainInInterface {
+    static void main(String[] args) { // bizzarerie
+        System.out.println(&quot;hello&quot;);
+    }
+}</code></pre>
+<h3 id="pas-de-function"><span class="header-section-number">8.1.2</span> Pas de function</h3>
+<p>De plus, la syntaxe suivante n'est pas du Java. Elle ressemble à ce qu'on pourrait avoir en JavaScript.</p>
+<pre><code>interface Foo {
+    function bar();
+}</code></pre>
+<h3 id="pas-de-return-avec-parenthèses"><span class="header-section-number">8.1.3</span> Pas de return avec parenthèses</h3>
+<p>Éviter les parenthèses inutiles :</p>
+<pre><code>return (x);</code></pre>
+<p>Préférer :</p>
+<pre><code>return x;</code></pre>
+<p>L'opérateur <code>return</code> n'est pas une fonction (comme println par ex.). On écrira donc <code>println(x);</code> mais <code>return x;</code></p>
+<h3 id="pas-de-switch-sans-parenthèses"><span class="header-section-number">8.1.4</span> Pas de switch sans parenthèses</h3>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">switch</span> (x) {
+}</code></pre></div>
+<p>et non pas comme en Swift :</p>
+<pre><code>switch x {
+}</code></pre>
+<h3 id="pas-de-duplication"><span class="header-section-number">8.1.5</span> Pas de duplication</h3>
+<p>Éviter :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; digitLength; i++) {
+    <span class="dt">int</span> digit = n % <span class="dv">16</span>;
+    <span class="kw">switch</span> (digit) {
+        <span class="kw">case</span> <span class="dv">0</span>:
+            out.<span class="fu">append</span>(<span class="st">&quot;0&quot;</span>);
+            <span class="kw">break</span>;
+        <span class="kw">case</span> <span class="dv">1</span>:
+            out.<span class="fu">append</span>(<span class="st">&quot;1&quot;</span>);
+            <span class="kw">break</span>;
+        <span class="kw">case</span> <span class="dv">2</span>:
+            out.<span class="fu">append</span>(<span class="st">&quot;2&quot;</span>);
+            <span class="kw">break</span>;
+        ...
+        <span class="kw">case</span> <span class="dv">15</span>:
+            out.<span class="fu">append</span>(<span class="st">&quot;F&quot;</span>);
+            <span class="kw">break</span>;
+    }
+    n /= <span class="dv">16</span>;
+}</code></pre></div>
+<p>Préférer :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">String</span>[] printedDigits = {<span class="st">&quot;0&quot;</span>, <span class="st">&quot;1&quot;</span>, <span class="st">&quot;2&quot;</span>, ..., <span class="st">&quot;F&quot;</span>};
+<span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; digitLength; i++) {
+    <span class="dt">int</span> digit = n % <span class="dv">16</span>;
+    out.<span class="fu">append</span>(printedDigits[digit]);
+    n /= <span class="dv">16</span>;
+}</code></pre></div>
+<p>Un switch qui contient du code qui se ressemble est une indication que le code est plus complexe qu'il ne devrait.</p>
+<h3 id="pas-de-cast-entre-type-primitif-et-référence"><span class="header-section-number">8.1.6</span> Pas de cast entre type primitif et référence</h3>
+<p>Attention le type <code>int</code> n'est pas castable en <code>String</code>. De manière générale, un type primitif n'est jamais castable en type référence. On pourrait le croire dans le cas de <code>Integer n = 10;</code>. Mais c'est un autre mécanisme que le cast qui est en jeu ici : l'auto-boxing.</p>
+<p>Ainsi :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> n = <span class="dv">10</span>;
+<span class="bu">String</span> s = (<span class="bu">String</span>) n; <span class="co">// Error: incompatible types: int cannot be converted to java.lang.String</span></code></pre></div>
+<p>Pour avoir la représentation décimale du nombre <code>n</code> on pourra utiliser :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> address = <span class="bn">0xA</span>;
+
+<span class="bu">String</span>.<span class="fu">valueOf</span>(address); <span class="co">// 10</span>
+<span class="bu">Integer</span>.<span class="fu">toString</span>(address); <span class="co">// 10</span></code></pre></div>
+<h3 id="pas-de-méthode-dans-une-méthode"><span class="header-section-number">8.1.7</span> Pas de méthode dans une méthode</h3>
+<p>En Java on ne peut pas définir une méthode dans le corps d'une une méthode.</p>
+<pre><code>class MethodInMethod {
+    void foo() {
+        void bar() { // Error illegal start of expression
+                     // Error &#39;;&#39; expected
+
+        }
+    }
+}</code></pre>
+<p>On observe le même principe pour <code>0 == false</code>.</p>
+<h3 id="faute-de-frappe-et-confusion"><span class="header-section-number">8.1.8</span> Faute de frappe et confusion</h3>
+<p>On écrit le type chaîne <code>String</code> et non pas <code>string</code>. La classe <code>String</code> en Java prend une capitale. C'est l'équivalent C# qui peut s'écrire : <code>string</code>.</p>
+<p>On n'écrit pas <code>Class Foo {}</code> en majuscule, mais <code>class Foo {}</code>. Tous les mots-clés du langage sont en minuscule.</p>
+<p>On écrit <code>@Override</code> et non pas <code>@Overide</code>. C'est l'annotation qui indique une méthode est héritée.</p>
+<p>On écrit <code>length</code> et non pas <code>lenght</code>. C'est le champ de classe pour qui stocke la taille d'un tableau.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span>[] array = {};
+<span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(array.<span class="fu">length</span>);</code></pre></div>
+<h2 id="valeur-par-défaut"><span class="header-section-number">8.2</span> Valeur par défaut</h2>
+<p>La valeur par défaut d'un type primitif est un élément neutre (pour la somme ou la disjonction logique <code>||</code>) : une sorte de zéro.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">class</span> ValeurType {
+    <span class="dt">int</span> a;
+    <span class="dt">double</span> x;
+    <span class="dt">boolean</span> ok;
+    <span class="bu">Object</span> o;
+    <span class="bu">String</span> s;
+    
+    <span class="dt">void</span> <span class="fu">print</span>() {
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(a); <span class="co">// 0</span>
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(x); <span class="co">// 0.0</span>
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(ok); <span class="co">// false</span>
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(o); <span class="co">// null</span>
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(s); <span class="co">// null</span>
+    }
+}</code></pre></div>
+<p>Pour les types référence c'est <code>null</code>. Cette référence spéciale qui est affectable à n'importe quelle type est assimilable à un zéro mais n'est pas neutre (cas de la <code>NullPointerException</code>).</p>
+<p>Attention : <code>String</code> est un type référence. La valeur par défaut d'une <code>String</code> n'est pas la chaîne vide : <code>&quot;&quot;</code>. C'est <code>null</code>. Contrairement à JavaScript il n'y a pas de conversion implicite de <code>null</code> à <code>&quot;&quot;</code>.</p>
+<p>La valeur par défaut <em>n'est pas</em> une valeur aléatoire qui dépend de l'état du système comme en C.</p>
+<p>En revanche, une valeur par défaut est uniquement affectée pour les champs de classe mais pas pour les variables locales.</p>
+<p>Ainsi, utiliser une variable locale qui peut être non initialisée est une erreur de compilation.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">class</span> ValeurDefaut {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+        <span class="dt">int</span> a;
+        
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(a); <span class="co">// Error: variable a might not have been initialized</span>
+    }
+}</code></pre></div>
+<h3 id="opérateur"><span class="header-section-number">8.2.1</span> Opérateur ==</h3>
+<p>L'opérateur <code>==</code> vérifie à la compilation que les deux opérandes sont de types comparables (c-à-d. cast possible). Et il vérifie l'égalité des valeurs à l'exécution.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="dv">0</span> == <span class="dv">1</span>);
+<span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="dv">0</span> == <span class="fl">0.0</span>);
+<span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="kw">null</span> == <span class="dv">0</span>); <span class="co">// Error: incomparable types: &lt;nulltype&gt; and int</span>
+<span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="dv">0</span> == <span class="kw">false</span>); <span class="co">// Error: incomparable types: int and boolean</span></code></pre></div>
+<p>L'expression <code>null == 0</code> ne compile pas. L'erreur est comparable à une erreur de cast :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> i = (<span class="dt">int</span>) <span class="kw">null</span>; <span class="co">// Error: incompatible types: &lt;nulltype&gt; cannot be converted to int</span></code></pre></div>
+<h3 id="types-primitifs"><span class="header-section-number">8.2.2</span> Types primitifs</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="right">Type</th>
+<th>Valeur par défaut</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">byte</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td align="right">short</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td align="right">int</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td align="right">long</td>
+<td>0L</td>
+</tr>
+<tr class="odd">
+<td align="right">float</td>
+<td>0.0f</td>
+</tr>
+<tr class="even">
+<td align="right">double</td>
+<td>0.0d</td>
+</tr>
+<tr class="odd">
+<td align="right">char</td>
+<td>'000'</td>
+</tr>
+<tr class="even">
+<td align="right">Object</td>
+<td>null</td>
+</tr>
+<tr class="odd">
+<td align="right">boolean</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<p>https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html</p>
+<p>Il n'existe pas de type qui soit la combinaison de types primitifs comme en C. Ainsi, ni <code>long long</code> ni <code>long double</code> par exemple n'existent en Java. En C, la taille d'un long dépend de l'implémentation. Ainsi on ne sait de <code>long long</code> qu'il n'est pas plus petit que <code>long</code> (c'est tout). En Java, la taille est normalisée dans la spécification (32 bits pour int).</p>
+<p>https://en.wikipedia.org/wiki/C_data_types</p>
+<h3 id="décalage-de-bits"><span class="header-section-number">8.2.3</span> Décalage de bits</h3>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">class</span> DecalageBits {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+        <span class="dt">int</span> a = <span class="dv">1</span>;
+        <span class="dt">int</span> b = a &lt;&lt; <span class="dv">8</span>;
+
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(a); <span class="co">// 1</span>
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(b); <span class="co">// 256</span>
+
+        b = b &gt;&gt; <span class="dv">8</span>;
+
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(b); <span class="co">// 1</span>
+    }
+}</code></pre></div>
+<p>L'expression <code>a &lt;&lt; 8</code> ne modifie pas <code>a</code>. Elle vaut <code>a</code> dont les bits ont été décalés de 8 places vers la gauche. Ansi, décaler un nombre d'un bit vers la gauche revient à le multiplier par 2. Décaler de deux bits multiplie par 4. Décaler de <code>n</code> bits multiplie par 2 puissance <code>n</code>.</p>
+<p>L'opérande de droite indique le nombre de bits à décaler :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> source = <span class="bn">0x1</span>;
+<span class="dt">int</span> decalage = <span class="dv">3</span>;
+
+<span class="fu">println</span>(source &lt;&lt; decalage); <span class="co">// 8</span>
+<span class="fu">println</span>(source &gt;&gt; decalage); <span class="co">// 0</span></code></pre></div>
+<p>Donc l'opérateur binaire <code>&lt;&lt;</code> (resp. <code>&gt;&gt;</code>) n'est pas commutatif comme l'opérateur <code>+</code> peut l'être.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> mi = <span class="dv">2</span>;
+<span class="dt">int</span> sina = <span class="dv">3</span>;
+<span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(mi &lt;&lt; sina); <span class="co">// 16</span>
+<span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(sina &lt;&lt; mi); <span class="co">// 12</span></code></pre></div>
+<p>Enfin l'opérateur <code>&gt;&gt;</code> qui est l'inverse de <code>&lt;&lt;</code> décale vers la droite. Ainsi : <code>2 &gt;&gt; 1</code> vaut <code>1</code>.</p>
+<p>Les opérateur <code>&lt;&lt;</code> et <code>&gt;&gt;</code> sont associatifs. Ainsi l'expression :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dv">1</span> &lt;&lt; <span class="dv">2</span> &gt;&gt; <span class="dv">2</span> &lt;&lt; <span class="dv">3</span> &gt;&gt; <span class="dv">3</span> <span class="co">// 1</span></code></pre></div>
+<p>S'associe de gauche à droite (comme tous les opérateurs binaires sauf l'affectation <code>=</code>).</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">(((<span class="dv">1</span> &lt;&lt; <span class="dv">2</span>) &gt;&gt; <span class="dv">2</span>) &lt;&lt; <span class="dv">3</span>) &gt;&gt; <span class="dv">3</span> <span class="co">// 1</span></code></pre></div>
+<h2 id="références"><span class="header-section-number">8.3</span> Références</h2>
+<p>https://docs.oracle.com/javase/tutorial/</p>
+<p>https://docs.oracle.com/javase/specs/</p>
 </body>
 </html>
