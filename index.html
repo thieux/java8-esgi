@@ -50,7 +50,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="header">
 <h1 class="title">Cours Java 8 AL ESGI</h1>
 <h2 class="author">Mathieu Pauly @ Arolla</h2>
-<h3 class="date">Première rédaction mars 2017 (dernière mise à jour : 19/05/2018)</h3>
+<h3 class="date">Première rédaction mars 2017 (dernière mise à jour : 13/10/2018)</h3>
 </div>
 <div id="TOC">
 <ul>
@@ -262,23 +262,56 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#exercice-16-2"><span class="toc-section-number">7.22</span> Exercice 16</a></li>
 <li><a href="#exercice-17-2"><span class="toc-section-number">7.23</span> Exercice 17</a></li>
 </ul></li>
-<li><a href="#annexes-et-précis"><span class="toc-section-number">8</span> Annexes et précis</a><ul>
-<li><a href="#florilège-à-ne-pas-écrire"><span class="toc-section-number">8.1</span> Florilège à ne pas écrire</a><ul>
-<li><a href="#pas-de-méthode-statique-abstraite-dans-une-interface"><span class="toc-section-number">8.1.1</span> Pas de méthode statique abstraite dans une interface</a></li>
-<li><a href="#pas-de-function"><span class="toc-section-number">8.1.2</span> Pas de function</a></li>
-<li><a href="#pas-de-return-avec-parenthèses"><span class="toc-section-number">8.1.3</span> Pas de return avec parenthèses</a></li>
-<li><a href="#pas-de-switch-sans-parenthèses"><span class="toc-section-number">8.1.4</span> Pas de switch sans parenthèses</a></li>
-<li><a href="#pas-de-duplication"><span class="toc-section-number">8.1.5</span> Pas de duplication</a></li>
-<li><a href="#pas-de-cast-entre-type-primitif-et-référence"><span class="toc-section-number">8.1.6</span> Pas de cast entre type primitif et référence</a></li>
-<li><a href="#pas-de-méthode-dans-une-méthode"><span class="toc-section-number">8.1.7</span> Pas de méthode dans une méthode</a></li>
-<li><a href="#faute-de-frappe-et-confusion"><span class="toc-section-number">8.1.8</span> Faute de frappe et confusion</a></li>
+<li><a href="#les-fils-dexécutions"><span class="toc-section-number">8</span> Les fils d'exécutions</a><ul>
+<li><a href="#classe-anonyme"><span class="toc-section-number">8.1</span> Classe anonyme</a></li>
+<li><a href="#exercice-1-5"><span class="toc-section-number">8.2</span> Exercice 1</a></li>
+<li><a href="#correction-1-1"><span class="toc-section-number">8.3</span> Correction 1</a></li>
+<li><a href="#exercice-2-5"><span class="toc-section-number">8.4</span> Exercice 2</a></li>
+<li><a href="#correction2"><span class="toc-section-number">8.5</span> Correction 2</a></li>
+<li><a href="#exercice3"><span class="toc-section-number">8.6</span> Exercice 3</a></li>
+<li><a href="#correction-3-1"><span class="toc-section-number">8.7</span> Correction 3</a></li>
+<li><a href="#exercice-4-4"><span class="toc-section-number">8.8</span> Exercice 4</a></li>
+<li><a href="#correction-4"><span class="toc-section-number">8.9</span> Correction 4</a></li>
+<li><a href="#exercice-5-5"><span class="toc-section-number">8.10</span> Exercice 5</a></li>
+<li><a href="#correction-5"><span class="toc-section-number">8.11</span> Correction 5</a></li>
+<li><a href="#exercice-6-4"><span class="toc-section-number">8.12</span> Exercice 6</a></li>
+<li><a href="#correction-6"><span class="toc-section-number">8.13</span> Correction 6</a></li>
+<li><a href="#exercice-7-4"><span class="toc-section-number">8.14</span> Exercice 7</a></li>
+<li><a href="#exercice-8-3"><span class="toc-section-number">8.15</span> Exercice 8</a></li>
+<li><a href="#correction-8"><span class="toc-section-number">8.16</span>  Correction 8</a></li>
+<li><a href="#exercice-9-4"><span class="toc-section-number">8.17</span> Exercice 9</a></li>
+<li><a href="#correction-9"><span class="toc-section-number">8.18</span> Correction 9</a></li>
+<li><a href="#exercice-10-4"><span class="toc-section-number">8.19</span> Exercice 10</a></li>
+<li><a href="#correction-10"><span class="toc-section-number">8.20</span> Correction 10</a></li>
+<li><a href="#exercice-11-4"><span class="toc-section-number">8.21</span> Exercice 11</a></li>
+<li><a href="#correction-12"><span class="toc-section-number">8.22</span> Correction 12</a></li>
+<li><a href="#synchronisation"><span class="toc-section-number">8.23</span> Synchronisation</a></li>
+<li><a href="#dîner-des-philosophes-13"><span class="toc-section-number">8.24</span> Dîner des philosophes (13)</a></li>
+<li><a href="#correction-13"><span class="toc-section-number">8.25</span> Correction (13)</a></li>
+<li><a href="#exercice-14-2"><span class="toc-section-number">8.26</span> Exercice 14</a></li>
+<li><a href="#correction-14"><span class="toc-section-number">8.27</span> Correction 14</a></li>
+<li><a href="#plus-de-verrous"><span class="toc-section-number">8.28</span>  Plus de verrous</a></li>
+<li><a href="#exercice-15-3"><span class="toc-section-number">8.29</span> Exercice 15</a></li>
+<li><a href="#correction-15"><span class="toc-section-number">8.30</span> Correction 15</a></li>
+<li><a href="#concurrence-et-parallèlisme"><span class="toc-section-number">8.31</span> Concurrence et parallèlisme</a></li>
 </ul></li>
-<li><a href="#valeur-par-défaut"><span class="toc-section-number">8.2</span> Valeur par défaut</a><ul>
-<li><a href="#opérateur"><span class="toc-section-number">8.2.1</span> Opérateur ==</a></li>
-<li><a href="#types-primitifs"><span class="toc-section-number">8.2.2</span> Types primitifs</a></li>
-<li><a href="#décalage-de-bits"><span class="toc-section-number">8.2.3</span> Décalage de bits</a></li>
+<li><a href="#annexes-et-précis"><span class="toc-section-number">9</span> Annexes et précis</a><ul>
+<li><a href="#florilège-à-ne-pas-écrire"><span class="toc-section-number">9.1</span> Florilège à ne pas écrire</a><ul>
+<li><a href="#pas-de-méthode-statique-abstraite-dans-une-interface"><span class="toc-section-number">9.1.1</span> Pas de méthode statique abstraite dans une interface</a></li>
+<li><a href="#pas-de-function"><span class="toc-section-number">9.1.2</span> Pas de function</a></li>
+<li><a href="#pas-de-return-avec-parenthèses"><span class="toc-section-number">9.1.3</span> Pas de return avec parenthèses</a></li>
+<li><a href="#pas-de-switch-sans-parenthèses"><span class="toc-section-number">9.1.4</span> Pas de switch sans parenthèses</a></li>
+<li><a href="#pas-de-duplication"><span class="toc-section-number">9.1.5</span> Pas de duplication</a></li>
+<li><a href="#pas-de-cast-entre-type-primitif-et-référence"><span class="toc-section-number">9.1.6</span> Pas de cast entre type primitif et référence</a></li>
+<li><a href="#pas-de-méthode-dans-une-méthode"><span class="toc-section-number">9.1.7</span> Pas de méthode dans une méthode</a></li>
+<li><a href="#faute-de-frappe-et-confusion"><span class="toc-section-number">9.1.8</span> Faute de frappe et confusion</a></li>
 </ul></li>
-<li><a href="#références"><span class="toc-section-number">8.3</span> Références</a></li>
+<li><a href="#valeur-par-défaut"><span class="toc-section-number">9.2</span> Valeur par défaut</a><ul>
+<li><a href="#opérateur"><span class="toc-section-number">9.2.1</span> Opérateur ==</a></li>
+<li><a href="#types-primitifs"><span class="toc-section-number">9.2.2</span> Types primitifs</a></li>
+<li><a href="#décalage-de-bits"><span class="toc-section-number">9.2.3</span> Décalage de bits</a></li>
+</ul></li>
+<li><a href="#références"><span class="toc-section-number">9.3</span> Références</a></li>
 </ul></li>
 </ul>
 </div>
@@ -4381,9 +4414,1038 @@ Pair&lt;<span class="bu">String</span>&gt; pair = Pair.<span class="fu">fromList
     output.<span class="fu">add</span>(right);
 }</code></pre></div>
 <p>Il faut retenir qu'on utilise une borne inférieure parce que <code>output</code> <em>consomme</em> des données (dont le type est la borne, ici <code>T</code>). Ici on a appelé uniquement la méthode <code>void add(T)</code> qui prend en paramètre un objet.</p>
-<h1 id="annexes-et-précis"><span class="header-section-number">8</span> Annexes et précis</h1>
-<h2 id="florilège-à-ne-pas-écrire"><span class="header-section-number">8.1</span> Florilège à ne pas écrire</h2>
-<h3 id="pas-de-méthode-statique-abstraite-dans-une-interface"><span class="header-section-number">8.1.1</span> Pas de méthode statique abstraite dans une interface</h3>
+<h1 id="les-fils-dexécutions"><span class="header-section-number">8</span> Les fils d'exécutions</h1>
+<p>En Java, les d'instructions d'un bloc sont exécutées en séquence.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> x = <span class="dv">10</span>; <span class="co">// 1</span>
+<span class="dt">int</span> y = <span class="dv">20</span>; <span class="co">// 2</span>
+<span class="dt">int</span> z = x + y; <span class="co">// 3</span></code></pre></div>
+<p>La dernière instruction est toujours exécutée en dernier.</p>
+<p>Toute instruction est exécutée dans un fil d'exécution qu'on appelle &quot;thread&quot;.</p>
+<pre><code>Instruction * -- 1 Thread</code></pre>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="bu">Thread</span>.<span class="fu">currentThread</span>()); <span class="co">// Thread[main,5,main]</span>
+}</code></pre></div>
+<p>Dans certains cas de figure on préfère que deux instructions soient exécutées en parallèle plutôt qu'en série.</p>
+<p>Ça pourrait être le cas dans :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> x = <span class="fu">readFromInput1</span>();
+<span class="dt">int</span> y = <span class="fu">readFromInput2</span>();
+<span class="dt">int</span> z = x + y;</code></pre></div>
+<p>Comme les 2 premières lignes sont indépendantes. Nul besoin d'attendre que la 1ère soit terminée pour commencer la 2e. En revanche, la 3e ligne a besoin de x et y. Elle doit donc attendre que les deux premières instructions soient terminées.</p>
+<p>Ici on a traitement en Y :</p>
+<pre><code>x     y
+ \   /
+  \ /
+   z</code></pre>
+<p>Pour pouvoir exécuter 2 traitements en parallèle on devra avoir 2 threads disponibles.</p>
+<p>Ici, on aura un thread qui calculera x, un thread qui calculera y. Le thread qui calcule z pourra réutiliser un des 2 threads précédant étant donné que son code devra être exécuté après x et y.</p>
+<p>Si le thread qui calcule z est le même que celui qui calcule x, celui ci devra attendre explicitement le thread qui calcule y. Inversement, si z est calculé dans le thread de y, ce thread devra attendre explicitement que le thread qui calcule x finisse. Enfin, si le thread calculant z est un 3e thread, il devra explicitement attendre les deux premiers.</p>
+<p>Commençons par la manière naïve et systématique.</p>
+<p>On va créer 3 <code>Thread</code> que l'on va démarrer.</p>
+<p>Par défaut, on a déja vu que <code>main()</code> tourne déjà dans un thread.</p>
+<p>Pour en créer un nouveau on instancie un objet <code>Thread</code>. On doit spécifier à la construction de l'objet le code que le thread exécutera une fois lancé.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="bu">Thread</span>.<span class="fu">currentThread</span>());
+    <span class="bu">Thread</span> thread = <span class="kw">new</span> <span class="bu">Thread</span>(<span class="kw">new</span> <span class="bu">Runnable</span>() {
+        <span class="at">@Override</span>
+        <span class="kw">public</span> <span class="dt">void</span> <span class="fu">run</span>() {
+            <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="bu">Thread</span>.<span class="fu">currentThread</span>());
+        }
+    });
+    thread.<span class="fu">start</span>();
+}</code></pre></div>
+<p>Si on appelle pas <code>thread.start()</code>, le fil d'exécution n'est pas lancé. On aura juste un objet Java instancié pour rien.</p>
+<p>Le programme précédant affichera :</p>
+<pre><code>Thread[main,5,main]
+Thread[Thread-0,5,main]</code></pre>
+<p>En revanche inverser :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+    <span class="bu">Thread</span> thread = <span class="kw">new</span> <span class="bu">Thread</span>(<span class="kw">new</span> <span class="bu">Runnable</span>() {
+        <span class="at">@Override</span>
+        <span class="kw">public</span> <span class="dt">void</span> <span class="fu">run</span>() {
+            <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="bu">Thread</span>.<span class="fu">currentThread</span>());
+        }
+    });
+    thread.<span class="fu">start</span>();
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="bu">Thread</span>.<span class="fu">currentThread</span>());
+}</code></pre></div>
+<p>Pourra afficher :</p>
+<pre><code>Thread[main,5,main]
+Thread[Thread-0,5,main]</code></pre>
+<p>que (lignes inversées) :</p>
+<pre><code>Thread[Thread-0,5,main]
+Thread[main,5,main]</code></pre>
+<p>Ceci car la méthode <code>start()</code> n'est pas blocante. Elle indique simplement que le code spécifié dans le constructeur pourra être appelé à n'importe quel moment par le scheduler de la JVM.</p>
+<h2 id="classe-anonyme"><span class="header-section-number">8.1</span> Classe anonyme</h2>
+<p>La construction suivante mérite une petite explication :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">Thread</span> thread = <span class="kw">new</span> <span class="bu">Thread</span>(<span class="kw">new</span> <span class="bu">Runnable</span>() {
+    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">run</span>() {
+        <span class="at">@Override</span>
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="bu">Thread</span>.<span class="fu">currentThread</span>());
+    }
+});</code></pre></div>
+<p>Étudions plus précisément l'expression :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">new</span> <span class="bu">Runnable</span>() {
+    <span class="at">@Override</span>
+    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">run</span>() {
+        <span class="co">// ...</span>
+    }
+}</code></pre></div>
+<p>Elle définit une classe sans nom qui implémente <code>Runnable</code>. C'est comme si on avait écrit :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">new</span> <span class="fu">Anonymous</span>();</code></pre></div>
+<p>avec la classe imbriquée suivante :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">class</span> Anonymous <span class="kw">implements</span> <span class="bu">Runnable</span> {
+    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">run</span>() {
+        <span class="co">// ...</span>
+    }
+}</code></pre></div>
+<p>Il y a en fait toute une famille de classes imbriquées (nested) : classes internes (inner), classes locales (dont fait partie les classes anonymes). Pour aller plus loin : https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html</p>
+<h2 id="exercice-1-5"><span class="header-section-number">8.2</span> Exercice 1</h2>
+<p>On veut générer 10 millions (10M) de nombres entiers aléatoires.</p>
+<ol style="list-style-type: decimal">
+<li>Écrire un programme qui sauvegarde séquentiellement ces nombres dans un fichier texte.</li>
+</ol>
+<h2 id="correction-1-1"><span class="header-section-number">8.3</span> Correction 1</h2>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">FileNotFoundException</span> {
+    <span class="bu">PrintStream</span> printStream = <span class="kw">new</span> <span class="bu">PrintStream</span>(<span class="st">&quot;random.csv&quot;</span>);
+    <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; 10_000_<span class="dv">000</span>; i++) {
+        <span class="kw">if</span> (i % 1_000_<span class="dv">000</span> == <span class="dv">0</span>) {
+            <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;1M&quot;</span>);
+        }
+        <span class="dt">int</span> random = (<span class="dt">int</span>) (<span class="bu">Math</span>.<span class="fu">random</span>() * <span class="dv">100</span>); <span class="co">// [0 - 99]</span>
+        printStream.<span class="fu">println</span>(random);
+    }
+
+    printStream.<span class="fu">close</span>();
+}</code></pre></div>
+<p>Temps d'exécution :</p>
+<pre><code>337571ms</code></pre>
+<p>Moyenne = 30s</p>
+<h2 id="exercice-2-5"><span class="header-section-number">8.4</span> Exercice 2</h2>
+<p>Si l'on juge (selon le contexte) que 30s est un temps inacceptable, alors il on pourra essayer de diminuer ce temps en parallélisant les traitements coûteux.</p>
+<ol style="list-style-type: decimal">
+<li>Configurer l'instance de PrintStream avec un tampon (buffer).</li>
+<li>Trouver le code long à exécuter.</li>
+</ol>
+<h2 id="correction2"><span class="header-section-number">8.5</span> Correction 2</h2>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> thread.exercice;</span>
+
+<span class="kw">import</span><span class="im"> java.io.BufferedOutputStream;</span>
+<span class="kw">import</span><span class="im"> java.io.FileNotFoundException;</span>
+<span class="kw">import</span><span class="im"> java.io.FileOutputStream;</span>
+<span class="kw">import</span><span class="im"> java.io.PrintStream;</span>
+<span class="kw">import</span><span class="im"> java.util.ArrayList;</span>
+<span class="kw">import</span><span class="im"> java.util.List;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> Ex2 {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">FileNotFoundException</span> {
+        <span class="dt">long</span> start = <span class="bu">System</span>.<span class="fu">currentTimeMillis</span>();
+        <span class="bu">PrintStream</span> printStream = <span class="kw">new</span> <span class="bu">PrintStream</span>(
+            <span class="kw">new</span> <span class="bu">BufferedOutputStream</span>(<span class="kw">new</span> <span class="bu">FileOutputStream</span>(<span class="st">&quot;random.csv&quot;</span>)));
+        <span class="bu">List</span>&lt;<span class="bu">Integer</span>&gt; list = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();
+
+        <span class="dt">long</span> startRandom = <span class="bu">System</span>.<span class="fu">currentTimeMillis</span>();
+        <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; 10_000_<span class="dv">000</span>; i++) {
+            <span class="dt">int</span> random = (<span class="dt">int</span>) (<span class="bu">Math</span>.<span class="fu">random</span>() * <span class="dv">100</span>);
+            list.<span class="fu">add</span>(random);
+        }
+        <span class="dt">long</span> endRandom = <span class="bu">System</span>.<span class="fu">currentTimeMillis</span>();
+        <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; list.<span class="fu">size</span>(); i++) {
+            <span class="kw">if</span> (i % 1_000_<span class="dv">000</span> == <span class="dv">0</span>) {
+                <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;1M&quot;</span>);
+            }
+            <span class="bu">Integer</span> random = list.<span class="fu">get</span>(i);
+            printStream.<span class="fu">println</span>(random);
+        }
+        <span class="dt">long</span> endPrint = <span class="bu">System</span>.<span class="fu">currentTimeMillis</span>();
+
+        printStream.<span class="fu">close</span>();
+        <span class="dt">long</span> end = <span class="bu">System</span>.<span class="fu">currentTimeMillis</span>();
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Total: &quot;</span> + (end - start) + <span class="st">&quot;ms&quot;</span>);
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Random: &quot;</span> + (endRandom - startRandom) + <span class="st">&quot;ms&quot;</span>);
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Print: &quot;</span> + (endPrint - endRandom) + <span class="st">&quot;ms&quot;</span>);
+    }
+}</code></pre></div>
+<p>Rien qu'en passant à un flux bufferisé, on a divisé par 2 le temps de traitement.</p>
+<pre><code>Total: 16109ms
+Random: 1264ms
+Print: 14812ms</code></pre>
+<p>On voit de plus que le temps passé dans les entrées/sorties domine largement le temps passé dans la génération des nombres aléatoires.</p>
+<h2 id="exercice3"><span class="header-section-number">8.6</span> Exercice 3</h2>
+<p>Optimiser la sauvegarde sur fichier des nombres aléatoires. On pourra pour cela essayer d'écrire dans deux fichiers plutôt qu'un.</p>
+<h2 id="correction-3-1"><span class="header-section-number">8.7</span> Correction 3</h2>
+<p>Pour optimiser la sauvegarde nous avons déjà besoin de séparer les traitements de génération de nombre de leur sauvegarde, de sorte de paralléliser uniquement le code d'écriture fichier.</p>
+<p>On sépare la liste de 10M en 2 listes de 5M. Et on écrit dans le même fichier de manière séquentielle.</p>
+<p>Enfin on traite l'écriture des 2 listes en parallèle.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> thread.exercice;</span>
+
+<span class="kw">import</span><span class="im"> java.io.BufferedOutputStream;</span>
+<span class="kw">import</span><span class="im"> java.io.FileNotFoundException;</span>
+<span class="kw">import</span><span class="im"> java.io.FileOutputStream;</span>
+<span class="kw">import</span><span class="im"> java.io.PrintStream;</span>
+<span class="kw">import</span><span class="im"> java.util.ArrayList;</span>
+<span class="kw">import</span><span class="im"> java.util.List;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> Ex3 {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">InterruptedException</span> {
+        <span class="dt">long</span> start = <span class="bu">System</span>.<span class="fu">currentTimeMillis</span>();
+        <span class="bu">List</span>&lt;<span class="bu">Integer</span>&gt; list = <span class="fu">generateRandom</span>();
+        <span class="bu">List</span>&lt;<span class="bu">Integer</span>&gt; a = list.<span class="fu">subList</span>(<span class="dv">0</span>, list.<span class="fu">size</span>() / <span class="dv">2</span>);
+        <span class="bu">List</span>&lt;<span class="bu">Integer</span>&gt; b = list.<span class="fu">subList</span>(list.<span class="fu">size</span>() / <span class="dv">2</span>, list.<span class="fu">size</span>());
+        assert a.<span class="fu">size</span>() + b.<span class="fu">size</span>() == list.<span class="fu">size</span>();
+        <span class="bu">Thread</span> thread1 = <span class="kw">new</span> <span class="bu">Thread</span>(<span class="kw">new</span> <span class="bu">Runnable</span>() {
+            <span class="at">@Override</span>
+            <span class="kw">public</span> <span class="dt">void</span> <span class="fu">run</span>() {
+                <span class="kw">try</span> {
+                    <span class="fu">print</span>(a, <span class="st">&quot;random1.csv&quot;</span>);
+                } <span class="kw">catch</span> (<span class="bu">FileNotFoundException</span> e) {
+                    e.<span class="fu">printStackTrace</span>();
+                }
+            }
+        });
+        <span class="bu">Thread</span> thread2 = <span class="kw">new</span> <span class="bu">Thread</span>(<span class="kw">new</span> <span class="bu">Runnable</span>() {
+            <span class="at">@Override</span>
+            <span class="kw">public</span> <span class="dt">void</span> <span class="fu">run</span>() {
+                <span class="kw">try</span> {
+                    <span class="fu">print</span>(b, <span class="st">&quot;random2.csv&quot;</span>);
+                } <span class="kw">catch</span> (<span class="bu">FileNotFoundException</span> e) {
+                    e.<span class="fu">printStackTrace</span>();
+                }
+            }
+        });
+        thread1.<span class="fu">start</span>();
+        thread2.<span class="fu">start</span>();
+        <span class="bu">Thread</span>.<span class="fu">yield</span>();
+        thread1.<span class="fu">join</span>();
+        thread2.<span class="fu">join</span>();
+        <span class="dt">long</span> end = <span class="bu">System</span>.<span class="fu">currentTimeMillis</span>();
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>((end - start) + <span class="st">&quot;ms&quot;</span>);
+    }
+
+    <span class="kw">private</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">print</span>(<span class="bu">List</span>&lt;<span class="bu">Integer</span>&gt; a, <span class="bu">String</span> fileName) <span class="kw">throws</span> <span class="bu">FileNotFoundException</span> {
+        <span class="bu">PrintStream</span> printStream1 = <span class="kw">new</span> <span class="bu">PrintStream</span>(<span class="kw">new</span> <span class="bu">BufferedOutputStream</span>(<span class="kw">new</span> <span class="bu">FileOutputStream</span>(fileName)));
+        <span class="dt">int</span> i = <span class="dv">0</span>;
+        <span class="kw">for</span> (<span class="bu">Integer</span> random : a) {
+            <span class="kw">if</span> (i % 1_000_<span class="dv">000</span> == <span class="dv">0</span>) {
+                <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;1M&quot;</span>);
+            }
+            printStream1.<span class="fu">println</span>(random);
+            i++;
+        }
+        printStream1.<span class="fu">close</span>();
+    }
+
+    <span class="kw">private</span> <span class="dt">static</span> <span class="bu">List</span>&lt;<span class="bu">Integer</span>&gt; <span class="fu">generateRandom</span>() {
+        <span class="bu">List</span>&lt;<span class="bu">Integer</span>&gt; list = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();
+        <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; 10_000_<span class="dv">000</span>; i++) {
+            <span class="dt">int</span> random = (<span class="dt">int</span>) (<span class="bu">Math</span>.<span class="fu">random</span>() * <span class="dv">100</span>);
+            list.<span class="fu">add</span>(random);
+        }
+        <span class="kw">return</span> list;
+    }
+}</code></pre></div>
+<p>Sur ma machine, le programme s'exécute en 10s en moyenne.</p>
+<p>On a gagnés 1/3 sur le temps d'écriture total.</p>
+<h2 id="exercice-4-4"><span class="header-section-number">8.8</span> Exercice 4</h2>
+<p>Écrire un programme qui affiche la somme et le nombre d'éléments du fichier de 10M nombre : random.csv.</p>
+<p>Par exemple si random.csv contient :</p>
+<pre><code>10
+20</code></pre>
+<p>alors on devra afficher :</p>
+<pre><code>30 2</code></pre>
+<h2 id="correction-4"><span class="header-section-number">8.9</span> Correction 4</h2>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> thread.exercice;</span>
+
+<span class="kw">import</span><span class="im"> java.io.IOException;</span>
+<span class="kw">import</span><span class="im"> java.nio.file.Files;</span>
+<span class="kw">import</span><span class="im"> java.nio.file.Paths;</span>
+<span class="kw">import</span><span class="im"> java.util.List;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> Ex4 {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">IOException</span> {
+        <span class="bu">List</span>&lt;<span class="bu">String</span>&gt; strings = Files.<span class="fu">readAllLines</span>(Paths.<span class="fu">get</span>(<span class="st">&quot;random.csv&quot;</span>));
+        <span class="dt">int</span> sum = <span class="dv">0</span>;
+        <span class="dt">int</span> count = <span class="dv">0</span>;
+        <span class="kw">for</span> (<span class="bu">String</span> string : strings) {
+            <span class="dt">int</span> n = <span class="bu">Integer</span>.<span class="fu">parseInt</span>(string);
+            sum += n;
+            count += <span class="dv">1</span>;
+        }
+        <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">&quot;</span><span class="sc">%d</span><span class="st"> </span><span class="sc">%d%n</span><span class="st">&quot;</span>, sum, count);
+    }
+}</code></pre></div>
+<h2 id="exercice-5-5"><span class="header-section-number">8.10</span> Exercice 5</h2>
+<p>Transformer le programme 4 pour afficher la également la somme et le compte les 2 fichiers random1.csv et random2.csv.</p>
+<p>Par exemple si random1.csv contient :</p>
+<pre><code>10
+20</code></pre>
+<p>et random2.csv contient :</p>
+<pre><code>30
+40</code></pre>
+<p>Alors le programme devra afficher :</p>
+<pre><code>100 4</code></pre>
+<h2 id="correction-5"><span class="header-section-number">8.11</span> Correction 5</h2>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> thread.exercice;</span>
+
+<span class="kw">import</span><span class="im"> java.io.IOException;</span>
+<span class="kw">import</span><span class="im"> java.nio.file.Files;</span>
+<span class="kw">import</span><span class="im"> java.nio.file.Paths;</span>
+<span class="kw">import</span><span class="im"> java.util.List;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> Ex5 {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">IOException</span> {
+        Average average1 = <span class="fu">computeAverage</span>(<span class="st">&quot;random1.csv&quot;</span>);
+        Average average2 = <span class="fu">computeAverage</span>(<span class="st">&quot;random2.csv&quot;</span>);
+
+        <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">&quot;</span><span class="sc">%d</span><span class="st"> </span><span class="sc">%d%n</span><span class="st">&quot;</span>, 
+            average1.<span class="fu">getSum</span>() + average2.<span class="fu">getSum</span>(), 
+            average1.<span class="fu">getCount</span>() + average2.<span class="fu">getCount</span>());
+    }
+
+    <span class="kw">private</span> <span class="dt">static</span> Average <span class="fu">computeAverage</span>(<span class="bu">String</span> filename) <span class="kw">throws</span> <span class="bu">IOException</span> {
+        <span class="bu">List</span>&lt;<span class="bu">String</span>&gt; strings = Files.<span class="fu">readAllLines</span>(Paths.<span class="fu">get</span>(filename));
+        <span class="dt">int</span> sum = <span class="dv">0</span>;
+        <span class="dt">int</span> count = <span class="dv">0</span>;
+        <span class="kw">for</span> (<span class="bu">String</span> string : strings) {
+            <span class="dt">int</span> n = <span class="bu">Integer</span>.<span class="fu">parseInt</span>(string);
+            sum += n;
+            count += <span class="dv">1</span>;
+        }
+        <span class="kw">return</span> <span class="kw">new</span> <span class="fu">Average</span>(sum, count);
+    }
+
+}
+
+<span class="kw">class</span> Average {
+    <span class="kw">private</span> <span class="dt">final</span> <span class="dt">int</span> sum;
+    <span class="kw">private</span> <span class="dt">final</span> <span class="dt">int</span> count;
+
+    <span class="fu">Average</span>(<span class="dt">int</span> sum, <span class="dt">int</span> count) {
+        <span class="kw">this</span>.<span class="fu">sum</span> = sum;
+        <span class="kw">this</span>.<span class="fu">count</span> = count;
+    }
+
+    <span class="dt">int</span> <span class="fu">getSum</span>() {
+        <span class="kw">return</span> sum;
+    }
+
+    <span class="dt">int</span> <span class="fu">getCount</span>() {
+        <span class="kw">return</span> count;
+    }
+}</code></pre></div>
+<p>Les expressions <code>average1.getSum() + average2.getSum()</code> et <code>average1.getCount() + average2.getCount()</code> permettent de définir la moyenne d'une somme. Elle n'est pas la somme des moyennes.</p>
+<p>On pourra réécrire :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> thread.exercice;</span>
+
+<span class="kw">import</span><span class="im"> java.io.IOException;</span>
+<span class="kw">import</span><span class="im"> java.nio.file.Files;</span>
+<span class="kw">import</span><span class="im"> java.nio.file.Paths;</span>
+<span class="kw">import</span><span class="im"> java.util.List;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> Ex5 {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">IOException</span> {
+        Average average1 = <span class="fu">computeAverage</span>(<span class="st">&quot;random1.csv&quot;</span>);
+        Average average2 = <span class="fu">computeAverage</span>(<span class="st">&quot;random2.csv&quot;</span>);
+
+        <span class="fu">print</span>(Average.<span class="fu">sum</span>(average1, average2));
+    }
+
+    <span class="kw">private</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">print</span>(Average average) {
+        <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">&quot;</span><span class="sc">%d</span><span class="st"> </span><span class="sc">%d%n</span><span class="st">&quot;</span>, average.<span class="fu">getSum</span>(), average.<span class="fu">getCount</span>());
+    }
+
+    <span class="kw">private</span> <span class="dt">static</span> Average <span class="fu">computeAverage</span>(<span class="bu">String</span> filename) 
+        <span class="kw">throws</span> <span class="bu">IOException</span> {
+        <span class="bu">List</span>&lt;<span class="bu">String</span>&gt; strings = Files.<span class="fu">readAllLines</span>(Paths.<span class="fu">get</span>(filename));
+        <span class="dt">int</span> sum = <span class="dv">0</span>;
+        <span class="dt">int</span> count = <span class="dv">0</span>;
+        <span class="kw">for</span> (<span class="bu">String</span> string : strings) {
+            <span class="dt">int</span> n = <span class="bu">Integer</span>.<span class="fu">parseInt</span>(string);
+            sum += n;
+            count += <span class="dv">1</span>;
+        }
+        <span class="kw">return</span> <span class="kw">new</span> <span class="fu">Average</span>(sum, count);
+    }
+
+}
+
+<span class="kw">class</span> Average {
+    <span class="kw">private</span> <span class="dt">final</span> <span class="dt">int</span> sum;
+    <span class="kw">private</span> <span class="dt">final</span> <span class="dt">int</span> count;
+
+    <span class="fu">Average</span>(<span class="dt">int</span> sum, <span class="dt">int</span> count) {
+        <span class="kw">this</span>.<span class="fu">sum</span> = sum;
+        <span class="kw">this</span>.<span class="fu">count</span> = count;
+    }
+
+    <span class="dt">static</span> Average <span class="fu">sum</span>(Average average1, Average average2) {
+        <span class="kw">return</span> <span class="kw">new</span> <span class="fu">Average</span>(average1.<span class="fu">getSum</span>() + average2.<span class="fu">getSum</span>(), 
+            average1.<span class="fu">getCount</span>() + average2.<span class="fu">getCount</span>());
+    }
+
+    <span class="dt">int</span> <span class="fu">getSum</span>() {
+        <span class="kw">return</span> sum;
+    }
+
+    <span class="dt">int</span> <span class="fu">getCount</span>() {
+        <span class="kw">return</span> count;
+    }
+}</code></pre></div>
+<p>Ce programme tourne en 5s en moyenne.</p>
+<h2 id="exercice-6-4"><span class="header-section-number">8.12</span> Exercice 6</h2>
+<p>Paralléliser la lecture des deux fichiers.</p>
+<h2 id="correction-6"><span class="header-section-number">8.13</span> Correction 6</h2>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> thread.exercice;</span>
+
+<span class="kw">import</span><span class="im"> java.io.IOException;</span>
+<span class="kw">import</span><span class="im"> java.nio.file.Files;</span>
+<span class="kw">import</span><span class="im"> java.nio.file.Paths;</span>
+<span class="kw">import</span><span class="im"> java.util.List;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> Ex6 {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">InterruptedException</span> {
+        <span class="dt">final</span> Average[] average1 = <span class="kw">new</span> Average[<span class="dv">1</span>];
+        <span class="bu">Thread</span> thread1 = <span class="kw">new</span> <span class="bu">Thread</span>(<span class="kw">new</span> <span class="bu">Runnable</span>() {
+            <span class="at">@Override</span>
+            <span class="kw">public</span> <span class="dt">void</span> <span class="fu">run</span>() {
+                <span class="kw">try</span> {
+                    average1[<span class="dv">0</span>] = <span class="fu">computeAverage</span>(<span class="st">&quot;random1.csv&quot;</span>);
+                } <span class="kw">catch</span> (<span class="bu">IOException</span> e) {
+                    e.<span class="fu">printStackTrace</span>();
+                }
+            }
+        });
+        <span class="dt">final</span> Average[] average2 = <span class="kw">new</span> Average[<span class="dv">1</span>];
+        <span class="bu">Thread</span> thread2 = <span class="kw">new</span> <span class="bu">Thread</span>(<span class="kw">new</span> <span class="bu">Runnable</span>() {
+            <span class="at">@Override</span>
+            <span class="kw">public</span> <span class="dt">void</span> <span class="fu">run</span>() {
+                <span class="kw">try</span> {
+                    average2[<span class="dv">0</span>] = <span class="fu">computeAverage</span>(<span class="st">&quot;random2.csv&quot;</span>);
+                } <span class="kw">catch</span> (<span class="bu">IOException</span> e) {
+                    e.<span class="fu">printStackTrace</span>();
+                }
+            }
+        });
+        thread1.<span class="fu">start</span>();
+        thread2.<span class="fu">start</span>();
+        <span class="bu">Thread</span>.<span class="fu">yield</span>();
+        thread1.<span class="fu">join</span>();
+        thread2.<span class="fu">join</span>();
+
+        <span class="fu">print</span>(Average.<span class="fu">sum</span>(average1[<span class="dv">0</span>], average2[<span class="dv">0</span>]));
+    }
+
+    <span class="kw">private</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">print</span>(Average average) {
+        <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">&quot;</span><span class="sc">%d</span><span class="st"> </span><span class="sc">%d%n</span><span class="st">&quot;</span>, average.<span class="fu">getSum</span>(), 
+            average.<span class="fu">getCount</span>());
+    }
+
+    <span class="kw">private</span> <span class="dt">static</span> Average <span class="fu">computeAverage</span>(<span class="bu">String</span> filename) 
+        <span class="kw">throws</span> <span class="bu">IOException</span> {
+        <span class="bu">List</span>&lt;<span class="bu">String</span>&gt; strings = Files.<span class="fu">readAllLines</span>(Paths.<span class="fu">get</span>(filename));
+        <span class="dt">int</span> sum = <span class="dv">0</span>;
+        <span class="dt">int</span> count = <span class="dv">0</span>;
+        <span class="kw">for</span> (<span class="bu">String</span> string : strings) {
+            <span class="dt">int</span> n = <span class="bu">Integer</span>.<span class="fu">parseInt</span>(string);
+            sum += n;
+            count += <span class="dv">1</span>;
+        }
+        <span class="kw">return</span> <span class="kw">new</span> <span class="fu">Average</span>(sum, count);
+    }
+
+    <span class="dt">static</span> <span class="kw">class</span> Average {
+        <span class="kw">private</span> <span class="dt">final</span> <span class="dt">int</span> sum;
+        <span class="kw">private</span> <span class="dt">final</span> <span class="dt">int</span> count;
+
+        <span class="fu">Average</span>(<span class="dt">int</span> sum, <span class="dt">int</span> count) {
+            <span class="kw">this</span>.<span class="fu">sum</span> = sum;
+            <span class="kw">this</span>.<span class="fu">count</span> = count;
+        }
+
+        <span class="dt">static</span> Average <span class="fu">sum</span>(Average average1, Average average2) {
+            <span class="kw">return</span> <span class="kw">new</span> <span class="fu">Average</span>(average1.<span class="fu">getSum</span>() + average2.<span class="fu">getSum</span>(), 
+                average1.<span class="fu">getCount</span>() + average2.<span class="fu">getCount</span>());
+        }
+
+        <span class="dt">int</span> <span class="fu">getSum</span>() {
+            <span class="kw">return</span> sum;
+        }
+
+        <span class="dt">int</span> <span class="fu">getCount</span>() {
+            <span class="kw">return</span> count;
+        }
+    }
+}</code></pre></div>
+<pre><code>495150079 10000000</code></pre>
+<p>Sur ma machine, le programme se termine en 9543ms 4615ms 6533ms...</p>
+<h2 id="exercice-7-4"><span class="header-section-number">8.14</span> Exercice 7</h2>
+<p>Afficher la moyenne arithmétique des nombres plutôt que leur somme et leur compte.</p>
+<pre><code>moyenne = somme / compte</code></pre>
+<h2 id="exercice-8-3"><span class="header-section-number">8.15</span> Exercice 8</h2>
+<p>Lancer le programme de calcul de la moyenne précédant en ayant préalablement supprimé le fichier random1.csv.</p>
+<ol style="list-style-type: decimal">
+<li>Qu'observe t'on ?</li>
+</ol>
+<p>On souhaite conditionner l'affichage de la moyenne à la réussite des 2 fils d'exécutions.</p>
+<ol style="list-style-type: decimal">
+<li>Comment transmettre l'information de succès entre Thread ?</li>
+</ol>
+<h2 id="correction-8"><span class="header-section-number">8.16</span>  Correction 8</h2>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">InterruptedException</span> {
+    <span class="dt">long</span> start = <span class="bu">System</span>.<span class="fu">currentTimeMillis</span>();
+    <span class="dt">final</span> Average[] average1 = <span class="kw">new</span> Average[<span class="dv">1</span>];
+    <span class="dt">final</span> <span class="bu">Exception</span>[] exception1 = <span class="kw">new</span> <span class="bu">Exception</span>[<span class="dv">1</span>];
+    <span class="bu">Thread</span> thread1 = <span class="kw">new</span> <span class="bu">Thread</span>(<span class="kw">new</span> <span class="bu">Runnable</span>() {
+        <span class="at">@Override</span>
+        <span class="kw">public</span> <span class="dt">void</span> <span class="fu">run</span>() {
+            <span class="kw">try</span> {
+                average1[<span class="dv">0</span>] = <span class="fu">computeAverage</span>(<span class="st">&quot;random1.csv&quot;</span>);
+            } <span class="kw">catch</span> (<span class="bu">IOException</span> e) {
+                exception1[<span class="dv">0</span>] = e;
+            }
+        }
+    });
+    <span class="dt">final</span> Average[] average2 = <span class="kw">new</span> Average[<span class="dv">1</span>];
+    <span class="dt">final</span> <span class="bu">Exception</span>[] exception1 = <span class="kw">new</span> <span class="bu">Exception</span>[<span class="dv">1</span>];
+    <span class="bu">Thread</span> thread2 = <span class="kw">new</span> <span class="bu">Thread</span>(<span class="kw">new</span> <span class="bu">Runnable</span>() {
+        <span class="at">@Override</span>
+        <span class="kw">public</span> <span class="dt">void</span> <span class="fu">run</span>() {
+            <span class="kw">try</span> {
+                average2[<span class="dv">0</span>] = <span class="fu">computeAverage</span>(<span class="st">&quot;random2.csv&quot;</span>);
+            } <span class="kw">catch</span> (<span class="bu">IOException</span> e) {
+                exception2[<span class="dv">0</span>] = e;
+            }
+        }
+    });
+    thread1.<span class="fu">start</span>();
+    thread2.<span class="fu">start</span>();
+    <span class="bu">Thread</span>.<span class="fu">yield</span>();
+    thread1.<span class="fu">join</span>();
+    thread2.<span class="fu">join</span>();
+    <span class="dt">long</span> end = <span class="bu">System</span>.<span class="fu">currentTimeMillis</span>();
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(end - start + <span class="st">&quot;ms&quot;</span>);
+    
+    <span class="kw">if</span> (exception1[<span class="dv">0</span>] == <span class="kw">null</span>) {
+        <span class="kw">throw</span> <span class="kw">new</span> <span class="bu">Exception</span>(exception1[<span class="dv">0</span>]);
+    }
+    <span class="kw">if</span> (exception2[<span class="dv">0</span>] == <span class="kw">null</span>) {
+        <span class="kw">throw</span> <span class="kw">new</span> <span class="bu">Exception</span>(exception2[<span class="dv">0</span>]);
+    }
+    
+    <span class="fu">print</span>(Average.<span class="fu">sum</span>(average1[<span class="dv">0</span>], average2[<span class="dv">0</span>]));
+}</code></pre></div>
+<h2 id="exercice-9-4"><span class="header-section-number">8.17</span> Exercice 9</h2>
+<p>Réécrire le programme précédant en utilisant cette fois la méthode <code>Thread.setUncaughtExceptionHandler()</code> pour conditionner l'affichage de la moyenne au succès des deux threads.</p>
+<h2 id="correction-9"><span class="header-section-number">8.18</span> Correction 9</h2>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">InterruptedException</span> {
+    <span class="dt">long</span> start = <span class="bu">System</span>.<span class="fu">currentTimeMillis</span>();
+    <span class="dt">final</span> Average[] average1 = <span class="kw">new</span> Average[<span class="dv">1</span>];
+    <span class="dt">final</span> <span class="bu">Exception</span>[] exception1 = <span class="kw">new</span> <span class="bu">Exception</span>[<span class="dv">1</span>];
+    <span class="bu">Thread</span> thread1 = <span class="kw">new</span> <span class="bu">Thread</span>(<span class="kw">new</span> <span class="bu">Runnable</span>() {
+        <span class="at">@Override</span>
+        <span class="kw">public</span> <span class="dt">void</span> <span class="fu">run</span>() {
+            <span class="kw">try</span> {
+                average1[<span class="dv">0</span>] = <span class="fu">computeAverage</span>(<span class="st">&quot;random1.csv&quot;</span>);
+            } <span class="kw">catch</span> (<span class="bu">IOException</span> e) {
+                <span class="kw">throw</span> <span class="kw">new</span> <span class="bu">RuntimeException</span>(e);
+            }
+        }
+    });
+    <span class="dt">final</span> Average[] average2 = <span class="kw">new</span> Average[<span class="dv">1</span>];
+    <span class="dt">final</span> <span class="bu">Exception</span>[] exception2 = <span class="kw">new</span> <span class="bu">Exception</span>[<span class="dv">1</span>];
+    <span class="bu">Thread</span> thread2 = <span class="kw">new</span> <span class="bu">Thread</span>(<span class="kw">new</span> <span class="bu">Runnable</span>() {
+        <span class="at">@Override</span>
+        <span class="kw">public</span> <span class="dt">void</span> <span class="fu">run</span>() {
+            <span class="kw">try</span> {
+                average2[<span class="dv">0</span>] = <span class="fu">computeAverage</span>(<span class="st">&quot;random2.csv&quot;</span>);
+            } <span class="kw">catch</span> (<span class="bu">IOException</span> e) {
+                <span class="kw">throw</span> <span class="kw">new</span> <span class="bu">RuntimeException</span>(e);
+            }
+        }
+    });
+    
+    thread1.<span class="fu">setUncaughtExceptionHandler</span>(<span class="kw">new</span> <span class="bu">Thread</span>.<span class="fu">UncaughtExceptionHandler</span>() {
+        <span class="at">@Override</span>
+        <span class="kw">public</span> <span class="dt">void</span> <span class="fu">uncaughtException</span>(<span class="bu">Thread</span> t, <span class="bu">Throwable</span> e) {
+            exception1[<span class="dv">0</span>] = e;
+        }
+    });
+    
+    thread2.<span class="fu">setUncaughtExceptionHandler</span>(<span class="kw">new</span> <span class="bu">Thread</span>.<span class="fu">UncaughtExceptionHandler</span>() {
+        <span class="at">@Override</span>
+        <span class="kw">public</span> <span class="dt">void</span> <span class="fu">uncaughtException</span>(<span class="bu">Thread</span> t, <span class="bu">Throwable</span> e) {
+            exception2[<span class="dv">0</span>] = e;
+        }
+    });
+    
+    thread1.<span class="fu">start</span>();
+    thread2.<span class="fu">start</span>();
+    <span class="bu">Thread</span>.<span class="fu">yield</span>();
+    thread1.<span class="fu">join</span>();
+    thread2.<span class="fu">join</span>();
+    <span class="dt">long</span> end = <span class="bu">System</span>.<span class="fu">currentTimeMillis</span>();
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(end - start + <span class="st">&quot;ms&quot;</span>);
+    
+    <span class="kw">if</span> (exception1[<span class="dv">0</span>] == <span class="kw">null</span>) {
+        <span class="kw">throw</span> <span class="kw">new</span> <span class="bu">Exception</span>(exception1[<span class="dv">0</span>]);
+    }
+    <span class="kw">if</span> (exception2[<span class="dv">0</span>] == <span class="kw">null</span>) {
+        <span class="kw">throw</span> <span class="kw">new</span> <span class="bu">Exception</span>(exception2[<span class="dv">0</span>]);
+    }
+    
+    <span class="fu">print</span>(Average.<span class="fu">sum</span>(average1[<span class="dv">0</span>], average2[<span class="dv">0</span>]));
+}</code></pre></div>
+<h2 id="exercice-10-4"><span class="header-section-number">8.19</span> Exercice 10</h2>
+<p>Écrire une classe Counter et une fonction qui incrémente 100 000 fois le compteur.</p>
+<h2 id="correction-10"><span class="header-section-number">8.20</span> Correction 10</h2>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> thread.exercice;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> Counter {
+
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+        Counter counter = <span class="kw">new</span> <span class="fu">Counter</span>();
+        <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; 100_<span class="dv">000</span>; i++) {
+            counter.<span class="fu">increment</span>();
+        }
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(counter);
+    }
+
+    <span class="kw">private</span> <span class="dt">int</span> i;
+
+    <span class="kw">private</span> <span class="dt">void</span> <span class="fu">increment</span>() {
+        i++;
+    }
+
+    <span class="at">@Override</span>
+    <span class="kw">public</span> <span class="bu">String</span> <span class="fu">toString</span>() {
+        <span class="kw">return</span> <span class="bu">String</span>.<span class="fu">valueOf</span>(i);
+    }
+}</code></pre></div>
+<h2 id="exercice-11-4"><span class="header-section-number">8.21</span> Exercice 11</h2>
+<p>Partager le travail d'incrémentation entre 2 fils d'exécuctions concurrents. 50 000 fois chacun. Observer le résultat.</p>
+<h2 id="correction-12"><span class="header-section-number">8.22</span> Correction 12</h2>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> thread.exercice;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> Counter {
+
+    <span class="kw">private</span> <span class="dt">static</span> <span class="dt">final</span> <span class="dt">int</span> TIMES = 50_<span class="dv">000</span>;
+
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">InterruptedException</span> {
+        Counter counter = <span class="kw">new</span> <span class="fu">Counter</span>();
+        <span class="bu">Thread</span> thread = <span class="kw">new</span> <span class="bu">Thread</span>(<span class="kw">new</span> <span class="bu">Runnable</span>() {
+            <span class="at">@Override</span>
+            <span class="kw">public</span> <span class="dt">void</span> <span class="fu">run</span>() {
+                <span class="fu">incrementUntil</span>(counter, TIMES);
+            }
+        });
+        thread.<span class="fu">start</span>();
+        <span class="bu">Thread</span>.<span class="fu">yield</span>();
+        <span class="fu">incrementUntil</span>(counter, TIMES);
+        thread.<span class="fu">join</span>();
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(counter);
+    }
+
+    <span class="kw">private</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">incrementUntil</span>(Counter counter, <span class="dt">int</span> times) {
+        <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; times; i++) {
+            counter.<span class="fu">increment</span>();
+        }
+    }
+
+    <span class="kw">private</span> <span class="dt">int</span> i;
+
+    <span class="kw">private</span> <span class="dt">void</span> <span class="fu">increment</span>() {
+        i++;
+    }
+
+    <span class="at">@Override</span>
+    <span class="kw">public</span> <span class="bu">String</span> <span class="fu">toString</span>() {
+        <span class="kw">return</span> <span class="bu">String</span>.<span class="fu">valueOf</span>(i);
+    }
+}</code></pre></div>
+<p>On observe les résultats suivant :</p>
+<pre><code>96810 
+100000 
+53682 
+100000 
+75031 
+52817 
+100000
+100000
+98012</code></pre>
+<p>On s'attendait à avoir 100% de 100000. Soit moins de 50% de bons résultats.</p>
+<h2 id="synchronisation"><span class="header-section-number">8.23</span> Synchronisation</h2>
+<p>Quand plusieurs <code>Thread</code> partagent un objet, tout se gatte. Effectuer des lectures ou écritures en concurrence nécessite beaucoup de rigueur. En effet, l'exemple précédant montre une &quot;race condition&quot;. L'opération <code>i++</code> effectuée en concurrence n'est pas atomique comme on pourrait le penser.</p>
+<p>Une opération est atomique quand tous les threads peuvent dire si l'opération est exécutée ou non. Si un thread peut observer l'état intermédiaire et interne d'une opération alors elle n'est pas atomique.</p>
+<p>L'instruction <code>i++</code> consiste en 3 étapes :</p>
+<ol style="list-style-type: decimal">
+<li>lecture de la variable i ;</li>
+<li>incrémentation ;</li>
+<li>écriture de la nouvelle valeur.</li>
+</ol>
+<p>Il est donc tout à fait possible que le thread 1 lise <code>i</code> (i = 0), qu'au même moment le thread 2 lise aussi <code>i</code> (i = 0). Le deuxième thread travaille donc avec des données déjà obsolète. Le résultat dans ce cas est que deux opérations concurrentes donnent le même résultat qu'une seule.</p>
+<p>Le premier mécanisme fournit par le langage Java permet de vérouiller l'accès à un objet partagé pendant une opération que l'on souhaite atomique.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">private</span> <span class="kw">synchronized</span> <span class="dt">void</span> <span class="fu">increment</span>() {
+    i++;
+}</code></pre></div>
+<p>Cette syntaxe indique qu'un seul thread pourra accéder à cet objet à la fois. Plus précisément, un seul thread peut appeler les méthodes <code>synchronized</code> de l'objet. Il est donc possible qu'un premier thread accède à l'objet <code>counter</code> en appelant <code>increment()</code>, et qu'un deuxième y accède aussi en même temps à via <code>toString()</code> qui n'est pas <code>synchronized</code>.</p>
+<p>En revanche, si on définit la méthode :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">private</span> <span class="kw">synchronized</span> <span class="dt">int</span> <span class="fu">get</span>() {
+    <span class="kw">return</span> i;
+}</code></pre></div>
+<p>Alors, il ne pourra pas y avoir le thread 1 appelant <code>increment()</code> en même temps que thread 2 qui appelle <code>get()</code>.</p>
+<p>Tous les objets Java ont un verrou intrinsec qui est ouvert et fermé par le thread qui appelle la méthode <code>synchronized</code>. On dit que le thread acquiert le verrou au début de la méthode et le relâche la fin.</p>
+<p>Une syntaxe alternative plus souple et verbeuse met ce verrou intrinsec en lumière (this) :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">private</span> <span class="kw">synchronized</span> <span class="dt">void</span> <span class="fu">increment</span>() {
+    <span class="kw">synchronized</span> (<span class="kw">this</span>) {
+        i++;
+    }
+}</code></pre></div>
+<h2 id="dîner-des-philosophes-13"><span class="header-section-number">8.24</span> Dîner des philosophes (13)</h2>
+<p>Cinq philosophes dînent le soir. Chacun partage sa fourchette droite avec la fourchette gauche de son voisin de droite. Il y a donc cinq fourchettes (représentées par <code>|</code>). Chaque philosophe réfléchit un moment puis mange pendant un certain temps.</p>
+<pre><code>... 1 | 2 | 3 | 4 | 5 | 1...</code></pre>
+<p>Pour manger, le philosophe commence par prendre sa fourchette gauche puis la droite puis mange puis repose la fourchette droite puis la gauche.</p>
+<p>Précision : les philosophes ne se parlent pas. Écrire un programme qui simule un repas entre ces 5 philosophes.</p>
+<h2 id="correction-13"><span class="header-section-number">8.25</span> Correction (13)</h2>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> thread.exercice;</span>
+
+<span class="kw">import</span><span class="im"> java.util.ArrayList;</span>
+<span class="kw">import</span><span class="im"> java.util.List;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> DinerPhilosophe {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">InterruptedException</span> {
+        <span class="bu">List</span>&lt;<span class="bu">Object</span>&gt; fourchettes = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();
+        <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">5</span>; i++) {
+            <span class="bu">Object</span> fourchette = i;
+            fourchettes.<span class="fu">add</span>(fourchette);
+        }
+        <span class="bu">List</span>&lt;Philosophe&gt; philosophes = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();
+        <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">5</span>; i++) {
+            philosophes.<span class="fu">add</span>(<span class="kw">new</span> <span class="fu">Philosophe</span>(fourchettes.<span class="fu">get</span>(i), fourchettes.<span class="fu">get</span>((i + <span class="dv">1</span>) % <span class="dv">5</span>), <span class="bu">String</span>.<span class="fu">valueOf</span>(i)));
+        }
+        <span class="bu">List</span>&lt;<span class="bu">Thread</span>&gt; threads = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();
+        <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">5</span>; i++) {
+            <span class="dt">int</span> finalI = i;
+            <span class="bu">Runnable</span> target = <span class="kw">new</span> <span class="bu">Runnable</span>() {
+                <span class="at">@Override</span>
+                <span class="kw">public</span> <span class="dt">void</span> <span class="fu">run</span>() {
+                    Philosophe philosophe = philosophes.<span class="fu">get</span>(finalI);
+                    <span class="kw">for</span> (<span class="dt">int</span> j = <span class="dv">0</span>; j &lt; 10_<span class="dv">000</span>; j++) {
+                        philosophe.<span class="fu">manger</span>();
+                    }
+                }
+            };
+            threads.<span class="fu">add</span>(<span class="kw">new</span> <span class="bu">Thread</span>(target));
+        }
+        <span class="kw">for</span> (<span class="bu">Thread</span> thread : threads) {
+            thread.<span class="fu">start</span>();
+        }
+        <span class="bu">Thread</span>.<span class="fu">yield</span>();
+        <span class="kw">for</span> (<span class="bu">Thread</span> thread : threads) {
+            thread.<span class="fu">join</span>();
+        }
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Fin du dîner&quot;</span>);
+    }
+
+    <span class="kw">private</span> <span class="dt">static</span> <span class="kw">class</span> Philosophe {
+        <span class="kw">private</span> <span class="dt">final</span> <span class="bu">Object</span> fourchetteGauche;
+        <span class="kw">private</span> <span class="dt">final</span> <span class="bu">Object</span> fourchetteDroite;
+        <span class="kw">private</span> <span class="dt">final</span> <span class="bu">String</span> nom;
+
+        <span class="fu">Philosophe</span>(<span class="bu">Object</span> fourchetteGauche, <span class="bu">Object</span> fourchetteDroite, <span class="bu">String</span> nom) {
+            <span class="kw">this</span>.<span class="fu">fourchetteGauche</span> = fourchetteGauche;
+            <span class="kw">this</span>.<span class="fu">fourchetteDroite</span> = fourchetteDroite;
+            <span class="kw">this</span>.<span class="fu">nom</span> = nom;
+        }
+
+        <span class="dt">void</span> <span class="fu">manger</span>() {
+            <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">&quot;</span><span class="sc">%s</span><span class="st"> attend la fourchette gauche </span><span class="sc">%s%n</span><span class="st">&quot;</span>, nom, fourchetteGauche);
+            <span class="kw">synchronized</span> (fourchetteGauche) {
+                <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">&quot;</span><span class="sc">%s</span><span class="st"> attend la fourchette droite </span><span class="sc">%s%n</span><span class="st">&quot;</span>, nom, fourchetteDroite);
+                <span class="kw">synchronized</span> (fourchetteDroite) {
+                    <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">&quot;</span><span class="sc">%s</span><span class="st"> mange</span><span class="sc">%n</span><span class="st">&quot;</span>, nom);
+                    <span class="kw">try</span> {
+                        <span class="bu">Thread</span>.<span class="fu">sleep</span>(((<span class="dt">long</span>) (<span class="bu">Math</span>.<span class="fu">random</span>() * <span class="dv">500</span>)));
+                    } <span class="kw">catch</span> (<span class="bu">InterruptedException</span> e) {
+                        e.<span class="fu">printStackTrace</span>();
+                    }
+                }
+            }
+        }
+    }
+}</code></pre></div>
+<p>En lancant ce programme j'obtiens un blocage mutuel (aussi appelé &quot;deadlock&quot;) :</p>
+<pre><code>0 attend la fourchette gauche 0
+0 prend la fourchette gauche 0
+0 attend la fourchette droite 1
+0 prend la fourchette droite 1
+0 mange
+3 attend la fourchette gauche 3
+3 prend la fourchette gauche 3
+3 attend la fourchette droite 4
+3 prend la fourchette droite 4
+3 mange
+4 attend la fourchette gauche 4
+1 attend la fourchette gauche 1
+2 attend la fourchette gauche 2
+2 prend la fourchette gauche 2
+2 attend la fourchette droite 3
+0 repose la fourchette droite 1
+1 prend la fourchette gauche 1
+1 attend la fourchette droite 2
+0 repose la fourchette gauche 0
+0 attend la fourchette gauche 0
+0 prend la fourchette gauche 0
+0 attend la fourchette droite 1
+3 repose la fourchette droite 4
+4 prend la fourchette gauche 4
+4 attend la fourchette droite 0
+3 repose la fourchette gauche 3
+3 attend la fourchette gauche 3
+3 prend la fourchette gauche 3
+3 attend la fourchette droite 4</code></pre>
+<p>Ici le philosophe 3 attend la fourchette droite 4. Or la fourchette droite 4 est toujours entre les mains du philosophe 4. Mais le philosophe 4 attend aussi sa fourchette droite 0. Et ainsi de suite jusqu'à avoir un inter-blocage (comme dans certaines intersections routières).</p>
+<h2 id="exercice-14-2"><span class="header-section-number">8.26</span> Exercice 14</h2>
+<p>Pour éviter cet interblocage, une méthode consiste à toujours vérrouiller les fourchettes dans le même ordre global. On peut ordonner les fourchette facilement de façon croissante : chaque philosophe doit prendre la fourchette qui a un numéro plus petit en premier.</p>
+<p>Par exemple, si le philosophe 0 a la fourchette 0 et 1 alors il devra prendre la 0 en premier. Si le philosophe 4 a la fourchette 4 et 0 il devra prendre la 0 en premier. Ainsi les attentes mutuelles ne sont plus possibles.</p>
+<ol style="list-style-type: decimal">
+<li>Corriger le programme de simulation du dîner en imposant un ordre global.</li>
+</ol>
+<h2 id="correction-14"><span class="header-section-number">8.27</span> Correction 14</h2>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">if</span> (fourchetteGauche.<span class="fu">ordre</span> &gt; fourchetteDroite.<span class="fu">ordre</span>) {
+    <span class="kw">this</span>.<span class="fu">fourchetteGauche</span> = fourchetteDroite;
+    <span class="kw">this</span>.<span class="fu">fourchetteDroite</span> = fourchetteGauche;
+} <span class="kw">else</span> {
+    <span class="kw">this</span>.<span class="fu">fourchetteGauche</span> = fourchetteGauche;
+    <span class="kw">this</span>.<span class="fu">fourchetteDroite</span> = fourchetteDroite;
+}
+assert <span class="kw">this</span>.<span class="fu">fourchetteGauche</span>.<span class="fu">ordre</span> &lt; <span class="kw">this</span>.<span class="fu">fourchetteDroite</span>.<span class="fu">ordre</span>;</code></pre></div>
+<p>Le programme entier :</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> thread.exercice;</span>
+
+<span class="kw">import</span><span class="im"> java.util.ArrayList;</span>
+<span class="kw">import</span><span class="im"> java.util.List;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> OrdreDinerPhilosophe {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">InterruptedException</span> {
+        <span class="bu">List</span>&lt;Fourchette&gt; fourchettes = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();
+        <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">5</span>; i++) {
+            fourchettes.<span class="fu">add</span>(<span class="kw">new</span> <span class="fu">Fourchette</span>(i));
+        }
+        <span class="bu">List</span>&lt;Philosophe&gt; philosophes = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();
+        <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">5</span>; i++) {
+            philosophes.<span class="fu">add</span>(<span class="kw">new</span> <span class="fu">Philosophe</span>(fourchettes.<span class="fu">get</span>(i), fourchettes.<span class="fu">get</span>((i + <span class="dv">1</span>) % <span class="dv">5</span>), <span class="bu">String</span>.<span class="fu">valueOf</span>(i)));
+        }
+        <span class="bu">List</span>&lt;<span class="bu">Thread</span>&gt; threads = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();
+        <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">5</span>; i++) {
+            <span class="dt">int</span> finalI = i;
+            <span class="bu">Runnable</span> target = <span class="kw">new</span> <span class="bu">Runnable</span>() {
+                <span class="at">@Override</span>
+                <span class="kw">public</span> <span class="dt">void</span> <span class="fu">run</span>() {
+                    Philosophe philosophe = philosophes.<span class="fu">get</span>(finalI);
+                    <span class="kw">for</span> (<span class="dt">int</span> j = <span class="dv">0</span>; j &lt; <span class="dv">1000</span>; j++) {
+                        philosophe.<span class="fu">manger</span>();
+                    }
+                }
+            };
+            threads.<span class="fu">add</span>(<span class="kw">new</span> <span class="bu">Thread</span>(target));
+        }
+
+        <span class="kw">for</span> (<span class="bu">Thread</span> thread : threads) {
+            thread.<span class="fu">start</span>();
+        }
+        <span class="kw">for</span> (<span class="bu">Thread</span> thread : threads) {
+            thread.<span class="fu">join</span>();
+        }
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Fin du dîner&quot;</span>);
+    }
+
+    <span class="kw">private</span> <span class="dt">static</span> <span class="kw">class</span> Philosophe {
+        <span class="kw">private</span> <span class="dt">final</span> Fourchette fourchetteGauche;
+        <span class="kw">private</span> <span class="dt">final</span> Fourchette fourchetteDroite;
+        <span class="kw">private</span> <span class="dt">final</span> <span class="bu">String</span> nom;
+
+        <span class="fu">Philosophe</span>(Fourchette fourchetteGauche, Fourchette fourchetteDroite, <span class="bu">String</span> nom) {
+            <span class="kw">if</span> (fourchetteGauche.<span class="fu">ordre</span> &gt; fourchetteDroite.<span class="fu">ordre</span>) {
+                <span class="kw">this</span>.<span class="fu">fourchetteGauche</span> = fourchetteDroite;
+                <span class="kw">this</span>.<span class="fu">fourchetteDroite</span> = fourchetteGauche;
+            } <span class="kw">else</span> {
+                <span class="kw">this</span>.<span class="fu">fourchetteGauche</span> = fourchetteGauche;
+                <span class="kw">this</span>.<span class="fu">fourchetteDroite</span> = fourchetteDroite;
+            }
+            assert <span class="kw">this</span>.<span class="fu">fourchetteGauche</span>.<span class="fu">ordre</span> &lt; <span class="kw">this</span>.<span class="fu">fourchetteDroite</span>.<span class="fu">ordre</span>;
+            <span class="kw">this</span>.<span class="fu">nom</span> = nom;
+        }
+
+        <span class="dt">void</span> <span class="fu">manger</span>() {
+            <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">&quot;</span><span class="sc">%s</span><span class="st"> attend la fourchette gauche </span><span class="sc">%s%n</span><span class="st">&quot;</span>, nom, fourchetteGauche);
+            <span class="kw">synchronized</span> (fourchetteGauche) {
+                <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">&quot;</span><span class="sc">%s</span><span class="st"> prend la fourchette gauche </span><span class="sc">%s%n</span><span class="st">&quot;</span>, nom, fourchetteGauche);
+                <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">&quot;</span><span class="sc">%s</span><span class="st"> attend la fourchette droite </span><span class="sc">%s%n</span><span class="st">&quot;</span>, nom, fourchetteDroite);
+                <span class="kw">synchronized</span> (fourchetteDroite) {
+                    <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">&quot;</span><span class="sc">%s</span><span class="st"> prend la fourchette droite </span><span class="sc">%s%n</span><span class="st">&quot;</span>, nom, fourchetteDroite);
+                    <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">&quot;</span><span class="sc">%s</span><span class="st"> mange</span><span class="sc">%n</span><span class="st">&quot;</span>, nom);
+                    <span class="kw">try</span> {
+                        <span class="bu">Thread</span>.<span class="fu">sleep</span>(((<span class="dt">long</span>) (<span class="bu">Math</span>.<span class="fu">random</span>() * <span class="dv">500</span>)));
+                    } <span class="kw">catch</span> (<span class="bu">InterruptedException</span> e) {
+                        e.<span class="fu">printStackTrace</span>();
+                    }
+                }
+                <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">&quot;</span><span class="sc">%s</span><span class="st"> repose la fourchette droite </span><span class="sc">%s%n</span><span class="st">&quot;</span>, nom, fourchetteDroite);
+            }
+            <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">&quot;</span><span class="sc">%s</span><span class="st"> repose la fourchette gauche </span><span class="sc">%s%n</span><span class="st">&quot;</span>, nom, fourchetteGauche);
+        }
+    }
+
+    <span class="kw">private</span> <span class="dt">static</span> <span class="kw">class</span> Fourchette {
+        <span class="kw">private</span> <span class="dt">int</span> ordre;
+
+        <span class="fu">Fourchette</span>(<span class="dt">int</span> ordre) {
+            <span class="kw">this</span>.<span class="fu">ordre</span> = ordre;
+        }
+    }
+}</code></pre></div>
+<p>Maintenant, le programme ne s'arrête plus.</p>
+<h2 id="plus-de-verrous"><span class="header-section-number">8.28</span>  Plus de verrous</h2>
+<p>Le mécanisme de verrou intrisec est limité : on ne doit forcément relacher un verrou dans la même méthode qu'on l'a acquis.</p>
+<p>Pour pouvoir programmer de manière plus libre on pourra utiliser <code>ReentrantLock</code></p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">class</span> X {
+    <span class="kw">private</span> <span class="dt">final</span> <span class="bu">ReentrantLock</span> lock = <span class="kw">new</span> <span class="bu">ReentrantLock</span>();
+
+    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">m</span>() {
+        lock.<span class="fu">lock</span>();  <span class="co">// block until condition holds</span>
+        <span class="kw">try</span> {
+            <span class="co">// ...</span>
+        } <span class="kw">finally</span> {
+            lock.<span class="fu">unlock</span>()
+        }
+    }
+    
+    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">fermer</span>() {
+        lock.<span class="fu">lock</span>();
+    }
+    
+    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">ouvrir</span>() {
+        <span class="kw">try</span> {
+            <span class="co">// ...</span>
+        } <span class="kw">finally</span> {
+            lock.<span class="fu">unlock</span>()
+        }
+    }
+}</code></pre></div>
+<h2 id="exercice-15-3"><span class="header-section-number">8.29</span> Exercice 15</h2>
+<p>Réécrire le simulateur de diné de philosophe avec des verrous réentrants.</p>
+<h2 id="correction-15"><span class="header-section-number">8.30</span> Correction 15</h2>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> thread.exercice;</span>
+
+<span class="kw">import</span><span class="im"> java.util.ArrayList;</span>
+<span class="kw">import</span><span class="im"> java.util.List;</span>
+<span class="kw">import</span><span class="im"> java.util.concurrent.locks.ReentrantLock;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> ReentrantDinerPhilosophe {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">InterruptedException</span> {
+        <span class="bu">List</span>&lt;Fourchette&gt; fourchettes = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();
+        <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">5</span>; i++) {
+            fourchettes.<span class="fu">add</span>(<span class="kw">new</span> <span class="fu">Fourchette</span>(i));
+        }
+
+        <span class="bu">List</span>&lt;Philosophe&gt; list = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();
+        <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">5</span>; i++) {
+            list.<span class="fu">add</span>(<span class="kw">new</span> <span class="fu">Philosophe</span>(fourchettes.<span class="fu">get</span>(i), fourchettes.<span class="fu">get</span>((i + <span class="dv">1</span>) % <span class="dv">5</span>), <span class="bu">String</span>.<span class="fu">valueOf</span>(i)));
+        }
+        <span class="bu">List</span>&lt;<span class="bu">Thread</span>&gt; threads = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();
+        <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">5</span>; i++) {
+            <span class="dt">int</span> finalI = i;
+            <span class="bu">Runnable</span> target = <span class="kw">new</span> <span class="bu">Runnable</span>() {
+                <span class="at">@Override</span>
+                <span class="kw">public</span> <span class="dt">void</span> <span class="fu">run</span>() {
+                    Philosophe philosophe = list.<span class="fu">get</span>(finalI);
+                    <span class="kw">for</span> (<span class="dt">int</span> j = <span class="dv">0</span>; j &lt; <span class="dv">1000</span>; j++) {
+                        philosophe.<span class="fu">manger</span>();
+                    }
+                }
+            };
+            threads.<span class="fu">add</span>(<span class="kw">new</span> <span class="bu">Thread</span>(target));
+        }
+
+        <span class="kw">for</span> (<span class="bu">Thread</span> thread : threads) {
+            thread.<span class="fu">start</span>();
+        }
+        <span class="kw">for</span> (<span class="bu">Thread</span> thread : threads) {
+            thread.<span class="fu">join</span>();
+        }
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Fin du dîner&quot;</span>);
+    }
+
+    <span class="kw">private</span> <span class="dt">static</span> <span class="kw">class</span> Philosophe {
+        <span class="kw">private</span> <span class="dt">final</span> Fourchette fourchetteGauche;
+        <span class="kw">private</span> <span class="dt">final</span> Fourchette fourchetteDroite;
+        <span class="kw">private</span> <span class="dt">final</span> <span class="bu">String</span> nom;
+
+        <span class="fu">Philosophe</span>(Fourchette fourchetteGauche, Fourchette fourchetteDroite, <span class="bu">String</span> nom) {
+            <span class="kw">if</span> (fourchetteGauche.<span class="fu">ordre</span> &gt; fourchetteDroite.<span class="fu">ordre</span>) {
+                <span class="kw">this</span>.<span class="fu">fourchetteGauche</span> = fourchetteDroite;
+                <span class="kw">this</span>.<span class="fu">fourchetteDroite</span> = fourchetteGauche;
+            } <span class="kw">else</span> {
+                <span class="kw">this</span>.<span class="fu">fourchetteGauche</span> = fourchetteGauche;
+                <span class="kw">this</span>.<span class="fu">fourchetteDroite</span> = fourchetteDroite;
+            }
+            assert <span class="kw">this</span>.<span class="fu">fourchetteGauche</span>.<span class="fu">ordre</span> &lt; <span class="kw">this</span>.<span class="fu">fourchetteDroite</span>.<span class="fu">ordre</span>;
+            <span class="kw">this</span>.<span class="fu">nom</span> = nom;
+        }
+
+        <span class="dt">void</span> <span class="fu">manger</span>() {
+            <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">&quot;</span><span class="sc">%s</span><span class="st"> attend la fourchette gauche </span><span class="sc">%s%n</span><span class="st">&quot;</span>, nom, fourchetteGauche);
+            fourchetteGauche.<span class="fu">prendre</span>();
+            <span class="kw">try</span> {
+                <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">&quot;</span><span class="sc">%s</span><span class="st"> prend la fourchette gauche </span><span class="sc">%s%n</span><span class="st">&quot;</span>, nom, fourchetteGauche);
+                <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">&quot;</span><span class="sc">%s</span><span class="st"> attend la fourchette droite </span><span class="sc">%s%n</span><span class="st">&quot;</span>, nom, fourchetteDroite);
+                fourchetteDroite.<span class="fu">prendre</span>();
+                <span class="kw">try</span> {
+                    <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">&quot;</span><span class="sc">%s</span><span class="st"> prend la fourchette droite </span><span class="sc">%s%n</span><span class="st">&quot;</span>, nom, fourchetteDroite);
+                    <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">&quot;</span><span class="sc">%s</span><span class="st"> mange</span><span class="sc">%n</span><span class="st">&quot;</span>, nom);
+                    <span class="kw">try</span> {
+                        <span class="bu">Thread</span>.<span class="fu">sleep</span>(((<span class="dt">long</span>) (<span class="bu">Math</span>.<span class="fu">random</span>() * <span class="dv">500</span>)));
+                    } <span class="kw">catch</span> (<span class="bu">InterruptedException</span> e) {
+                        e.<span class="fu">printStackTrace</span>();
+                    }
+                } <span class="kw">finally</span> {
+                    fourchetteDroite.<span class="fu">relacher</span>();
+                    <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">&quot;</span><span class="sc">%s</span><span class="st"> repose la fourchette droite </span><span class="sc">%s%n</span><span class="st">&quot;</span>, nom, fourchetteDroite);
+                }
+            } <span class="kw">finally</span> {
+                fourchetteGauche.<span class="fu">relacher</span>();
+                <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">&quot;</span><span class="sc">%s</span><span class="st"> repose la fourchette gauche </span><span class="sc">%s%n</span><span class="st">&quot;</span>, nom, fourchetteGauche);
+            }
+        }
+    }
+
+    <span class="kw">private</span> <span class="dt">static</span> <span class="kw">class</span> Fourchette {
+        <span class="kw">private</span> <span class="bu">ReentrantLock</span> lock = <span class="kw">new</span> <span class="bu">ReentrantLock</span>();
+        <span class="kw">private</span> <span class="dt">int</span> ordre;
+
+        <span class="fu">Fourchette</span>(<span class="dt">int</span> ordre) {
+            <span class="kw">this</span>.<span class="fu">ordre</span> = ordre;
+        }
+
+        <span class="dt">void</span> <span class="fu">prendre</span>() {
+            lock.<span class="fu">lock</span>();
+        }
+
+        <span class="dt">void</span> <span class="fu">relacher</span>() {
+            lock.<span class="fu">unlock</span>();
+        }
+
+        <span class="at">@Override</span>
+        <span class="kw">public</span> <span class="bu">String</span> <span class="fu">toString</span>() {
+            <span class="kw">return</span> <span class="bu">String</span>.<span class="fu">valueOf</span>(ordre);
+        }
+    }
+}</code></pre></div>
+<h2 id="concurrence-et-parallèlisme"><span class="header-section-number">8.31</span> Concurrence et parallèlisme</h2>
+<p>Jusqu'ici on a présenté la programmation multithread comme une technique d'optimisation : on parallélise pour gagner du temps.</p>
+<p>La concurrence est plus que cela, c'est un paradigme de programmation dans lequel on peut modéliser des problèmes de manière élégante (c'est à dire simple et efficace).</p>
+<h1 id="annexes-et-précis"><span class="header-section-number">9</span> Annexes et précis</h1>
+<h2 id="florilège-à-ne-pas-écrire"><span class="header-section-number">9.1</span> Florilège à ne pas écrire</h2>
+<h3 id="pas-de-méthode-statique-abstraite-dans-une-interface"><span class="header-section-number">9.1.1</span> Pas de méthode statique abstraite dans une interface</h3>
 <pre><code>interface Foo {
     static void bar(); // Error: missing method body, or declare abstract
 }
@@ -4410,24 +5472,24 @@ class BarFoo implements Foo {
         System.out.println(&quot;hello&quot;);
     }
 }</code></pre>
-<h3 id="pas-de-function"><span class="header-section-number">8.1.2</span> Pas de function</h3>
+<h3 id="pas-de-function"><span class="header-section-number">9.1.2</span> Pas de function</h3>
 <p>De plus, la syntaxe suivante n'est pas du Java. Elle ressemble à ce qu'on pourrait avoir en JavaScript.</p>
 <pre><code>interface Foo {
     function bar();
 }</code></pre>
-<h3 id="pas-de-return-avec-parenthèses"><span class="header-section-number">8.1.3</span> Pas de return avec parenthèses</h3>
+<h3 id="pas-de-return-avec-parenthèses"><span class="header-section-number">9.1.3</span> Pas de return avec parenthèses</h3>
 <p>Éviter les parenthèses inutiles :</p>
 <pre><code>return (x);</code></pre>
 <p>Préférer :</p>
 <pre><code>return x;</code></pre>
 <p>L'opérateur <code>return</code> n'est pas une fonction (comme println par ex.). On écrira donc <code>println(x);</code> mais <code>return x;</code></p>
-<h3 id="pas-de-switch-sans-parenthèses"><span class="header-section-number">8.1.4</span> Pas de switch sans parenthèses</h3>
+<h3 id="pas-de-switch-sans-parenthèses"><span class="header-section-number">9.1.4</span> Pas de switch sans parenthèses</h3>
 <div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">switch</span> (x) {
 }</code></pre></div>
 <p>et non pas comme en Swift :</p>
 <pre><code>switch x {
 }</code></pre>
-<h3 id="pas-de-duplication"><span class="header-section-number">8.1.5</span> Pas de duplication</h3>
+<h3 id="pas-de-duplication"><span class="header-section-number">9.1.5</span> Pas de duplication</h3>
 <p>Éviter :</p>
 <div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; digitLength; i++) {
     <span class="dt">int</span> digit = n % <span class="dv">16</span>;
@@ -4456,7 +5518,7 @@ class BarFoo implements Foo {
     n /= <span class="dv">16</span>;
 }</code></pre></div>
 <p>Un switch qui contient du code qui se ressemble est une indication que le code est plus complexe qu'il ne devrait.</p>
-<h3 id="pas-de-cast-entre-type-primitif-et-référence"><span class="header-section-number">8.1.6</span> Pas de cast entre type primitif et référence</h3>
+<h3 id="pas-de-cast-entre-type-primitif-et-référence"><span class="header-section-number">9.1.6</span> Pas de cast entre type primitif et référence</h3>
 <p>Attention le type <code>int</code> n'est pas castable en <code>String</code>. De manière générale, un type primitif n'est jamais castable en type référence. On pourrait le croire dans le cas de <code>Integer n = 10;</code>. Mais c'est un autre mécanisme que le cast qui est en jeu ici : l'auto-boxing.</p>
 <p>Ainsi :</p>
 <div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> n = <span class="dv">10</span>;
@@ -4466,7 +5528,7 @@ class BarFoo implements Foo {
 
 <span class="bu">String</span>.<span class="fu">valueOf</span>(address); <span class="co">// 10</span>
 <span class="bu">Integer</span>.<span class="fu">toString</span>(address); <span class="co">// 10</span></code></pre></div>
-<h3 id="pas-de-méthode-dans-une-méthode"><span class="header-section-number">8.1.7</span> Pas de méthode dans une méthode</h3>
+<h3 id="pas-de-méthode-dans-une-méthode"><span class="header-section-number">9.1.7</span> Pas de méthode dans une méthode</h3>
 <p>En Java on ne peut pas définir une méthode dans le corps d'une une méthode.</p>
 <pre><code>class MethodInMethod {
     void foo() {
@@ -4477,14 +5539,14 @@ class BarFoo implements Foo {
     }
 }</code></pre>
 <p>On observe le même principe pour <code>0 == false</code>.</p>
-<h3 id="faute-de-frappe-et-confusion"><span class="header-section-number">8.1.8</span> Faute de frappe et confusion</h3>
+<h3 id="faute-de-frappe-et-confusion"><span class="header-section-number">9.1.8</span> Faute de frappe et confusion</h3>
 <p>On écrit le type chaîne <code>String</code> et non pas <code>string</code>. La classe <code>String</code> en Java prend une capitale. C'est l'équivalent C# qui peut s'écrire : <code>string</code>.</p>
 <p>On n'écrit pas <code>Class Foo {}</code> en majuscule, mais <code>class Foo {}</code>. Tous les mots-clés du langage sont en minuscule.</p>
 <p>On écrit <code>@Override</code> et non pas <code>@Overide</code>. C'est l'annotation qui indique une méthode est héritée.</p>
 <p>On écrit <code>length</code> et non pas <code>lenght</code>. C'est le champ de classe pour qui stocke la taille d'un tableau.</p>
 <div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span>[] array = {};
 <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(array.<span class="fu">length</span>);</code></pre></div>
-<h2 id="valeur-par-défaut"><span class="header-section-number">8.2</span> Valeur par défaut</h2>
+<h2 id="valeur-par-défaut"><span class="header-section-number">9.2</span> Valeur par défaut</h2>
 <p>La valeur par défaut d'un type primitif est un élément neutre (pour la somme ou la disjonction logique <code>||</code>) : une sorte de zéro.</p>
 <div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">class</span> ValeurType {
     <span class="dt">int</span> a;
@@ -4513,7 +5575,7 @@ class BarFoo implements Foo {
         <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(a); <span class="co">// Error: variable a might not have been initialized</span>
     }
 }</code></pre></div>
-<h3 id="opérateur"><span class="header-section-number">8.2.1</span> Opérateur ==</h3>
+<h3 id="opérateur"><span class="header-section-number">9.2.1</span> Opérateur ==</h3>
 <p>L'opérateur <code>==</code> vérifie à la compilation que les deux opérandes sont de types comparables (c-à-d. cast possible). Et il vérifie l'égalité des valeurs à l'exécution.</p>
 <div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="dv">0</span> == <span class="dv">1</span>);
 <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="dv">0</span> == <span class="fl">0.0</span>);
@@ -4521,7 +5583,7 @@ class BarFoo implements Foo {
 <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="dv">0</span> == <span class="kw">false</span>); <span class="co">// Error: incomparable types: int and boolean</span></code></pre></div>
 <p>L'expression <code>null == 0</code> ne compile pas. L'erreur est comparable à une erreur de cast :</p>
 <div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> i = (<span class="dt">int</span>) <span class="kw">null</span>; <span class="co">// Error: incompatible types: &lt;nulltype&gt; cannot be converted to int</span></code></pre></div>
-<h3 id="types-primitifs"><span class="header-section-number">8.2.2</span> Types primitifs</h3>
+<h3 id="types-primitifs"><span class="header-section-number">9.2.2</span> Types primitifs</h3>
 <table>
 <thead>
 <tr class="header">
@@ -4571,7 +5633,7 @@ class BarFoo implements Foo {
 <p>https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html</p>
 <p>Il n'existe pas de type qui soit la combinaison de types primitifs comme en C. Ainsi, ni <code>long long</code> ni <code>long double</code> par exemple n'existent en Java. En C, la taille d'un long dépend de l'implémentation. Ainsi on ne sait de <code>long long</code> qu'il n'est pas plus petit que <code>long</code> (c'est tout). En Java, la taille est normalisée dans la spécification (32 bits pour int).</p>
 <p>https://en.wikipedia.org/wiki/C_data_types</p>
-<h3 id="décalage-de-bits"><span class="header-section-number">8.2.3</span> Décalage de bits</h3>
+<h3 id="décalage-de-bits"><span class="header-section-number">9.2.3</span> Décalage de bits</h3>
 <div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">class</span> DecalageBits {
     <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
         <span class="dt">int</span> a = <span class="dv">1</span>;
@@ -4602,7 +5664,7 @@ class BarFoo implements Foo {
 <div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dv">1</span> &lt;&lt; <span class="dv">2</span> &gt;&gt; <span class="dv">2</span> &lt;&lt; <span class="dv">3</span> &gt;&gt; <span class="dv">3</span> <span class="co">// 1</span></code></pre></div>
 <p>S'associe de gauche à droite (comme tous les opérateurs binaires sauf l'affectation <code>=</code>).</p>
 <div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">(((<span class="dv">1</span> &lt;&lt; <span class="dv">2</span>) &gt;&gt; <span class="dv">2</span>) &lt;&lt; <span class="dv">3</span>) &gt;&gt; <span class="dv">3</span> <span class="co">// 1</span></code></pre></div>
-<h2 id="références"><span class="header-section-number">8.3</span> Références</h2>
+<h2 id="références"><span class="header-section-number">9.3</span> Références</h2>
 <p>https://docs.oracle.com/javase/tutorial/</p>
 <p>https://docs.oracle.com/javase/specs/</p>
 </body>
